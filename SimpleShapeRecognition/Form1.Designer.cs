@@ -31,7 +31,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(617, 346);
             this.Name = "Form1";
-            this.Text = "SimpleShapeRecognition2";
+            this.Text = "SimpleShapeRecognition3";
             this.ResumeLayout(false);
 
 		}
