@@ -32,6 +32,7 @@
             this.ClientSize = new System.Drawing.Size(617, 346);
             this.Name = "Form1";
             this.Text = "SimpleShapeRecognition2";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
 
 		}
