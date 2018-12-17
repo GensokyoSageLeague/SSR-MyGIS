@@ -13,6 +13,7 @@ namespace SimpleShapeRecognition {
 		public Form1() {
 			InitializeComponent();
             int a = 1;
+			int b = 2;
 		}
 	}
 }
