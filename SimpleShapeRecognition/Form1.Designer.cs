@@ -23,16 +23,16 @@
 		/// 使用代码编辑器修改此方法的内容。
 		/// </summary>
 		private void InitializeComponent() {
-            this.SuspendLayout();
-            // 
-            // Form1
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(617, 346);
-            this.Name = "Form1";
-            this.Text = "SimpleShapeRecognition3";
-            this.ResumeLayout(false);
+			this.SuspendLayout();
+			// 
+			// Form1
+			// 
+			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.ClientSize = new System.Drawing.Size(617, 346);
+			this.Name = "Form1";
+			this.Text = "SimpleShapeRecognition";
+			this.ResumeLayout(false);
 
 		}
 
