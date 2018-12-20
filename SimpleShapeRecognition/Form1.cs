@@ -13,5 +13,13 @@ namespace SimpleShapeRecognition {
 		public Form1() {
 			InitializeComponent();
 		}
+
+		private void aboutToolStripMenuItem_Click(object sender, EventArgs e) {
+			MessageBox.Show("Proudly Made by\r\n\t10170320 李云烽\r\n\t10170325 李健纯\r\n\t10170347 姜子威\r\n\t10170348 姚迪昭", "About Project");
+		}
+
+		private void exitToolStripMenuItem_Click(object sender, EventArgs e) {
+			Application.Exit();
+		}
 	}
 }
