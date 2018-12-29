@@ -48,16 +48,24 @@ namespace SimpleShapeRecognition {
 
 				//霍夫圆检测
 				CircleF[] circles = CvInvoke.HoughCircles(grayImage, HoughType.Gradient, 2.0, 20.0, 100.0, 180.0, 5);
-				Image<Bgr, Byte> recognizedImage = srcImage.Clone();
+				Image<Bgr, Byte> recognizedCircleImage = srcImage.Clone();
 				foreach (CircleF circle in circles)
-					recognizedImage.Draw(circle, new Bgr(Color.Blue), 4);
+					recognizedCircleImage.Draw(circle, new Bgr(Color.Blue), 4);
 
 // 				LineSegment2D[] lines = CvInvoke.HoughLinesP(grayImage, 1, Math.PI / 180, 500, 100, 10);
 // 				foreach (var line in lines)
 // 				recognizedImage.Draw(line, new Bgr(Color.Red), 4);
 
-				CvInvoke.Imshow("Hough Transformed Image", recognizedImage);
+				CvInvoke.Imshow("Hough Transformed Circle", recognizedCircleImage);
 				//CvInvoke.WaitKey(0);
+
+				//霍夫圆检测
+				//CircleF[] lines = CvInvoke.HoughCircles(grayImage, HoughType.Gradient, 2.0, 20.0, 100.0, 180.0, 5);
+				LineSegment2D[] lines = CvInvoke.HoughLinesP(grayImage, 1, Math.PI / 180, 50, 50, 10);
+				Image<Bgr, Byte> recognizedLineImage = srcImage.Clone();
+				foreach (var line in lines)
+					recognizedLineImage.Draw(line, new Bgr(Color.Blue), 4);
+				CvInvoke.Imshow("Hough Transformed Line", recognizedLineImage);
 			}
 		}
 
