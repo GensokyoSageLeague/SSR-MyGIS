@@ -23,5 +23,13 @@ namespace MyGIS {
 		private void exitToolStripMenuItem_Click(object sender, EventArgs e) {
 			Application.Exit();
 		}
+
+		private void optionsToolStripMenuItem_Click(object sender, EventArgs e) {
+			new FormMainOptions().ShowDialog(this);
+		}
+
+		private void dotSpatialTestToolStripMenuItem_Click(object sender, EventArgs e) {
+			new FormTestDotSpatial().ShowDialog();
+		}
 	}
 }

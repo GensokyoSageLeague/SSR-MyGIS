@@ -1,5 +1,5 @@
-﻿namespace SimpleShapeRecognition {
-	partial class Form1Options {
+﻿namespace MyGIS {
+	partial class FormMainOptions {
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>

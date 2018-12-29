@@ -8,9 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SimpleShapeRecognition {
-	public partial class Form1Options : Form {
-		public Form1Options() {
+namespace MyGIS {
+	public partial class FormMainOptions : Form {
+		public FormMainOptions() {
 			InitializeComponent();
 		}
 	}

@@ -55,53 +55,56 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DotSpatial.Controls, Version=1.9.0.0, Culture=neutral, PublicKeyToken=4d9e49339a7d240c, processorArchitecture=MSIL">
-      <HintPath>..\packages\DotSpatial.Controls.1.9\lib\net40-Client\DotSpatial.Controls.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="DotSpatial.Analysis">
+      <HintPath>..\packages\DotSpatial\DotSpatial.Analysis.dll</HintPath>
     </Reference>
-    <Reference Include="DotSpatial.Data, Version=1.9.0.0, Culture=neutral, PublicKeyToken=c29dbf30e059ca9d, processorArchitecture=MSIL">
-      <HintPath>..\packages\DotSpatial.Data.1.9\lib\net40-Client\DotSpatial.Data.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="DotSpatial.Compatibility">
+      <HintPath>..\packages\DotSpatial\DotSpatial.Compatibility.dll</HintPath>
     </Reference>
-    <Reference Include="DotSpatial.Data.Forms, Version=1.9.0.0, Culture=neutral, PublicKeyToken=53ab5a198378d4c1, processorArchitecture=MSIL">
-      <HintPath>..\packages\DotSpatial.Data.Forms.1.9\lib\net40-Client\DotSpatial.Data.Forms.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="DotSpatial.Controls">
+      <HintPath>..\packages\DotSpatial\DotSpatial.Controls.dll</HintPath>
     </Reference>
-    <Reference Include="DotSpatial.Extensions, Version=1.9.0.0, Culture=neutral, PublicKeyToken=4d9e49339a7d240c, processorArchitecture=MSIL">
-      <HintPath>..\packages\DotSpatial.Extensions.1.9\lib\net40-Client\DotSpatial.Extensions.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="DotSpatial.Data">
+      <HintPath>..\packages\DotSpatial\DotSpatial.Data.dll</HintPath>
     </Reference>
-    <Reference Include="DotSpatial.Modeling.Forms, Version=1.9.0.0, Culture=neutral, PublicKeyToken=712bef29a31a9354, processorArchitecture=MSIL">
-      <HintPath>..\packages\DotSpatial.Modeling.Forms.1.9\lib\net40-Client\DotSpatial.Modeling.Forms.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="DotSpatial.Data.Forms">
+      <HintPath>..\packages\DotSpatial\DotSpatial.Data.Forms.dll</HintPath>
     </Reference>
-    <Reference Include="DotSpatial.Mono, Version=1.9.0.0, Culture=neutral, PublicKeyToken=425ba4de41127026, processorArchitecture=MSIL">
-      <HintPath>..\packages\DotSpatial.Mono.1.9\lib\net40-Client\DotSpatial.Mono.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="DotSpatial.Extensions">
+      <HintPath>..\packages\DotSpatial\DotSpatial.Extensions.dll</HintPath>
     </Reference>
-    <Reference Include="DotSpatial.Projections, Version=1.9.0.0, Culture=neutral, PublicKeyToken=272632bddd08a38b, processorArchitecture=MSIL">
-      <HintPath>..\packages\DotSpatial.Projections.1.9\lib\net40-Client\DotSpatial.Projections.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="DotSpatial.Modeling.Forms">
+      <HintPath>..\packages\DotSpatial\DotSpatial.Modeling.Forms.dll</HintPath>
     </Reference>
-    <Reference Include="DotSpatial.Projections.Forms, Version=1.9.0.0, Culture=neutral, PublicKeyToken=52099474f11b7ff0, processorArchitecture=MSIL">
-      <HintPath>..\packages\DotSpatial.Projections.Forms.1.9\lib\net40-Client\DotSpatial.Projections.Forms.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="DotSpatial.Mono">
+      <HintPath>..\packages\DotSpatial\DotSpatial.Mono.dll</HintPath>
     </Reference>
-    <Reference Include="DotSpatial.Serialization, Version=1.9.0.0, Culture=neutral, PublicKeyToken=441f200f827611e7, processorArchitecture=MSIL">
-      <HintPath>..\packages\DotSpatial.Serialization.1.9\lib\net40-Client\DotSpatial.Serialization.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="DotSpatial.Positioning">
+      <HintPath>..\packages\DotSpatial\DotSpatial.Positioning.dll</HintPath>
     </Reference>
-    <Reference Include="DotSpatial.Symbology, Version=1.9.0.0, Culture=neutral, PublicKeyToken=6178c08da7998387, processorArchitecture=MSIL">
-      <HintPath>..\packages\DotSpatial.Symbology.1.9\lib\net40-Client\DotSpatial.Symbology.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="DotSpatial.Positioning.Design">
+      <HintPath>..\packages\DotSpatial\DotSpatial.Positioning.Design.dll</HintPath>
     </Reference>
-    <Reference Include="DotSpatial.Symbology.Forms, Version=1.9.0.0, Culture=neutral, PublicKeyToken=0544cdeefb662382, processorArchitecture=MSIL">
-      <HintPath>..\packages\DotSpatial.Symbology.Forms.1.9\lib\net40-Client\DotSpatial.Symbology.Forms.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="DotSpatial.Positioning.Forms">
+      <HintPath>..\packages\DotSpatial\DotSpatial.Positioning.Forms.dll</HintPath>
     </Reference>
-    <Reference Include="DotSpatial.Topology, Version=1.9.0.0, Culture=neutral, PublicKeyToken=a66b5e9434ca3671, processorArchitecture=MSIL">
-      <HintPath>..\packages\DotSpatial.Topology.1.9\lib\net40-Client\DotSpatial.Topology.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="DotSpatial.Projections">
+      <HintPath>..\packages\DotSpatial\DotSpatial.Projections.dll</HintPath>
+    </Reference>
+    <Reference Include="DotSpatial.Projections.Forms">
+      <HintPath>..\packages\DotSpatial\DotSpatial.Projections.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="DotSpatial.Serialization">
+      <HintPath>..\packages\DotSpatial\DotSpatial.Serialization.dll</HintPath>
+    </Reference>
+    <Reference Include="DotSpatial.Symbology">
+      <HintPath>..\packages\DotSpatial\DotSpatial.Symbology.dll</HintPath>
+    </Reference>
+    <Reference Include="DotSpatial.Symbology.Forms">
+      <HintPath>..\packages\DotSpatial\DotSpatial.Symbology.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="DotSpatial.Topology">
+      <HintPath>..\packages\DotSpatial\DotSpatial.Topology.dll</HintPath>
     </Reference>
     <Reference Include="Emgu.CV.UI, Version=3.4.3.3016, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
       <HintPath>..\packages\EMGU.CV.3.4.3.3016\lib\net35\Emgu.CV.UI.dll</HintPath>
@@ -112,6 +115,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -141,6 +145,12 @@
     <Compile Include="FormMain.designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormTestDotSpatial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTestDotSpatial.Designer.cs">
+      <DependentUpon>FormTestDotSpatial.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AppInfo.resx">
@@ -152,6 +162,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTestDotSpatial.resx">
+      <DependentUpon>FormTestDotSpatial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

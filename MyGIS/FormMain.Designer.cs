@@ -43,10 +43,14 @@
 			this.splitContainer1 = new System.Windows.Forms.SplitContainer();
 			this.listView1 = new System.Windows.Forms.ListView();
 			this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.map1 = new DotSpatial.Controls.Map();
+			this.debugToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.dotSpatialTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuStrip1.SuspendLayout();
 			this.toolStrip1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
 			this.splitContainer1.Panel1.SuspendLayout();
+			this.splitContainer1.Panel2.SuspendLayout();
 			this.splitContainer1.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -58,7 +62,8 @@
             this.editToolStripMenuItem,
             this.viewToolStripMenuItem,
             this.procToolStripMenuItem,
-            this.helpToolStripMenuItem});
+            this.helpToolStripMenuItem,
+            this.debugToolStripMenuItem});
 			resources.ApplyResources(this.menuStrip1, "menuStrip1");
 			this.menuStrip1.Name = "menuStrip1";
 			// 
@@ -111,6 +116,7 @@
 			// 
 			this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
 			resources.ApplyResources(this.optionsToolStripMenuItem, "optionsToolStripMenuItem");
+			this.optionsToolStripMenuItem.Click += new System.EventHandler(this.optionsToolStripMenuItem_Click);
 			// 
 			// viewToolStripMenuItem
 			// 
@@ -164,6 +170,10 @@
 			// 
 			this.splitContainer1.Panel1.Controls.Add(this.listView1);
 			// 
+			// splitContainer1.Panel2
+			// 
+			this.splitContainer1.Panel2.Controls.Add(this.map1);
+			// 
 			// listView1
 			// 
 			this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
@@ -176,6 +186,39 @@
 			// columnHeader1
 			// 
 			resources.ApplyResources(this.columnHeader1, "columnHeader1");
+			// 
+			// map1
+			// 
+			this.map1.AllowDrop = true;
+			this.map1.BackColor = System.Drawing.Color.White;
+			this.map1.CollectAfterDraw = false;
+			this.map1.CollisionDetection = false;
+			this.map1.ExtendBuffer = false;
+			this.map1.FunctionMode = DotSpatial.Controls.FunctionMode.None;
+			this.map1.IsBusy = false;
+			this.map1.IsZoomedToMaxExtent = false;
+			this.map1.Legend = null;
+			resources.ApplyResources(this.map1, "map1");
+			this.map1.Name = "map1";
+			this.map1.ProgressHandler = null;
+			this.map1.ProjectionModeDefine = DotSpatial.Controls.ActionMode.Prompt;
+			this.map1.ProjectionModeReproject = DotSpatial.Controls.ActionMode.Prompt;
+			this.map1.RedrawLayersWhileResizing = false;
+			this.map1.SelectionEnabled = true;
+			this.map1.ZoomOutFartherThanMaxExtent = false;
+			// 
+			// debugToolStripMenuItem
+			// 
+			this.debugToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.dotSpatialTestToolStripMenuItem});
+			this.debugToolStripMenuItem.Name = "debugToolStripMenuItem";
+			resources.ApplyResources(this.debugToolStripMenuItem, "debugToolStripMenuItem");
+			// 
+			// dotSpatialTestToolStripMenuItem
+			// 
+			this.dotSpatialTestToolStripMenuItem.Name = "dotSpatialTestToolStripMenuItem";
+			resources.ApplyResources(this.dotSpatialTestToolStripMenuItem, "dotSpatialTestToolStripMenuItem");
+			this.dotSpatialTestToolStripMenuItem.Click += new System.EventHandler(this.dotSpatialTestToolStripMenuItem_Click);
 			// 
 			// FormMain
 			// 
@@ -192,6 +235,7 @@
 			this.toolStrip1.ResumeLayout(false);
 			this.toolStrip1.PerformLayout();
 			this.splitContainer1.Panel1.ResumeLayout(false);
+			this.splitContainer1.Panel2.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
 			this.splitContainer1.ResumeLayout(false);
 			this.ResumeLayout(false);
@@ -220,6 +264,9 @@
 		private System.Windows.Forms.SplitContainer splitContainer1;
 		private System.Windows.Forms.ListView listView1;
 		private System.Windows.Forms.ColumnHeader columnHeader1;
+		private DotSpatial.Controls.Map map1;
+		private System.Windows.Forms.ToolStripMenuItem debugToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem dotSpatialTestToolStripMenuItem;
 	}
 }
 

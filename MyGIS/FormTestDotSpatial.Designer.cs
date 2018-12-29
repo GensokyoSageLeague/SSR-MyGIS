@@ -1,5 +1,5 @@
 ﻿namespace MyGIS {
-	partial class Form1Options {
+	partial class FormTestDotSpatial {
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
@@ -23,35 +23,33 @@
 		/// the contents of this method with the code editor.
 		/// </summary>
 		private void InitializeComponent() {
-			this.checkBox1 = new System.Windows.Forms.CheckBox();
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormTestDotSpatial));
+			this.appManager1 = new DotSpatial.Controls.AppManager();
 			this.SuspendLayout();
 			// 
-			// checkBox1
+			// appManager1
 			// 
-			this.checkBox1.AutoSize = true;
-			this.checkBox1.Location = new System.Drawing.Point(12, 12);
-			this.checkBox1.Name = "checkBox1";
-			this.checkBox1.Size = new System.Drawing.Size(285, 19);
-			this.checkBox1.TabIndex = 0;
-			this.checkBox1.Text = "Use Classic Hough Transformation";
-			this.checkBox1.UseVisualStyleBackColor = true;
+			this.appManager1.Directories = ((System.Collections.Generic.List<string>)(resources.GetObject("appManager1.Directories")));
+			this.appManager1.DockManager = null;
+			this.appManager1.HeaderControl = null;
+			this.appManager1.Legend = null;
+			this.appManager1.Map = null;
+			this.appManager1.ProgressHandler = null;
+			this.appManager1.ShowExtensionsDialogMode = DotSpatial.Controls.ShowExtensionsDialogMode.Default;
 			// 
-			// Form1Options
+			// FormTestDotSpatial
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(313, 47);
-			this.Controls.Add(this.checkBox1);
-			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-			this.Name = "Form1Options";
-			this.Text = "Options";
+			this.ClientSize = new System.Drawing.Size(765, 448);
+			this.Name = "FormTestDotSpatial";
+			this.Text = "FormTestDotSpatial";
 			this.ResumeLayout(false);
-			this.PerformLayout();
 
 		}
 
 		#endregion
 
-		internal System.Windows.Forms.CheckBox checkBox1;
+		private DotSpatial.Controls.AppManager appManager1;
 	}
 }

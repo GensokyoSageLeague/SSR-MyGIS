@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SimpleShapeRecognition.Properties {
+namespace MyGIS.Properties {
 
 
 	/// <summary>
