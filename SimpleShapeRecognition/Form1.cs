@@ -32,7 +32,7 @@ namespace SimpleShapeRecognition {
 			fd.Title = "Open Bitmap";
 			fd.Filter = "Bitmap|*.bmp;*.jpg;*.jepg";
 			if (fd.ShowDialog() == DialogResult.OK) {
-				Image<Bgr, Byte> srcImage = new Image<Bgr, byte>(fd.FileName);
+				Image<Bgr, Byte> srcImage = new Image<Bgr, Byte>(fd.FileName);
 				CvInvoke.Imshow("Source", srcImage);
 				pictureBox1.Image = srcImage.Bitmap;
 
@@ -40,8 +40,9 @@ namespace SimpleShapeRecognition {
 				UMat grayImage = new UMat();
 				CvInvoke.CvtColor(srcImage, grayImage, ColorConversion.Bgr2Gray);
 
-				//使用高斯滤波去除噪声
+				//使用高斯滤波去除噪声 边缘检测
 				CvInvoke.GaussianBlur(grayImage, grayImage, new Size(5, 5), 3);
+				CvInvoke.Canny(grayImage, grayImage, 350, 400);
 				CvInvoke.Imshow("Blur Image", grayImage);
 				pictureBox2.Image = grayImage.Bitmap;
 
@@ -53,7 +54,7 @@ namespace SimpleShapeRecognition {
 
 // 				LineSegment2D[] lines = CvInvoke.HoughLinesP(grayImage, 1, Math.PI / 180, 500, 100, 10);
 // 				foreach (var line in lines)
-// 					recognizedImage.Draw(line, new Bgr(Color.Red), 4);
+// 				recognizedImage.Draw(line, new Bgr(Color.Red), 4);
 
 				CvInvoke.Imshow("Hough Transformed Image", recognizedImage);
 				//CvInvoke.WaitKey(0);

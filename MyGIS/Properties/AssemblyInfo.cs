@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("MyGIS")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("HP Inc.")]
-[assembly: AssemblyProduct("MyGIS")]
-[assembly: AssemblyCopyright("Copyright © HP Inc. 2018")]
+[assembly: AssemblyCompany("Team Wuyanzu")]
+[assembly: AssemblyProduct("MyGIS Desktop")]
+[assembly: AssemblyCopyright("Copyright © Team Wuyanzu, All Rights Reserved")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // 如果此项目向 COM 公开，则下列 GUID 用于类型库的 ID
-[assembly: Guid("7b7343ea-8a6c-4c91-bbee-fd6c2ae7f8a0")]
+[assembly: Guid("d253f9cb-8e36-4a50-9a44-15ea598feabc")]
 
 // 程序集的版本信息由下列四个值组成: 
 //
