@@ -56,7 +56,7 @@ namespace SimpleShapeRecognition {
 // 				foreach (var line in lines)
 // 				recognizedImage.Draw(line, new Bgr(Color.Red), 4);
 
-				CvInvoke.Imshow("Hough Transformed Circle", recognizedCircleImage);
+				CvInvoke.Imshow("Hough-Transformed Circle", recognizedCircleImage);
 				//CvInvoke.WaitKey(0);
 
 				//霍夫圆检测
@@ -65,7 +65,7 @@ namespace SimpleShapeRecognition {
 				Image<Bgr, Byte> recognizedLineImage = srcImage.Clone();
 				foreach (var line in lines)
 					recognizedLineImage.Draw(line, new Bgr(Color.Blue), 4);
-				CvInvoke.Imshow("Hough Transformed Line", recognizedLineImage);
+				CvInvoke.Imshow("Hough-Transformed Line", recognizedLineImage);
 			}
 		}
 
