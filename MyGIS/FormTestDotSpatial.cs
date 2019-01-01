@@ -17,9 +17,44 @@ namespace MyGIS {
 		public FormTestDotSpatial() {
 			InitializeComponent();
 
-			if (DesignMode) return;
+		/*	if (DesignMode) return;
 			Shell = this;
 			appManager1.LoadExtensions();
+            */
 		}
-	}
+
+        private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e) {
+
+        }
+
+        private void FormTestDotSpatial_Load(object sender, EventArgs e) {
+
+        }
+
+      
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e) {
+
+        }
+
+        private void openLayerToolStripMenuItem_Click(object sender, EventArgs e) {
+            map1.AddLayer();
+        }
+
+        private void closeLayerToolStripMenuItem_Click(object sender, EventArgs e) {
+            map1.ClearLayers();
+        }
+
+        private void zoomInToolStripMenuItem_Click(object sender, EventArgs e) {
+            map1.ZoomIn();
+        }
+
+        private void zoomOutToolStripMenuItem_Click(object sender, EventArgs e) {
+            map1.ZoomOut();
+        }
+
+        private void zoomToExtendToolStripMenuItem_Click(object sender, EventArgs e) {
+            map1.ZoomToMaxExtent();
+        }
+    }
 }
