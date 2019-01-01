@@ -31,6 +31,7 @@
             this.zoomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.map1 = new DotSpatial.Controls.Map();
             this.processToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.map1.MouseWheel += new System.Windows.Forms.MouseEventHandler(this.map1_MouseWheel);
             this.openLayerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.closeLayerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.zoomInToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();

@@ -31,7 +31,14 @@ namespace MyGIS {
 
         }
 
-      
+        private void map1_MouseWheel(object sender, MouseEventArgs e) {
+            if (e.Delta > 0) { // Zoom In
+                map1.ZoomIn();
+            }
+            if (e.Delta < 0) { // Zoom Out
+                map1.ZoomOut();
+            }
+        }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e) {
 
