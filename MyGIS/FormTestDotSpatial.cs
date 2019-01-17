@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.ComponentModel.Composition;
+using DotSpatial.Controls;
 
 namespace MyGIS {
 	public partial class FormTestDotSpatial : Form {
@@ -62,6 +63,19 @@ namespace MyGIS {
 
         private void zoomToExtendToolStripMenuItem_Click(object sender, EventArgs e) {
             map1.ZoomToMaxExtent();
+        }
+
+
+        private void toolStripButton1_Click(object sender, EventArgs e) {
+            map1.FunctionMode = FunctionMode.Pan;
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e) {
+            map1.ZoomIn();
+        }
+
+        private void toolStripButton3_Click(object sender, EventArgs e) {
+            map1.ZoomOut();
         }
     }
 }
