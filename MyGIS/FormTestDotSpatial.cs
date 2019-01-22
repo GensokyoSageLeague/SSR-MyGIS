@@ -148,7 +148,7 @@ namespace MyGIS {
         }
 
         private void map1_MouseDown(object sender, MouseEventArgs e) {
-           // switch (shapeType) {
+            switch (shapeType) {
                 case "Point":
                     if (e.Button == MouseButtons.Left) {
                         if ((pointmouseClick)) {
