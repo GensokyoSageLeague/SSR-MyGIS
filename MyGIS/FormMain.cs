@@ -92,7 +92,7 @@ namespace MyGIS {
 		// --------------MAP Ctr End----------------
 
 		private void sSREnumToolStripMenuItem_Click(object sender, EventArgs e) {
-			map1.Layers[0].
+			//map1.Layers[0].
 		}
 	}
 }
