@@ -15,7 +15,6 @@ namespace MyGIS {
 	public partial class FormMain : Form {
 		public FormMain() {
 			InitializeComponent();
-			InitializeMapper();
 			statusBar.Text = "Initialized.";
 		}
 
@@ -76,7 +75,7 @@ namespace MyGIS {
 		}
 
 		private void sSRTestToolStripMenuItem_Click(object sender, EventArgs e) {
-
+			InitializeMapper();
 		}
 	}
 }
