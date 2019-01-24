@@ -26,6 +26,7 @@
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
 			this.toolStripContainer = new System.Windows.Forms.ToolStripContainer();
 			this.splitContainer = new System.Windows.Forms.SplitContainer();
+			this.legend1 = new DotSpatial.Controls.Legend();
 			this.map1 = new DotSpatial.Controls.Map();
 			this.menuStrip = new System.Windows.Forms.MenuStrip();
 			this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -44,12 +45,11 @@
 			this.debugToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.dotSpatialTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.sSRTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.sSREnumToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStrip1 = new System.Windows.Forms.ToolStrip();
 			this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
 			this.statusStrip = new System.Windows.Forms.StatusStrip();
 			this.statusBar = new System.Windows.Forms.ToolStripStatusLabel();
-			this.legend1 = new DotSpatial.Controls.Legend();
-			this.sSREnumToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripContainer.ContentPanel.SuspendLayout();
 			this.toolStripContainer.TopToolStripPanel.SuspendLayout();
 			this.toolStripContainer.SuspendLayout();
@@ -89,6 +89,22 @@
 			// splitContainer.Panel2
 			// 
 			this.splitContainer.Panel2.Controls.Add(this.map1);
+			// 
+			// legend1
+			// 
+			this.legend1.BackColor = System.Drawing.Color.White;
+			this.legend1.ControlRectangle = new System.Drawing.Rectangle(0, 0, 200, 368);
+			resources.ApplyResources(this.legend1, "legend1");
+			this.legend1.DocumentRectangle = new System.Drawing.Rectangle(0, 0, 187, 428);
+			this.legend1.HorizontalScrollEnabled = true;
+			this.legend1.Indentation = 30;
+			this.legend1.IsInitialized = false;
+			this.legend1.Name = "legend1";
+			this.legend1.ProgressHandler = null;
+			this.legend1.ResetOnResize = false;
+			this.legend1.SelectionFontColor = System.Drawing.Color.Black;
+			this.legend1.SelectionHighlight = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(238)))), ((int)(((byte)(252)))));
+			this.legend1.VerticalScrollEnabled = true;
 			// 
 			// map1
 			// 
@@ -226,6 +242,12 @@
 			resources.ApplyResources(this.sSRTestToolStripMenuItem, "sSRTestToolStripMenuItem");
 			this.sSRTestToolStripMenuItem.Click += new System.EventHandler(this.sSRTestToolStripMenuItem_Click);
 			// 
+			// sSREnumToolStripMenuItem
+			// 
+			this.sSREnumToolStripMenuItem.Name = "sSREnumToolStripMenuItem";
+			resources.ApplyResources(this.sSREnumToolStripMenuItem, "sSREnumToolStripMenuItem");
+			this.sSREnumToolStripMenuItem.Click += new System.EventHandler(this.sSREnumToolStripMenuItem_Click);
+			// 
 			// toolStrip1
 			// 
 			resources.ApplyResources(this.toolStrip1, "toolStrip1");
@@ -253,28 +275,6 @@
 			// 
 			this.statusBar.Name = "statusBar";
 			resources.ApplyResources(this.statusBar, "statusBar");
-			// 
-			// legend1
-			// 
-			this.legend1.BackColor = System.Drawing.Color.White;
-			this.legend1.ControlRectangle = new System.Drawing.Rectangle(0, 0, 200, 368);
-			resources.ApplyResources(this.legend1, "legend1");
-			this.legend1.DocumentRectangle = new System.Drawing.Rectangle(0, 0, 187, 428);
-			this.legend1.HorizontalScrollEnabled = true;
-			this.legend1.Indentation = 30;
-			this.legend1.IsInitialized = false;
-			this.legend1.Name = "legend1";
-			this.legend1.ProgressHandler = null;
-			this.legend1.ResetOnResize = false;
-			this.legend1.SelectionFontColor = System.Drawing.Color.Black;
-			this.legend1.SelectionHighlight = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(238)))), ((int)(((byte)(252)))));
-			this.legend1.VerticalScrollEnabled = true;
-			// 
-			// sSREnumToolStripMenuItem
-			// 
-			this.sSREnumToolStripMenuItem.Name = "sSREnumToolStripMenuItem";
-			resources.ApplyResources(this.sSREnumToolStripMenuItem, "sSREnumToolStripMenuItem");
-			this.sSREnumToolStripMenuItem.Click += new System.EventHandler(this.sSREnumToolStripMenuItem_Click);
 			// 
 			// FormMain
 			// 

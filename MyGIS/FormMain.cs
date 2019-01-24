@@ -22,14 +22,19 @@ namespace MyGIS {
 			Configurations.formLogger = new FormLogger();
 			Configurations.formLogger.Show();
 
-			statusBar.Text = "Initialized.";
-			Logger.log("Initialized.");
+			this.Text = AppInfo.Name;
+			statusBar.Text = "Idle";
+			Logger.log("Started at " + DateTime.Now.ToString() + " on " + AppInfo.Name + " " + AppInfo.Version + " " + AppInfo.VersionState);
+			Logger.log("===============Logger Start===============");
+
+			map1.GeoMouseMove += map1_GeoMouseMove;
 		}
 
 		private void aboutToolStripMenuItem_Click(object sender, EventArgs e) {
-			MessageBox.Show("MyGIS Desktop " + AppInfo.Version +" "+ AppInfo.VersionState + "\r\n\r\n" +
-				"Proudly Made by\r\n\t10170320 李云烽\r\n\t10170325 李健纯\r\n\t10170347 姜子威\r\n\t10170348 姚迪昭",
-				"About MyGIS");
+			MessageBox.Show(AppInfo.Name + " " + AppInfo.Version +" "+ AppInfo.VersionState + "\r\n\r\n" +
+				"Proudly Made by\r\n\t10170320 李云烽\r\n\t10170325 李健纯\r\n\t10170347 姜子威\r\n\t10170348 姚迪昭" + "\r\n\r\n" +
+				"in Nanjing Normal University",
+				"About " + AppInfo.Name);
 		}
 
 		private void exitToolStripMenuItem_Click(object sender, EventArgs e) {
@@ -64,32 +69,24 @@ namespace MyGIS {
 		}
 
 		// --------------MAP Ctr Start----------------
-		private Map mapCtrl = null;
-		private Label coordLabelCtrl = null;
-
 		private void InitializeMapper() {
 			Logger.log("Shapefile.OpenFile(\"so/腾冲/腾冲_Casted1.shp\")");
-			mapCtrl = map1;
 			var shp = Shapefile.OpenFile("so/腾冲/腾冲_Casted1.shp");
 			shp.Projection = KnownCoordinateSystems.Geographic.World.WGS1984;
 
-			var layer = mapCtrl.Layers.Add(shp) as MapLineLayer;
-			layer.Symbolizer = new DotSpatial.Symbology.LineSymbolizer(Color.FromArgb(0x33, 0x33, 0x33), 1);
-			mapCtrl.GeoMouseMove += mapCtrl_GeoMouseMove;
+			foreach (var item in shp.Features) {
+				Logger.log("X:" + item.ToShape().Vertices[0].ToString() +
+					", Y:" + item.ToShape().Vertices[1].ToString());
+			}
 
-			coordLabelCtrl = new Label() {
-				Name = "coordLabelCtrl",
-				Text = "X:00.0000,Y:00.0000",
-				Width = 200,
-				BackColor = Color.Transparent
-			};
-			mapCtrl.Controls.Add(coordLabelCtrl);
+			var layer = map1.Layers.Add(shp) as MapLineLayer;
+			layer.Symbolizer = new LineSymbolizer(Color.FromArgb(0x33, 0x33, 0x33), 1);
 		}
 
-		void mapCtrl_GeoMouseMove(object sender, GeoMouseArgs e) {
-			string locStr = "X:" + e.GeographicLocation.X.ToString("F6");
-			locStr += "Y:" + e.GeographicLocation.Y.ToString("F6");
-			coordLabelCtrl.Text = locStr;
+		void map1_GeoMouseMove(object sender, GeoMouseArgs e) {
+			string locStr = "X:" + e.GeographicLocation.X.ToString("F2") + 
+				", Y:" + e.GeographicLocation.Y.ToString("F2");
+			statusBar.Text = locStr;
 		}
 		// --------------MAP Ctr End----------------
 

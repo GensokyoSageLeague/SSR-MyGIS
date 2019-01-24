@@ -61,6 +61,15 @@ namespace MyGIS {
         }
         
         /// <summary>
+        ///   查找类似 MyGIS Desktop 的本地化字符串。
+        /// </summary>
+        internal static string Name {
+            get {
+                return ResourceManager.GetString("Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 0.1.190123 的本地化字符串。
         /// </summary>
         internal static string Version {
