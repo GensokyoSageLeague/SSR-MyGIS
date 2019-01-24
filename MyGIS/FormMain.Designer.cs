@@ -26,8 +26,6 @@
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
 			this.toolStripContainer = new System.Windows.Forms.ToolStripContainer();
 			this.splitContainer = new System.Windows.Forms.SplitContainer();
-			this.listView1 = new System.Windows.Forms.ListView();
-			this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.map1 = new DotSpatial.Controls.Map();
 			this.menuStrip = new System.Windows.Forms.MenuStrip();
 			this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -39,6 +37,7 @@
 			this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.toggleDebugLogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.procToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,6 +48,8 @@
 			this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
 			this.statusStrip = new System.Windows.Forms.StatusStrip();
 			this.statusBar = new System.Windows.Forms.ToolStripStatusLabel();
+			this.legend1 = new DotSpatial.Controls.Legend();
+			this.sSREnumToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripContainer.ContentPanel.SuspendLayout();
 			this.toolStripContainer.TopToolStripPanel.SuspendLayout();
 			this.toolStripContainer.SuspendLayout();
@@ -83,24 +84,11 @@
 			// 
 			// splitContainer.Panel1
 			// 
-			this.splitContainer.Panel1.Controls.Add(this.listView1);
+			this.splitContainer.Panel1.Controls.Add(this.legend1);
 			// 
 			// splitContainer.Panel2
 			// 
 			this.splitContainer.Panel2.Controls.Add(this.map1);
-			// 
-			// listView1
-			// 
-			this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1});
-			resources.ApplyResources(this.listView1, "listView1");
-			this.listView1.Name = "listView1";
-			this.listView1.UseCompatibleStateImageBehavior = false;
-			this.listView1.View = System.Windows.Forms.View.Details;
-			// 
-			// columnHeader1
-			// 
-			resources.ApplyResources(this.columnHeader1, "columnHeader1");
 			// 
 			// map1
 			// 
@@ -113,7 +101,7 @@
 			this.map1.FunctionMode = DotSpatial.Controls.FunctionMode.None;
 			this.map1.IsBusy = false;
 			this.map1.IsZoomedToMaxExtent = false;
-			this.map1.Legend = null;
+			this.map1.Legend = this.legend1;
 			this.map1.Name = "map1";
 			this.map1.ProgressHandler = null;
 			this.map1.ProjectionModeDefine = DotSpatial.Controls.ActionMode.Prompt;
@@ -188,8 +176,16 @@
 			// 
 			// viewToolStripMenuItem
 			// 
+			this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toggleDebugLogToolStripMenuItem});
 			this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
 			resources.ApplyResources(this.viewToolStripMenuItem, "viewToolStripMenuItem");
+			// 
+			// toggleDebugLogToolStripMenuItem
+			// 
+			this.toggleDebugLogToolStripMenuItem.Name = "toggleDebugLogToolStripMenuItem";
+			resources.ApplyResources(this.toggleDebugLogToolStripMenuItem, "toggleDebugLogToolStripMenuItem");
+			this.toggleDebugLogToolStripMenuItem.Click += new System.EventHandler(this.toggleDebugLogToolStripMenuItem_Click);
 			// 
 			// procToolStripMenuItem
 			// 
@@ -213,7 +209,8 @@
 			// 
 			this.debugToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.dotSpatialTestToolStripMenuItem,
-            this.sSRTestToolStripMenuItem});
+            this.sSRTestToolStripMenuItem,
+            this.sSREnumToolStripMenuItem});
 			this.debugToolStripMenuItem.Name = "debugToolStripMenuItem";
 			resources.ApplyResources(this.debugToolStripMenuItem, "debugToolStripMenuItem");
 			// 
@@ -242,6 +239,7 @@
 			this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
 			resources.ApplyResources(this.toolStripButton1, "toolStripButton1");
 			this.toolStripButton1.Name = "toolStripButton1";
+			this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
 			// 
 			// statusStrip
 			// 
@@ -256,6 +254,28 @@
 			this.statusBar.Name = "statusBar";
 			resources.ApplyResources(this.statusBar, "statusBar");
 			// 
+			// legend1
+			// 
+			this.legend1.BackColor = System.Drawing.Color.White;
+			this.legend1.ControlRectangle = new System.Drawing.Rectangle(0, 0, 200, 368);
+			resources.ApplyResources(this.legend1, "legend1");
+			this.legend1.DocumentRectangle = new System.Drawing.Rectangle(0, 0, 187, 428);
+			this.legend1.HorizontalScrollEnabled = true;
+			this.legend1.Indentation = 30;
+			this.legend1.IsInitialized = false;
+			this.legend1.Name = "legend1";
+			this.legend1.ProgressHandler = null;
+			this.legend1.ResetOnResize = false;
+			this.legend1.SelectionFontColor = System.Drawing.Color.Black;
+			this.legend1.SelectionHighlight = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(238)))), ((int)(((byte)(252)))));
+			this.legend1.VerticalScrollEnabled = true;
+			// 
+			// sSREnumToolStripMenuItem
+			// 
+			this.sSREnumToolStripMenuItem.Name = "sSREnumToolStripMenuItem";
+			resources.ApplyResources(this.sSREnumToolStripMenuItem, "sSREnumToolStripMenuItem");
+			this.sSREnumToolStripMenuItem.Click += new System.EventHandler(this.sSREnumToolStripMenuItem_Click);
+			// 
 			// FormMain
 			// 
 			resources.ApplyResources(this, "$this");
@@ -264,6 +284,7 @@
 			this.Controls.Add(this.statusStrip);
 			this.MainMenuStrip = this.menuStrip;
 			this.Name = "FormMain";
+			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMain_FormClosing);
 			this.toolStripContainer.ContentPanel.ResumeLayout(false);
 			this.toolStripContainer.TopToolStripPanel.ResumeLayout(false);
 			this.toolStripContainer.TopToolStripPanel.PerformLayout();
@@ -303,14 +324,15 @@
 		private System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem;
 		private System.Windows.Forms.StatusStrip statusStrip;
 		private System.Windows.Forms.SplitContainer splitContainer;
-		private System.Windows.Forms.ListView listView1;
-		private System.Windows.Forms.ColumnHeader columnHeader1;
 		private DotSpatial.Controls.Map map1;
 		private System.Windows.Forms.ToolStripMenuItem debugToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem dotSpatialTestToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem sSRTestToolStripMenuItem;
 		private System.Windows.Forms.ToolStripContainer toolStripContainer;
 		private System.Windows.Forms.ToolStripStatusLabel statusBar;
+		private System.Windows.Forms.ToolStripMenuItem toggleDebugLogToolStripMenuItem;
+		private DotSpatial.Controls.Legend legend1;
+		private System.Windows.Forms.ToolStripMenuItem sSREnumToolStripMenuItem;
 	}
 }
 

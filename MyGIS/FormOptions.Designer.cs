@@ -1,5 +1,5 @@
 ﻿namespace MyGIS {
-	partial class FormMainOptions {
+	partial class FormOptions {
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
@@ -35,15 +35,16 @@
 			this.checkBox1.TabIndex = 0;
 			this.checkBox1.Text = "Use Classic Hough Transformation";
 			this.checkBox1.UseVisualStyleBackColor = true;
+			this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
 			// 
-			// Form1Options
+			// FormOptions
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(313, 47);
 			this.Controls.Add(this.checkBox1);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-			this.Name = "Form1Options";
+			this.Name = "FormOptions";
 			this.Text = "Options";
 			this.ResumeLayout(false);
 			this.PerformLayout();
