@@ -24,7 +24,14 @@
 		/// </summary>
 		private void InitializeComponent() {
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
-			this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+			this.toolStripContainer = new System.Windows.Forms.ToolStripContainer();
+			this.splitContainer = new System.Windows.Forms.SplitContainer();
+			this.listView1 = new System.Windows.Forms.ListView();
+			this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.map1 = new DotSpatial.Controls.Map();
+			this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+			this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+			this.menuStrip = new System.Windows.Forms.MenuStrip();
 			this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.openShapefileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.shapefileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -37,35 +44,110 @@
 			this.procToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-			this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-			this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-			this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-			this.listView1 = new System.Windows.Forms.ListView();
-			this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-			this.map1 = new DotSpatial.Controls.Map();
 			this.debugToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.dotSpatialTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.menuStrip1.SuspendLayout();
+			this.sSRTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.statusStrip = new System.Windows.Forms.StatusStrip();
+			this.statusBar = new System.Windows.Forms.ToolStripStatusLabel();
+			this.toolStripContainer.ContentPanel.SuspendLayout();
+			this.toolStripContainer.TopToolStripPanel.SuspendLayout();
+			this.toolStripContainer.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
+			this.splitContainer.Panel1.SuspendLayout();
+			this.splitContainer.Panel2.SuspendLayout();
+			this.splitContainer.SuspendLayout();
 			this.toolStrip1.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-			this.splitContainer1.Panel1.SuspendLayout();
-			this.splitContainer1.Panel2.SuspendLayout();
-			this.splitContainer1.SuspendLayout();
+			this.menuStrip.SuspendLayout();
+			this.statusStrip.SuspendLayout();
 			this.SuspendLayout();
 			// 
-			// menuStrip1
+			// toolStripContainer
 			// 
-			this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-			this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+			// 
+			// toolStripContainer.ContentPanel
+			// 
+			resources.ApplyResources(this.toolStripContainer.ContentPanel, "toolStripContainer.ContentPanel");
+			this.toolStripContainer.ContentPanel.Controls.Add(this.splitContainer);
+			resources.ApplyResources(this.toolStripContainer, "toolStripContainer");
+			this.toolStripContainer.Name = "toolStripContainer";
+			// 
+			// toolStripContainer.TopToolStripPanel
+			// 
+			this.toolStripContainer.TopToolStripPanel.Controls.Add(this.menuStrip);
+			this.toolStripContainer.TopToolStripPanel.Controls.Add(this.toolStrip1);
+			// 
+			// splitContainer
+			// 
+			resources.ApplyResources(this.splitContainer, "splitContainer");
+			this.splitContainer.Name = "splitContainer";
+			// 
+			// splitContainer.Panel1
+			// 
+			this.splitContainer.Panel1.Controls.Add(this.listView1);
+			// 
+			// splitContainer.Panel2
+			// 
+			this.splitContainer.Panel2.Controls.Add(this.map1);
+			// 
+			// listView1
+			// 
+			this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1});
+			resources.ApplyResources(this.listView1, "listView1");
+			this.listView1.Name = "listView1";
+			this.listView1.UseCompatibleStateImageBehavior = false;
+			this.listView1.View = System.Windows.Forms.View.Details;
+			// 
+			// columnHeader1
+			// 
+			resources.ApplyResources(this.columnHeader1, "columnHeader1");
+			// 
+			// map1
+			// 
+			this.map1.AllowDrop = true;
+			this.map1.BackColor = System.Drawing.Color.White;
+			this.map1.CollectAfterDraw = false;
+			this.map1.CollisionDetection = false;
+			resources.ApplyResources(this.map1, "map1");
+			this.map1.ExtendBuffer = false;
+			this.map1.FunctionMode = DotSpatial.Controls.FunctionMode.None;
+			this.map1.IsBusy = false;
+			this.map1.IsZoomedToMaxExtent = false;
+			this.map1.Legend = null;
+			this.map1.Name = "map1";
+			this.map1.ProgressHandler = null;
+			this.map1.ProjectionModeDefine = DotSpatial.Controls.ActionMode.Prompt;
+			this.map1.ProjectionModeReproject = DotSpatial.Controls.ActionMode.Prompt;
+			this.map1.RedrawLayersWhileResizing = false;
+			this.map1.SelectionEnabled = true;
+			this.map1.ZoomOutFartherThanMaxExtent = false;
+			// 
+			// toolStrip1
+			// 
+			resources.ApplyResources(this.toolStrip1, "toolStrip1");
+			this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+			this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton1});
+			this.toolStrip1.Name = "toolStrip1";
+			// 
+			// toolStripButton1
+			// 
+			this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			resources.ApplyResources(this.toolStripButton1, "toolStripButton1");
+			this.toolStripButton1.Name = "toolStripButton1";
+			// 
+			// menuStrip
+			// 
+			resources.ApplyResources(this.menuStrip, "menuStrip");
+			this.menuStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
+			this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.editToolStripMenuItem,
             this.viewToolStripMenuItem,
             this.procToolStripMenuItem,
             this.helpToolStripMenuItem,
             this.debugToolStripMenuItem});
-			resources.ApplyResources(this.menuStrip1, "menuStrip1");
-			this.menuStrip1.Name = "menuStrip1";
+			this.menuStrip.Name = "menuStrip";
 			// 
 			// fileToolStripMenuItem
 			// 
@@ -81,8 +163,8 @@
 			this.openShapefileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.shapefileToolStripMenuItem,
             this.gridToolStripMenuItem});
-			this.openShapefileToolStripMenuItem.Name = "openShapefileToolStripMenuItem";
 			resources.ApplyResources(this.openShapefileToolStripMenuItem, "openShapefileToolStripMenuItem");
+			this.openShapefileToolStripMenuItem.Name = "openShapefileToolStripMenuItem";
 			// 
 			// shapefileToolStripMenuItem
 			// 
@@ -141,76 +223,11 @@
 			resources.ApplyResources(this.aboutToolStripMenuItem, "aboutToolStripMenuItem");
 			this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
 			// 
-			// toolStrip1
-			// 
-			this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-			this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1});
-			resources.ApplyResources(this.toolStrip1, "toolStrip1");
-			this.toolStrip1.Name = "toolStrip1";
-			// 
-			// toolStripButton1
-			// 
-			this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			resources.ApplyResources(this.toolStripButton1, "toolStripButton1");
-			this.toolStripButton1.Name = "toolStripButton1";
-			// 
-			// statusStrip1
-			// 
-			this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-			resources.ApplyResources(this.statusStrip1, "statusStrip1");
-			this.statusStrip1.Name = "statusStrip1";
-			// 
-			// splitContainer1
-			// 
-			resources.ApplyResources(this.splitContainer1, "splitContainer1");
-			this.splitContainer1.Name = "splitContainer1";
-			// 
-			// splitContainer1.Panel1
-			// 
-			this.splitContainer1.Panel1.Controls.Add(this.listView1);
-			// 
-			// splitContainer1.Panel2
-			// 
-			this.splitContainer1.Panel2.Controls.Add(this.map1);
-			// 
-			// listView1
-			// 
-			this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1});
-			resources.ApplyResources(this.listView1, "listView1");
-			this.listView1.Name = "listView1";
-			this.listView1.UseCompatibleStateImageBehavior = false;
-			this.listView1.View = System.Windows.Forms.View.Details;
-			// 
-			// columnHeader1
-			// 
-			resources.ApplyResources(this.columnHeader1, "columnHeader1");
-			// 
-			// map1
-			// 
-			this.map1.AllowDrop = true;
-			this.map1.BackColor = System.Drawing.Color.White;
-			this.map1.CollectAfterDraw = false;
-			this.map1.CollisionDetection = false;
-			this.map1.ExtendBuffer = false;
-			this.map1.FunctionMode = DotSpatial.Controls.FunctionMode.None;
-			this.map1.IsBusy = false;
-			this.map1.IsZoomedToMaxExtent = false;
-			this.map1.Legend = null;
-			resources.ApplyResources(this.map1, "map1");
-			this.map1.Name = "map1";
-			this.map1.ProgressHandler = null;
-			this.map1.ProjectionModeDefine = DotSpatial.Controls.ActionMode.Prompt;
-			this.map1.ProjectionModeReproject = DotSpatial.Controls.ActionMode.Prompt;
-			this.map1.RedrawLayersWhileResizing = false;
-			this.map1.SelectionEnabled = true;
-			this.map1.ZoomOutFartherThanMaxExtent = false;
-			// 
 			// debugToolStripMenuItem
 			// 
 			this.debugToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.dotSpatialTestToolStripMenuItem});
+            this.dotSpatialTestToolStripMenuItem,
+            this.sSRTestToolStripMenuItem});
 			this.debugToolStripMenuItem.Name = "debugToolStripMenuItem";
 			resources.ApplyResources(this.debugToolStripMenuItem, "debugToolStripMenuItem");
 			// 
@@ -220,24 +237,48 @@
 			resources.ApplyResources(this.dotSpatialTestToolStripMenuItem, "dotSpatialTestToolStripMenuItem");
 			this.dotSpatialTestToolStripMenuItem.Click += new System.EventHandler(this.dotSpatialTestToolStripMenuItem_Click);
 			// 
+			// sSRTestToolStripMenuItem
+			// 
+			this.sSRTestToolStripMenuItem.Name = "sSRTestToolStripMenuItem";
+			resources.ApplyResources(this.sSRTestToolStripMenuItem, "sSRTestToolStripMenuItem");
+			this.sSRTestToolStripMenuItem.Click += new System.EventHandler(this.sSRTestToolStripMenuItem_Click);
+			// 
+			// statusStrip
+			// 
+			this.statusStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
+			this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.statusBar});
+			resources.ApplyResources(this.statusStrip, "statusStrip");
+			this.statusStrip.Name = "statusStrip";
+			// 
+			// statusBar
+			// 
+			this.statusBar.Name = "statusBar";
+			resources.ApplyResources(this.statusBar, "statusBar");
+			// 
 			// FormMain
 			// 
 			resources.ApplyResources(this, "$this");
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.Controls.Add(this.splitContainer1);
-			this.Controls.Add(this.statusStrip1);
-			this.Controls.Add(this.toolStrip1);
-			this.Controls.Add(this.menuStrip1);
-			this.MainMenuStrip = this.menuStrip1;
+			this.Controls.Add(this.toolStripContainer);
+			this.Controls.Add(this.statusStrip);
+			this.MainMenuStrip = this.menuStrip;
 			this.Name = "FormMain";
-			this.menuStrip1.ResumeLayout(false);
-			this.menuStrip1.PerformLayout();
+			this.toolStripContainer.ContentPanel.ResumeLayout(false);
+			this.toolStripContainer.TopToolStripPanel.ResumeLayout(false);
+			this.toolStripContainer.TopToolStripPanel.PerformLayout();
+			this.toolStripContainer.ResumeLayout(false);
+			this.toolStripContainer.PerformLayout();
+			this.splitContainer.Panel1.ResumeLayout(false);
+			this.splitContainer.Panel2.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.splitContainer)).EndInit();
+			this.splitContainer.ResumeLayout(false);
 			this.toolStrip1.ResumeLayout(false);
 			this.toolStrip1.PerformLayout();
-			this.splitContainer1.Panel1.ResumeLayout(false);
-			this.splitContainer1.Panel2.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-			this.splitContainer1.ResumeLayout(false);
+			this.menuStrip.ResumeLayout(false);
+			this.menuStrip.PerformLayout();
+			this.statusStrip.ResumeLayout(false);
+			this.statusStrip.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -245,7 +286,7 @@
 
 		#endregion
 
-		private System.Windows.Forms.MenuStrip menuStrip1;
+		private System.Windows.Forms.MenuStrip menuStrip;
 		private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
@@ -260,13 +301,16 @@
 		private System.Windows.Forms.ToolStripMenuItem gridToolStripMenuItem;
 		private System.Windows.Forms.ToolStripButton toolStripButton1;
 		private System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem;
-		private System.Windows.Forms.StatusStrip statusStrip1;
-		private System.Windows.Forms.SplitContainer splitContainer1;
+		private System.Windows.Forms.StatusStrip statusStrip;
+		private System.Windows.Forms.SplitContainer splitContainer;
 		private System.Windows.Forms.ListView listView1;
 		private System.Windows.Forms.ColumnHeader columnHeader1;
 		private DotSpatial.Controls.Map map1;
 		private System.Windows.Forms.ToolStripMenuItem debugToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem dotSpatialTestToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem sSRTestToolStripMenuItem;
+		private System.Windows.Forms.ToolStripContainer toolStripContainer;
+		private System.Windows.Forms.ToolStripStatusLabel statusBar;
 	}
 }
 

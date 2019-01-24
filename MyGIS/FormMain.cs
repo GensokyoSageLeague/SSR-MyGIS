@@ -7,12 +7,55 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DotSpatial.Controls;
+using DotSpatial.Data;
+using DotSpatial.Projections;
 
 namespace MyGIS {
 	public partial class FormMain : Form {
 		public FormMain() {
 			InitializeComponent();
+			InitializeMapper();
+			statusBar.Text = "Initialized.";
 		}
+
+		// --------------MAP Ctr Start----------------
+		private Map mapCtrl = null;
+		private Label coordLabelCtrl = null;
+
+		private void InitializeMapper() {
+			// 			mapCtrl = new Map() {
+			// 				Name = "mapCtrl",
+			// 				Dock = DockStyle.Fill
+			// 			};
+			mapCtrl = map1;
+			var shp = Shapefile.OpenFile("so\\hetian_90m.shp");
+			shp.Projection = KnownCoordinateSystems.Geographic.World.WGS1984;
+			var layer = mapCtrl.Layers.Add(shp) as MapLineLayer;
+			layer.Symbolizer = new DotSpatial.Symbology.LineSymbolizer(Color.FromArgb(0x33, 0x33, 0x33), 1);
+			mapCtrl.GeoMouseMove += mapCtrl_GeoMouseMove;
+
+			coordLabelCtrl = new Label() {
+				Name = "coordLabelCtrl",
+				Text = "X:00.0000,Y:00.0000",
+				Width = 200,
+				BackColor = Color.Transparent
+			};
+			mapCtrl.Controls.Add(coordLabelCtrl);
+		}
+
+// 		protected override void OnLoad(EventArgs e) {
+// 			base.OnLoad(e);
+// 			Controls.Add(mapCtrl);
+// 			coordLabelCtrl.Top = mapCtrl.Height - coordLabelCtrl.Height;
+// 		}
+
+		void mapCtrl_GeoMouseMove(object sender, GeoMouseArgs e) {
+			string locStr = "X:" + e.GeographicLocation.X.ToString("F6");
+			locStr += "Y:" + e.GeographicLocation.Y.ToString("F6");
+			coordLabelCtrl.Text = locStr;
+		}
+		// --------------MAP Ctr End----------------
 
 		private void aboutToolStripMenuItem_Click(object sender, EventArgs e) {
 			MessageBox.Show("MyGIS Desktop " + AppInfo.Version +" "+ AppInfo.VersionState + "\r\n\r\n" +
@@ -30,6 +73,10 @@ namespace MyGIS {
 
 		private void dotSpatialTestToolStripMenuItem_Click(object sender, EventArgs e) {
 			new FormTestDotSpatial().ShowDialog();
+		}
+
+		private void sSRTestToolStripMenuItem_Click(object sender, EventArgs e) {
+
 		}
 	}
 }

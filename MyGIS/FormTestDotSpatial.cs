@@ -124,63 +124,63 @@ namespace MyGIS {
 
         private void createToolStripMenuItem_Click(object sender, EventArgs e) {
 
-            //Change the cursor style
-            map1.Cursor = Cursors.Cross;
-            //set the shape type to the classlevel string variable
-            //we are going to use this variable in select case statement
-            shapeType = "Point";
-            //set projection
-            pointF.Projection = map1.Projection;
-            //initialize the featureSet attribute table
-            DataColumn column = new DataColumn("ID");
-            pointF.DataTable.Columns.Add(column);
-            //add the featureSet as map layer
-            MapPointLayer pointLayer = (MapPointLayer)map1.Layers.Add(pointF);
-            //Create a new symbolizer
-            PointSymbolizer symbol = new PointSymbolizer(Color.Red, DotSpatial.Symbology.PointShape.Ellipse, 3);
-            //Set the symbolizer to the point layer
-            pointLayer.Symbolizer = symbol;
-            //Set the legentText as point
-            pointLayer.LegendText = "point";
-            //Set left mouse click as true
-            pointmouseClick = true;
+//             //Change the cursor style
+//             map1.Cursor = Cursors.Cross;
+//             //set the shape type to the classlevel string variable
+//             //we are going to use this variable in select case statement
+//             shapeType = "Point";
+//             //set projection
+//             pointF.Projection = map1.Projection;
+//             //initialize the featureSet attribute table
+//             DataColumn column = new DataColumn("ID");
+//             pointF.DataTable.Columns.Add(column);
+//             //add the featureSet as map layer
+//             MapPointLayer pointLayer = (MapPointLayer)map1.Layers.Add(pointF);
+//             //Create a new symbolizer
+//             PointSymbolizer symbol = new PointSymbolizer(Color.Red, DotSpatial.Symbology.PointShape.Ellipse, 3);
+//             //Set the symbolizer to the point layer
+//             pointLayer.Symbolizer = symbol;
+//             //Set the legentText as point
+//             pointLayer.LegendText = "point";
+//             //Set left mouse click as true
+//             pointmouseClick = true;
 
         }
 
         private void map1_MouseDown(object sender, MouseEventArgs e) {
-            switch (shapeType) {
-                case "Point":
-                    if (e.Button == MouseButtons.Left) {
-                        if ((pointmouseClick)) {
-                            //This method is used to convert the screen cordinate to map coordinate
-                            //e.location is the mouse click point on the map control
-                            Coordinate coord = map1.PixelToProj(e.Location);
-
-                            //Create a new point
-                            //Input parameter is clicked point coordinate
-                            DotSpatial.Topology.Point point = new DotSpatial.Topology.Point(coord);
-
-                            //Add the point into the Point Feature
-                            //assigning the point feature to IFeature because via it only we can set the attributes.
-                            IFeature currentFeature = pointF.AddFeature(point);
-
-                            //increase the point id
-                            pointID = pointID + 1;
-
-                            //set the ID attribute
-                            currentFeature.DataRow["PointID"] = pointID;
-
-                            //refresh the map
-                            map1.ResetBuffer();
-                        }
-                    } else {
-                        //mouse right click
-                        map1.Cursor = Cursors.Default;
-                        pointmouseClick = false;
-                    }
-                    break;
-
-            }
+//             switch (shapeType) {
+//                 case "Point":
+//                     if (e.Button == MouseButtons.Left) {
+//                         if ((pointmouseClick)) {
+//                             //This method is used to convert the screen cordinate to map coordinate
+//                             //e.location is the mouse click point on the map control
+//                             Coordinate coord = map1.PixelToProj(e.Location);
+// 
+//                             //Create a new point
+//                             //Input parameter is clicked point coordinate
+//                             DotSpatial.Topology.Point point = new DotSpatial.Topology.Point(coord);
+// 
+//                             //Add the point into the Point Feature
+//                             //assigning the point feature to IFeature because via it only we can set the attributes.
+//                             IFeature currentFeature = pointF.AddFeature(point);
+// 
+//                             //increase the point id
+//                             pointID = pointID + 1;
+// 
+//                             //set the ID attribute
+//                             currentFeature.DataRow["PointID"] = pointID;
+// 
+//                             //refresh the map
+//                             map1.ResetBuffer();
+//                         }
+//                     } else {
+//                         //mouse right click
+//                         map1.Cursor = Cursors.Default;
+//                         pointmouseClick = false;
+//                     }
+//                     break;
+// 
+//             }
         }
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e) {

@@ -61,7 +61,7 @@ namespace MyGIS {
         }
         
         /// <summary>
-        ///   查找类似 0.1.181224 的本地化字符串。
+        ///   查找类似 0.1.190123 的本地化字符串。
         /// </summary>
         internal static string Version {
             get {
