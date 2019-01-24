@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using DotSpatial.Controls;
 using DotSpatial.Data;
 using DotSpatial.Projections;
+using DotSpatial.Symbology;
+using DotSpatial.Topology;
 
 namespace MyGIS {
 	public partial class FormMain : Form {
@@ -92,7 +94,24 @@ namespace MyGIS {
 		// --------------MAP Ctr End----------------
 
 		private void sSREnumToolStripMenuItem_Click(object sender, EventArgs e) {
-			//map1.Layers[0].
+			//查看与选中要素重叠的要素
+			if (map1.Layers.Count == 0) {
+				return;
+			}
+			//重叠分析
+			//遍历要素，显示面积
+			PolygonLayer pLayer = map1.Layers[0] as PolygonLayer;
+			FeatureSet fs = null;
+			fs = (FeatureSet)map1.Layers[0].DataSet;
+			if (pLayer.Selection.Count == 0) {
+				MessageBox.Show("无选中记录", "系统提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				return;
+			}
+			foreach (Feature feature in pLayer.Selection.ToFeatureList()) {
+				////实现方式1==================
+				IEnvelope pEnvelope = null;
+				pLayer.Select(null, feature.Envelope, DotSpatial.Symbology.SelectionMode.Intersects, out pEnvelope);
+			}
 		}
 	}
 }

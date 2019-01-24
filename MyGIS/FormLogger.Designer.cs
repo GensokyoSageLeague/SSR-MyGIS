@@ -34,7 +34,7 @@
 			this.logBox.Name = "logBox";
 			this.logBox.ReadOnly = true;
 			this.logBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-			this.logBox.Size = new System.Drawing.Size(582, 353);
+			this.logBox.Size = new System.Drawing.Size(582, 253);
 			this.logBox.TabIndex = 0;
 			this.logBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.logBox_KeyDown);
 			// 
@@ -42,7 +42,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(582, 353);
+			this.ClientSize = new System.Drawing.Size(582, 253);
 			this.ControlBox = false;
 			this.Controls.Add(this.logBox);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -51,6 +51,7 @@
 			this.Name = "FormLogger";
 			this.ShowIcon = false;
 			this.ShowInTaskbar = false;
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
 			this.Text = "Debug Log [Esc To Hide]";
 			this.ResumeLayout(false);
 			this.PerformLayout();

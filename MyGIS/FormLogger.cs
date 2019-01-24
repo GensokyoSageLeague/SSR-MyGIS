@@ -20,6 +20,9 @@ namespace MyGIS {
 		}
 
 		private void logBox_KeyDown(object sender, KeyEventArgs e) {
+			if ((e.KeyCode == Keys.F4) && (e.Alt == true)) {
+				e.Handled = true;
+			}
 			if (e.KeyCode == Keys.Escape) {
 				this.Visible = false;
 			}
