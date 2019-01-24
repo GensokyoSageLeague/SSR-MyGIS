@@ -29,8 +29,6 @@
 			this.listView1 = new System.Windows.Forms.ListView();
 			this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.map1 = new DotSpatial.Controls.Map();
-			this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-			this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
 			this.menuStrip = new System.Windows.Forms.MenuStrip();
 			this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.openShapefileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -47,6 +45,8 @@
 			this.debugToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.dotSpatialTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.sSRTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+			this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
 			this.statusStrip = new System.Windows.Forms.StatusStrip();
 			this.statusBar = new System.Windows.Forms.ToolStripStatusLabel();
 			this.toolStripContainer.ContentPanel.SuspendLayout();
@@ -56,8 +56,8 @@
 			this.splitContainer.Panel1.SuspendLayout();
 			this.splitContainer.Panel2.SuspendLayout();
 			this.splitContainer.SuspendLayout();
-			this.toolStrip1.SuspendLayout();
 			this.menuStrip.SuspendLayout();
+			this.toolStrip1.SuspendLayout();
 			this.statusStrip.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -121,20 +121,6 @@
 			this.map1.RedrawLayersWhileResizing = false;
 			this.map1.SelectionEnabled = true;
 			this.map1.ZoomOutFartherThanMaxExtent = false;
-			// 
-			// toolStrip1
-			// 
-			resources.ApplyResources(this.toolStrip1, "toolStrip1");
-			this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-			this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1});
-			this.toolStrip1.Name = "toolStrip1";
-			// 
-			// toolStripButton1
-			// 
-			this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			resources.ApplyResources(this.toolStripButton1, "toolStripButton1");
-			this.toolStripButton1.Name = "toolStripButton1";
 			// 
 			// menuStrip
 			// 
@@ -243,6 +229,20 @@
 			resources.ApplyResources(this.sSRTestToolStripMenuItem, "sSRTestToolStripMenuItem");
 			this.sSRTestToolStripMenuItem.Click += new System.EventHandler(this.sSRTestToolStripMenuItem_Click);
 			// 
+			// toolStrip1
+			// 
+			resources.ApplyResources(this.toolStrip1, "toolStrip1");
+			this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+			this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton1});
+			this.toolStrip1.Name = "toolStrip1";
+			// 
+			// toolStripButton1
+			// 
+			this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			resources.ApplyResources(this.toolStripButton1, "toolStripButton1");
+			this.toolStripButton1.Name = "toolStripButton1";
+			// 
 			// statusStrip
 			// 
 			this.statusStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
@@ -273,10 +273,10 @@
 			this.splitContainer.Panel2.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.splitContainer)).EndInit();
 			this.splitContainer.ResumeLayout(false);
-			this.toolStrip1.ResumeLayout(false);
-			this.toolStrip1.PerformLayout();
 			this.menuStrip.ResumeLayout(false);
 			this.menuStrip.PerformLayout();
+			this.toolStrip1.ResumeLayout(false);
+			this.toolStrip1.PerformLayout();
 			this.statusStrip.ResumeLayout(false);
 			this.statusStrip.PerformLayout();
 			this.ResumeLayout(false);
