@@ -32,9 +32,34 @@ namespace MyGIS {
 
 		string shapeType;
 
-		#endregion
+        #endregion
+        #region Polyline  ShapeFile class level variables
 
-		public FormTestDotSpatial() {
+        MapLineLayer lineLayer = default(MapLineLayer);
+
+        //the line feature set
+        FeatureSet lineF = new FeatureSet(FeatureType.Line);
+
+        int lineID = 0;
+
+        //boolean variable for first time mouse click
+        bool firstClick = false;
+
+        //It controls the drawing the polyline after the polyline saved operation.
+        bool linemouseClick = false;
+
+        #endregion
+        #region Polygon ShapeFile class level variables
+
+        FeatureSet polygonF = new FeatureSet(FeatureType.Polygon);
+
+        int polygonID = 0;
+
+        bool polygonmouseClick = false;
+
+        #endregion
+
+        public FormTestDotSpatial() {
 			InitializeComponent();
 
 			/*	if (DesignMode) return;
@@ -180,17 +205,187 @@ namespace MyGIS {
 						map1.Cursor = Cursors.Default;
 						pointmouseClick = false;
 					}
+              
 					break;
+                case "line":
+                    if (e.Button == MouseButtons.Left) {
+                        //left click - fill array of coordinates
+                        //coordinate of clicked point
+                        Coordinate coord = map1.PixelToProj(e.Location);
+                        if (linemouseClick) {
+                            //first time left click - create empty line feature
+                            if (firstClick) {
+                                //Create a new List called lineArray.                          
+                                //This list will store the Coordinates
+                                //We are going to store the mouse click coordinates into this array.
+                                List<Coordinate> lineArray = new List<Coordinate>();
 
-			}
-		}
+                                //Create an instance for LineString class.
+                                //We need to pass collection of list coordinates
+                                LineString lineGeometry = new LineString(lineArray);
+
+                                //Add the linegeometry to line feature
+                                IFeature lineFeature = lineF.AddFeature(lineGeometry);
+
+                                //add first coordinate to the line feature
+                                lineFeature.Coordinates.Add(coord);
+                                //set the line feature attribute
+                                lineID = lineID + 1;
+                                lineFeature.DataRow["LineID"] = lineID;
+                                firstClick = false;
+                            } else {
+                                //second or more clicks - add points to the existing feature
+                                IFeature existingFeature = lineF.Features[lineF.Features.Count - 1];
+                                existingFeature.Coordinates.Add(coord);
+
+                                //refresh the map if line has 2 or more points
+                                if (existingFeature.Coordinates.Count >= 2) {
+                                    lineF.InitializeVertices();
+                                    map1.ResetBuffer();
+                                }
+                            }
+                        }
+                    } else {
+                        //right click - reset first mouse click
+                        firstClick = true;
+                        map1.ResetBuffer();
+                    }
+                    break;
+                case "polygon":
+
+                    if (e.Button == MouseButtons.Left) {
+                        //left click - fill array of coordinates
+                        Coordinate coord = map1.PixelToProj(e.Location);
+
+                        if (polygonmouseClick) {
+                            //first time left click - create empty line feature
+                            if (firstClick) {
+                                //Create a new List called polygonArray.
+
+                                //this list will store the Coordinates
+                                //We are going to store the mouse click coordinates into this array.
+
+                                List<Coordinate> polygonArray = new List<Coordinate>();
+
+                                //Create an instance for LinearRing class.
+                                //We pass the polygon List to the constructor of this class
+                                LinearRing polygonGeometry = new LinearRing(polygonArray);
+
+                                //Add the polygonGeometry instance to PolygonFeature
+                                IFeature polygonFeature = polygonF.AddFeature(polygonGeometry);
+
+                                //add first coordinate to the polygon feature
+                                polygonFeature.Coordinates.Add(coord);
+
+                                //set the polygon feature attribute
+                                polygonID = polygonID + 1;
+                                polygonFeature.DataRow["PolygonID"] = polygonID;
+                                firstClick = false;
+                            } else {
+                                //second or more clicks - add points to the existing feature
+                                IFeature existingFeature = (IFeature)polygonF.Features[polygonF.Features.Count - 1];
+
+                                existingFeature.Coordinates.Add(coord);
+
+                                //refresh the map if line has 2 or more points
+                                if (existingFeature.Coordinates.Count >= 3) {
+                                    //refresh the map
+                                    polygonF.InitializeVertices();
+                                    map1.ResetBuffer();
+                                }
+                            }
+                        }
+                    } else {
+                        //right click - reset first mouse click
+                        firstClick = true;
+                    }
+                    break;
+
+
+            }
+        }
 
 		private void saveToolStripMenuItem_Click(object sender, EventArgs e) {
-			{
-				pointF.SaveAs("point.shp", true);
-				MessageBox.Show("The point shapefile has been saved.");
-				map1.Cursor = Cursors.Arrow;
-			}
+
+            pointF.SaveAs("point.shp", true);
+            MessageBox.Show("The point shapefile has been saved.");
+            map1.Cursor = Cursors.Arrow;
+			
 		}
-	}
+
+        private void createToolStripMenuItem1_Click(object sender, EventArgs e) {
+            //Change the mouse cursor
+            map1.Cursor = Cursors.Cross;
+
+            //set shape type
+            shapeType = "line";
+
+            //set projection
+            lineF.Projection = map1.Projection;
+
+            //initialize the featureSet attribute table
+            DataColumn column = new DataColumn("LineID");
+
+            if (!lineF.DataTable.Columns.Contains("LineID")) {
+                lineF.DataTable.Columns.Add(column);
+            }
+
+            //add the featureSet as map layer
+            lineLayer = (MapLineLayer)map1.Layers.Add(lineF);
+
+            //Set the symbolizer to the line feature. 
+            LineSymbolizer symbol = new LineSymbolizer(Color.Blue, 2);
+            lineLayer.Symbolizer = symbol;
+            lineLayer.LegendText = "line";
+
+            firstClick = true;
+
+            linemouseClick = true;
+        }
+
+        private void saveToolStripMenuItem1_Click(object sender, EventArgs e) {
+            lineF.SaveAs("c:\\MW\\line.shp", true);
+            MessageBox.Show("The line shapefile has been saved.");
+            map1.Cursor = Cursors.Arrow;
+            linemouseClick = false;
+        }
+
+        private void createToolStripMenuItem2_Click(object sender, EventArgs e) {
+            //initialize polyline feature set
+            map1.Cursor = Cursors.Cross;
+
+            //set shape type
+            shapeType = "polygon";
+
+            //set projection
+            polygonF.Projection = map1.Projection;
+
+            //initialize the featureSet attribute table
+            DataColumn column = new DataColumn("PolygonID");
+
+            if (!polygonF.DataTable.Columns.Contains("PolygonID")) {
+                polygonF.DataTable.Columns.Add(column);
+            }
+
+            //add the featureSet as map layer
+            MapPolygonLayer polygonLayer = (MapPolygonLayer)map1.Layers.Add(polygonF);
+
+            PolygonSymbolizer symbol = new PolygonSymbolizer(Color.Green);
+
+            polygonLayer.Symbolizer = symbol;
+            polygonLayer.LegendText = "polygon";
+
+            firstClick = true;
+
+            polygonmouseClick = true;
+
+        }
+
+        private void saveToolStripMenuItem2_Click(object sender, EventArgs e) {
+            polygonF.SaveAs("c:\\MW\\polygon.shp", true);
+            MessageBox.Show("The polygon shapefile has been saved.");
+            map1.Cursor = Cursors.Arrow;
+            polygonmouseClick = false;
+        }
+    }
 }
