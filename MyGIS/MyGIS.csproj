@@ -158,6 +158,7 @@
     <Compile Include="FormTestDotSpatial.Designer.cs">
       <DependentUpon>FormTestDotSpatial.cs</DependentUpon>
     </Compile>
+    <Compile Include="LICore.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AppInfo.resx">

@@ -15,8 +15,14 @@ using DotSpatial.Topology;
 
 namespace MyGIS {
 	public partial class FormMain : Form {
+		[System.ComponentModel.Composition.Export("Shell", typeof(ContainerControl))]
+		private static ContainerControl Shell;
+
 		public FormMain() {
 			InitializeComponent();
+
+			Shell = this;
+			//appManager1.LoadExtensions();
 
 			Configurations.formMain = this;
 			Configurations.formLogger = new FormLogger();
@@ -28,6 +34,9 @@ namespace MyGIS {
 			Logger.log("===============Logger Start===============");
 
 			map1.GeoMouseMove += map1_GeoMouseMove;
+			map1.MouseWheel += new MouseEventHandler(map1_MouseWheel);
+
+			map1.FunctionMode = FunctionMode.Pan;
 		}
 
 		private void aboutToolStripMenuItem_Click(object sender, EventArgs e) {
@@ -71,12 +80,13 @@ namespace MyGIS {
 		// --------------MAP Ctr Start----------------
 		private void InitializeMapper() {
 			Logger.log("Shapefile.OpenFile(\"so/腾冲/腾冲_Casted1.shp\")");
-			var shp = Shapefile.OpenFile("so/腾冲/腾冲_Casted1.shp");
+			Shapefile shp = Shapefile.OpenFile("so/腾冲/腾冲_Casted1.shp");
 			shp.Projection = KnownCoordinateSystems.Geographic.World.WGS1984;
 
 			foreach (var item in shp.Features) {
-				Logger.log("X:" + item.ToShape().Vertices[0].ToString() +
-					", Y:" + item.ToShape().Vertices[1].ToString());
+				LICore.LI_Line(item.ToShape().Vertices);
+// 				Logger.log("X:" + item.ToShape().Vertices[0].ToString() +
+// 					", Y:" + item.ToShape().Vertices[1].ToString());
 			}
 
 			var layer = map1.Layers.Add(shp) as MapLineLayer;
@@ -109,6 +119,90 @@ namespace MyGIS {
 				IEnvelope pEnvelope = null;
 				pLayer.Select(null, feature.Envelope, DotSpatial.Symbology.SelectionMode.Intersects, out pEnvelope);
 			}
+		}
+
+		private void shapefileToolStripMenuItem_Click(object sender, EventArgs e) {
+			string fileName = "";
+			OpenFileDialog openFile = new OpenFileDialog();
+			openFile.Filter = "Shapefile|*.shp";
+			if (openFile.ShowDialog() == DialogResult.OK) {
+				fileName = openFile.FileName;
+				map1.AddLayer(fileName);
+			}
+		}
+
+		private void map1_MouseWheel(object sender, MouseEventArgs e) {
+			FunctionMode ori = map1.FunctionMode;
+			if (e.Delta > 0) {
+				map1.FunctionMode = FunctionMode.ZoomIn;
+			}
+			else {
+				map1.FunctionMode = FunctionMode.ZoomOut;
+			}
+			map1.FunctionMode = ori;
+		}
+
+		private void toolStripButton2_Click(object sender, EventArgs e) {
+			map1.FunctionMode = FunctionMode.Info;
+			clntoolStripButtonChecked();
+			toolStripButton2.Checked = true;
+		}
+
+		private void toolStripButton3_Click(object sender, EventArgs e) {
+			map1.FunctionMode = FunctionMode.ZoomIn;
+			clntoolStripButtonChecked();
+			toolStripButton3.Checked = true;
+		}
+
+		private void toolStripButton4_Click(object sender, EventArgs e) {
+			map1.FunctionMode = FunctionMode.ZoomOut;
+			clntoolStripButtonChecked();
+			toolStripButton4.Checked = true;
+		}
+
+		private void toolStripButton5_Click(object sender, EventArgs e) {
+			map1.FunctionMode = FunctionMode.ZoomPan;
+			clntoolStripButtonChecked();
+			toolStripButton5.Checked = true;
+		}
+
+		private void toolStripButton6_Click(object sender, EventArgs e) {
+			map1.FunctionMode = FunctionMode.Pan;
+			clntoolStripButtonChecked();
+			toolStripButton6.Checked = true;
+		}
+
+		private void toolStripButton7_Click(object sender, EventArgs e) {
+			map1.FunctionMode = FunctionMode.Select;
+			clntoolStripButtonChecked();
+			toolStripButton7.Checked = true;
+		}
+
+		private void toolStripButton8_Click(object sender, EventArgs e) {
+			map1.FunctionMode = FunctionMode.Label;
+			clntoolStripButtonChecked();
+			toolStripButton8.Checked = true;
+		}
+
+		private void toolStripButton9_Click(object sender, EventArgs e) {
+			map1.FunctionMode = FunctionMode.None;
+			clntoolStripButtonChecked();
+			toolStripButton9.Checked = true;
+		}
+
+		private void clntoolStripButtonChecked() {
+			toolStripButton2.Checked = false;
+			toolStripButton3.Checked = false;
+			toolStripButton4.Checked = false;
+			toolStripButton5.Checked = false;
+			toolStripButton6.Checked = false;
+			toolStripButton7.Checked = false;
+			toolStripButton8.Checked = false;
+			toolStripButton9.Checked = false;
+		}
+
+		private void toolStripButton10_Click(object sender, EventArgs e) {
+			shapefileToolStripMenuItem_Click(sender, e);
 		}
 	}
 }
