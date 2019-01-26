@@ -210,5 +210,14 @@ namespace MyGIS {
 		private void FormMain_ResizeEnd(object sender, EventArgs e) {
 			statusBar1.Width = this.Width - statusBar2.Width - 100;
 		}
+
+		private void lineToolStripMenuItem_Click(object sender, EventArgs e) {
+			
+		}
+
+		private void mapRenderingToolStripMenuItem_Click(object sender, EventArgs e) {
+			map1.Enabled = !map1.Enabled;
+			mapRenderingToolStripMenuItem.Checked = !mapRenderingToolStripMenuItem.Checked;
+		}
 	}
 }

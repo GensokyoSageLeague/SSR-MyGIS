@@ -305,6 +305,7 @@
 			this.mapRenderingToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.mapRenderingToolStripMenuItem.Name = "mapRenderingToolStripMenuItem";
 			resources.ApplyResources(this.mapRenderingToolStripMenuItem, "mapRenderingToolStripMenuItem");
+			this.mapRenderingToolStripMenuItem.Click += new System.EventHandler(this.mapRenderingToolStripMenuItem_Click);
 			// 
 			// toolBarToolStripMenuItem
 			// 
@@ -339,6 +340,7 @@
 			// 
 			this.lineToolStripMenuItem.Name = "lineToolStripMenuItem";
 			resources.ApplyResources(this.lineToolStripMenuItem, "lineToolStripMenuItem");
+			this.lineToolStripMenuItem.Click += new System.EventHandler(this.lineToolStripMenuItem_Click);
 			// 
 			// circleToolStripMenuItem
 			// 
