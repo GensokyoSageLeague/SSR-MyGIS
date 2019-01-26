@@ -387,5 +387,13 @@ namespace MyGIS {
             map1.Cursor = Cursors.Arrow;
             polygonmouseClick = false;
         }
+
+        private void button1_Click(object sender, EventArgs e) {
+            map1.Select();
+        }
+
+        private void button2_Click(object sender, EventArgs e) {
+            map1.ClearSelection();
+        }
     }
 }
