@@ -29,7 +29,7 @@ namespace MyGIS {
 			Configurations.formLogger.Show();
 
 			this.Text = AppInfo.Name;
-			statusBar.Text = "Idle";
+			statusBar1.Text = "Idle";
 			Logger.log("Started at " + DateTime.Now.ToString() + " on " + AppInfo.Name + " " + AppInfo.Version + " " + AppInfo.VersionState);
 			Logger.log("===============Logger Start===============");
 
@@ -37,6 +37,7 @@ namespace MyGIS {
 			map1.MouseWheel += new MouseEventHandler(map1_MouseWheel);
 
 			map1.FunctionMode = FunctionMode.Pan;
+			statusBar1.Width = this.Width - statusBar2.Width - 100;
 		}
 
 		private void aboutToolStripMenuItem_Click(object sender, EventArgs e) {
@@ -77,6 +78,13 @@ namespace MyGIS {
 			InitializeMapper();
 		}
 
+		void map1_GeoMouseMove(object sender, GeoMouseArgs e) {
+			string locStr = "X:" + e.GeographicLocation.X.ToString("F2") +
+				", Y:" + e.GeographicLocation.Y.ToString("F2");
+			statusBar2.Text = locStr;
+			statusBar1.Width = this.Width - statusBar2.Width - 100;
+		}
+
 		// --------------MAP Ctr Start----------------
 		private void InitializeMapper() {
 			Logger.log("Shapefile.OpenFile(\"so/腾冲/腾冲_Casted1.shp\")");
@@ -92,13 +100,6 @@ namespace MyGIS {
 			var layer = map1.Layers.Add(shp) as MapLineLayer;
 			layer.Symbolizer = new LineSymbolizer(Color.FromArgb(0x33, 0x33, 0x33), 1);
 		}
-
-		void map1_GeoMouseMove(object sender, GeoMouseArgs e) {
-			string locStr = "X:" + e.GeographicLocation.X.ToString("F2") + 
-				", Y:" + e.GeographicLocation.Y.ToString("F2");
-			statusBar.Text = locStr;
-		}
-		// --------------MAP Ctr End----------------
 
 		private void sSREnumToolStripMenuItem_Click(object sender, EventArgs e) {
 			//查看与选中要素重叠的要素
@@ -120,6 +121,7 @@ namespace MyGIS {
 				pLayer.Select(null, feature.Envelope, DotSpatial.Symbology.SelectionMode.Intersects, out pEnvelope);
 			}
 		}
+		// --------------MAP Ctr End----------------
 
 		private void shapefileToolStripMenuItem_Click(object sender, EventArgs e) {
 			string fileName = "";
@@ -203,6 +205,10 @@ namespace MyGIS {
 
 		private void toolStripButton10_Click(object sender, EventArgs e) {
 			shapefileToolStripMenuItem_Click(sender, e);
+		}
+
+		private void FormMain_ResizeEnd(object sender, EventArgs e) {
+			statusBar1.Width = this.Width - statusBar2.Width - 100;
 		}
 	}
 }

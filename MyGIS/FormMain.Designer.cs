@@ -50,7 +50,6 @@
 			this.layersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.mapRenderingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolBarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.statusBarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.procToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.basicOperationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.landformIdentificationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -70,22 +69,23 @@
 			this.sSRTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.sSREnumToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+			this.toolStripButton10 = new System.Windows.Forms.ToolStripButton();
 			this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
 			this.toolStrip2 = new System.Windows.Forms.ToolStrip();
+			this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
+			this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
 			this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+			this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
 			this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
 			this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
 			this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
-			this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
-			this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
-			this.statusStrip = new System.Windows.Forms.StatusStrip();
-			this.statusBar = new System.Windows.Forms.ToolStripStatusLabel();
-			this.appManager1 = new DotSpatial.Controls.AppManager();
 			this.toolStripButton8 = new System.Windows.Forms.ToolStripButton();
-			this.toolStripButton9 = new System.Windows.Forms.ToolStripButton();
-			this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
 			this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
-			this.toolStripButton10 = new System.Windows.Forms.ToolStripButton();
+			this.toolStripButton9 = new System.Windows.Forms.ToolStripButton();
+			this.appManager1 = new DotSpatial.Controls.AppManager();
+			this.spatialStatusStrip = new DotSpatial.Controls.SpatialStatusStrip();
+			this.statusBar1 = new System.Windows.Forms.ToolStripStatusLabel();
+			this.statusBar2 = new System.Windows.Forms.ToolStripStatusLabel();
 			this.toolStripContainer.ContentPanel.SuspendLayout();
 			this.toolStripContainer.TopToolStripPanel.SuspendLayout();
 			this.toolStripContainer.SuspendLayout();
@@ -96,7 +96,7 @@
 			this.menuStrip.SuspendLayout();
 			this.toolStrip1.SuspendLayout();
 			this.toolStrip2.SuspendLayout();
-			this.statusStrip.SuspendLayout();
+			this.spatialStatusStrip.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// toolStripContainer
@@ -131,7 +131,7 @@
 			// legend1
 			// 
 			this.legend1.BackColor = System.Drawing.Color.White;
-			this.legend1.ControlRectangle = new System.Drawing.Rectangle(0, 0, 200, 368);
+			this.legend1.ControlRectangle = new System.Drawing.Rectangle(0, 0, 200, 393);
 			resources.ApplyResources(this.legend1, "legend1");
 			this.legend1.DocumentRectangle = new System.Drawing.Rectangle(0, 0, 187, 428);
 			this.legend1.HorizontalScrollEnabled = true;
@@ -288,8 +288,7 @@
 			this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.layersToolStripMenuItem,
             this.mapRenderingToolStripMenuItem,
-            this.toolBarToolStripMenuItem,
-            this.statusBarToolStripMenuItem});
+            this.toolBarToolStripMenuItem});
 			this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
 			resources.ApplyResources(this.viewToolStripMenuItem, "viewToolStripMenuItem");
 			// 
@@ -313,13 +312,6 @@
 			this.toolBarToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.toolBarToolStripMenuItem.Name = "toolBarToolStripMenuItem";
 			resources.ApplyResources(this.toolBarToolStripMenuItem, "toolBarToolStripMenuItem");
-			// 
-			// statusBarToolStripMenuItem
-			// 
-			this.statusBarToolStripMenuItem.Checked = true;
-			this.statusBarToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-			this.statusBarToolStripMenuItem.Name = "statusBarToolStripMenuItem";
-			resources.ApplyResources(this.statusBarToolStripMenuItem, "statusBarToolStripMenuItem");
 			// 
 			// procToolStripMenuItem
 			// 
@@ -444,6 +436,13 @@
             this.toolStripButton1});
 			this.toolStrip1.Name = "toolStrip1";
 			// 
+			// toolStripButton10
+			// 
+			this.toolStripButton10.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			resources.ApplyResources(this.toolStripButton10, "toolStripButton10");
+			this.toolStripButton10.Name = "toolStripButton10";
+			this.toolStripButton10.Click += new System.EventHandler(this.toolStripButton10_Click);
+			// 
 			// toolStripButton1
 			// 
 			this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -468,12 +467,33 @@
             this.toolStripButton9});
 			this.toolStrip2.Name = "toolStrip2";
 			// 
+			// toolStripButton6
+			// 
+			this.toolStripButton6.Checked = true;
+			this.toolStripButton6.CheckState = System.Windows.Forms.CheckState.Checked;
+			this.toolStripButton6.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			resources.ApplyResources(this.toolStripButton6, "toolStripButton6");
+			this.toolStripButton6.Name = "toolStripButton6";
+			this.toolStripButton6.Click += new System.EventHandler(this.toolStripButton6_Click);
+			// 
+			// toolStripButton7
+			// 
+			this.toolStripButton7.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			resources.ApplyResources(this.toolStripButton7, "toolStripButton7");
+			this.toolStripButton7.Name = "toolStripButton7";
+			this.toolStripButton7.Click += new System.EventHandler(this.toolStripButton7_Click);
+			// 
 			// toolStripButton2
 			// 
 			this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
 			resources.ApplyResources(this.toolStripButton2, "toolStripButton2");
 			this.toolStripButton2.Name = "toolStripButton2";
 			this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
+			// 
+			// toolStripSeparator6
+			// 
+			this.toolStripSeparator6.Name = "toolStripSeparator6";
+			resources.ApplyResources(this.toolStripSeparator6, "toolStripSeparator6");
 			// 
 			// toolStripButton3
 			// 
@@ -496,51 +516,17 @@
 			this.toolStripButton5.Name = "toolStripButton5";
 			this.toolStripButton5.Click += new System.EventHandler(this.toolStripButton5_Click);
 			// 
-			// toolStripButton6
-			// 
-			this.toolStripButton6.Checked = true;
-			this.toolStripButton6.CheckState = System.Windows.Forms.CheckState.Checked;
-			this.toolStripButton6.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			resources.ApplyResources(this.toolStripButton6, "toolStripButton6");
-			this.toolStripButton6.Name = "toolStripButton6";
-			this.toolStripButton6.Click += new System.EventHandler(this.toolStripButton6_Click);
-			// 
-			// toolStripButton7
-			// 
-			this.toolStripButton7.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			resources.ApplyResources(this.toolStripButton7, "toolStripButton7");
-			this.toolStripButton7.Name = "toolStripButton7";
-			this.toolStripButton7.Click += new System.EventHandler(this.toolStripButton7_Click);
-			// 
-			// statusStrip
-			// 
-			this.statusStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
-			this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.statusBar});
-			resources.ApplyResources(this.statusStrip, "statusStrip");
-			this.statusStrip.Name = "statusStrip";
-			// 
-			// statusBar
-			// 
-			this.statusBar.Name = "statusBar";
-			resources.ApplyResources(this.statusBar, "statusBar");
-			// 
-			// appManager1
-			// 
-			this.appManager1.Directories = ((System.Collections.Generic.List<string>)(resources.GetObject("appManager1.Directories")));
-			this.appManager1.DockManager = null;
-			this.appManager1.HeaderControl = null;
-			this.appManager1.Legend = this.legend1;
-			this.appManager1.Map = this.map1;
-			this.appManager1.ProgressHandler = null;
-			this.appManager1.ShowExtensionsDialogMode = DotSpatial.Controls.ShowExtensionsDialogMode.Default;
-			// 
 			// toolStripButton8
 			// 
 			this.toolStripButton8.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
 			resources.ApplyResources(this.toolStripButton8, "toolStripButton8");
 			this.toolStripButton8.Name = "toolStripButton8";
 			this.toolStripButton8.Click += new System.EventHandler(this.toolStripButton8_Click);
+			// 
+			// toolStripSeparator7
+			// 
+			this.toolStripSeparator7.Name = "toolStripSeparator7";
+			resources.ApplyResources(this.toolStripSeparator7, "toolStripSeparator7");
 			// 
 			// toolStripButton9
 			// 
@@ -549,32 +535,48 @@
 			this.toolStripButton9.Name = "toolStripButton9";
 			this.toolStripButton9.Click += new System.EventHandler(this.toolStripButton9_Click);
 			// 
-			// toolStripSeparator6
+			// appManager1
 			// 
-			this.toolStripSeparator6.Name = "toolStripSeparator6";
-			resources.ApplyResources(this.toolStripSeparator6, "toolStripSeparator6");
+			this.appManager1.Directories = ((System.Collections.Generic.List<string>)(resources.GetObject("appManager1.Directories")));
+			this.appManager1.DockManager = null;
+			this.appManager1.HeaderControl = null;
+			this.appManager1.Legend = this.legend1;
+			this.appManager1.Map = this.map1;
+			this.appManager1.ProgressHandler = this.spatialStatusStrip;
+			this.appManager1.ShowExtensionsDialogMode = DotSpatial.Controls.ShowExtensionsDialogMode.Default;
 			// 
-			// toolStripSeparator7
+			// spatialStatusStrip
 			// 
-			this.toolStripSeparator7.Name = "toolStripSeparator7";
-			resources.ApplyResources(this.toolStripSeparator7, "toolStripSeparator7");
+			this.spatialStatusStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
+			this.spatialStatusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.statusBar1,
+            this.statusBar2});
+			resources.ApplyResources(this.spatialStatusStrip, "spatialStatusStrip");
+			this.spatialStatusStrip.Name = "spatialStatusStrip";
+			this.spatialStatusStrip.ProgressBar = null;
+			this.spatialStatusStrip.ProgressLabel = this.statusBar1;
 			// 
-			// toolStripButton10
+			// statusBar1
 			// 
-			this.toolStripButton10.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			resources.ApplyResources(this.toolStripButton10, "toolStripButton10");
-			this.toolStripButton10.Name = "toolStripButton10";
-			this.toolStripButton10.Click += new System.EventHandler(this.toolStripButton10_Click);
+			resources.ApplyResources(this.statusBar1, "statusBar1");
+			this.statusBar1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+			this.statusBar1.Name = "statusBar1";
+			// 
+			// statusBar2
+			// 
+			this.statusBar2.Name = "statusBar2";
+			resources.ApplyResources(this.statusBar2, "statusBar2");
 			// 
 			// FormMain
 			// 
 			resources.ApplyResources(this, "$this");
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.Controls.Add(this.spatialStatusStrip);
 			this.Controls.Add(this.toolStripContainer);
-			this.Controls.Add(this.statusStrip);
 			this.MainMenuStrip = this.menuStrip;
 			this.Name = "FormMain";
 			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMain_FormClosing);
+			this.ResizeEnd += new System.EventHandler(this.FormMain_ResizeEnd);
 			this.toolStripContainer.ContentPanel.ResumeLayout(false);
 			this.toolStripContainer.TopToolStripPanel.ResumeLayout(false);
 			this.toolStripContainer.TopToolStripPanel.PerformLayout();
@@ -590,8 +592,8 @@
 			this.toolStrip1.PerformLayout();
 			this.toolStrip2.ResumeLayout(false);
 			this.toolStrip2.PerformLayout();
-			this.statusStrip.ResumeLayout(false);
-			this.statusStrip.PerformLayout();
+			this.spatialStatusStrip.ResumeLayout(false);
+			this.spatialStatusStrip.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -614,14 +616,12 @@
 		private System.Windows.Forms.ToolStripMenuItem gridToolStripMenuItem;
 		private System.Windows.Forms.ToolStripButton toolStripButton1;
 		private System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem;
-		private System.Windows.Forms.StatusStrip statusStrip;
 		private System.Windows.Forms.SplitContainer splitContainer;
 		private DotSpatial.Controls.Map map1;
 		private System.Windows.Forms.ToolStripMenuItem debugToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem dotSpatialTestToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem sSRTestToolStripMenuItem;
 		private System.Windows.Forms.ToolStripContainer toolStripContainer;
-		private System.Windows.Forms.ToolStripStatusLabel statusBar;
 		private DotSpatial.Controls.Legend legend1;
 		private System.Windows.Forms.ToolStripMenuItem sSREnumToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
@@ -641,7 +641,6 @@
 		private System.Windows.Forms.ToolStripMenuItem layersToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem mapRenderingToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem toolBarToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem statusBarToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem1;
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
 		private System.Windows.Forms.ToolStripMenuItem toggleDebugLogToolStripMenuItem;
@@ -661,6 +660,9 @@
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
 		private System.Windows.Forms.ToolStripButton toolStripButton10;
+		private DotSpatial.Controls.SpatialStatusStrip spatialStatusStrip;
+		private System.Windows.Forms.ToolStripStatusLabel statusBar1;
+		private System.Windows.Forms.ToolStripStatusLabel statusBar2;
 	}
 }
 
