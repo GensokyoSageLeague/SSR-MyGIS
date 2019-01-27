@@ -204,26 +204,26 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="License-LGPL.txt" />
-    <Content Include="Plugins\de-DE\DotSpatial.Plugins.ShapeEditor.resources.dll">
+    <Content Include="Ext\de-DE\DotSpatial.Plugins.ShapeEditor.resources.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Plugins\DotSpatial.Plugins.About.dll">
+    <Content Include="Ext\DotSpatial.Plugins.About.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Plugins\DotSpatial.Plugins.About.pdb" />
-    <Content Include="Plugins\DotSpatial.Plugins.ScaleBar.dll">
+    <Content Include="Ext\DotSpatial.Plugins.About.pdb" />
+    <Content Include="Ext\DotSpatial.Plugins.ScaleBar.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Plugins\DotSpatial.Plugins.ScaleBar.pdb" />
-    <Content Include="Plugins\DotSpatial.Plugins.ShapeEditor.dll">
+    <Content Include="Ext\DotSpatial.Plugins.ScaleBar.pdb" />
+    <Content Include="Ext\DotSpatial.Plugins.ShapeEditor.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Plugins\DotSpatial.Plugins.ShapeEditor.pdb" />
-    <Content Include="Plugins\DotSpatial.Plugins.ToolManager.dll">
+    <Content Include="Ext\DotSpatial.Plugins.ShapeEditor.pdb" />
+    <Content Include="Ext\DotSpatial.Plugins.ToolManager.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Plugins\DotSpatial.Plugins.ToolManager.pdb" />
-    <Content Include="Plugins\zh-CN\DotSpatial.Plugins.ShapeEditor.resources.dll">
+    <Content Include="Ext\DotSpatial.Plugins.ToolManager.pdb" />
+    <Content Include="Ext\zh-CN\DotSpatial.Plugins.ShapeEditor.resources.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
