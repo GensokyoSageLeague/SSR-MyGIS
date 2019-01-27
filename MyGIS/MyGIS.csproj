@@ -152,12 +152,12 @@
     <Compile Include="FormMain.designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormTestDotSpatial.cs">
+    <None Include="FormTestDotSpatial.cs">
       <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormTestDotSpatial.Designer.cs">
+    </None>
+    <None Include="FormTestDotSpatial.Designer.cs">
       <DependentUpon>FormTestDotSpatial.cs</DependentUpon>
-    </Compile>
+    </None>
     <Compile Include="LICore.cs" />
     <Compile Include="LIDef.cs" />
     <Compile Include="Program.cs" />
@@ -175,9 +175,9 @@
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormTestDotSpatial.resx">
+    <None Include="FormTestDotSpatial.resx">
       <DependentUpon>FormTestDotSpatial.cs</DependentUpon>
-    </EmbeddedResource>
+    </None>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -232,9 +232,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Ext\DotSpatial.Plugins.ShapeEditor.pdb" />
-    <Content Include="Ext\DotSpatial.Plugins.ToolManager.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <Content Include="Ext\DotSpatial.Plugins.ToolManager.dll" />
     <Content Include="Ext\DotSpatial.Plugins.ToolManager.pdb" />
     <Content Include="Ext\zh-CN\DotSpatial.Plugins.ShapeEditor.resources.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

@@ -71,7 +71,7 @@ namespace MyGIS {
 
 		private void dotSpatialTestToolStripMenuItem_Click(object sender, EventArgs e) {
 			Logger.log("new FormTestDotSpatial().ShowDialog()");
-			new FormTestDotSpatial().ShowDialog();
+			//new FormTestDotSpatial().ShowDialog();
 		}
 
 		private void sSRTestToolStripMenuItem_Click(object sender, EventArgs e) {

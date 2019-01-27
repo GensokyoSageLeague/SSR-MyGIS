@@ -16,8 +16,8 @@ using DotSpatial.Topology;
 
 namespace MyGIS {
 	public partial class FormTestDotSpatial : Form {
-		[Export("Shell", typeof(ContainerControl))]
-		private static ContainerControl Shell;
+// 		[Export("Shell", typeof(ContainerControl))]
+// 		private static ContainerControl Shell;
 
 		#region Point ShapeFile class level variable
 

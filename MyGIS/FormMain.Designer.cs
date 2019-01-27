@@ -415,8 +415,8 @@
 			// 
 			// dotSpatialTestToolStripMenuItem
 			// 
-			this.dotSpatialTestToolStripMenuItem.Name = "dotSpatialTestToolStripMenuItem";
 			resources.ApplyResources(this.dotSpatialTestToolStripMenuItem, "dotSpatialTestToolStripMenuItem");
+			this.dotSpatialTestToolStripMenuItem.Name = "dotSpatialTestToolStripMenuItem";
 			this.dotSpatialTestToolStripMenuItem.Click += new System.EventHandler(this.dotSpatialTestToolStripMenuItem_Click);
 			// 
 			// sSRTestToolStripMenuItem
