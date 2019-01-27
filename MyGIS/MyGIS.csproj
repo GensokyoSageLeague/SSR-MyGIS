@@ -203,10 +203,23 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="License-LGPL.txt" />
-    <Content Include="Ext\de-DE\DotSpatial.Plugins.ShapeEditor.resources.dll">
+    <Content Include="Ext\DotSpatial.Plugins.FindFeature.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Ext\DotSpatial.Plugins.FindFeature.pdb" />
+    <Content Include="Ext\DotSpatial.Plugins.Measure.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Ext\DotSpatial.Plugins.Measure.pdb" />
+    <Content Include="Ext\DotSpatial.Plugins.StatusBarImprovements.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Ext\DotSpatial.Plugins.StatusBarImprovements.pdb" />
+    <Content Include="Ext\DotSpatial.Plugins.TableEditor.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Ext\DotSpatial.Plugins.TableEditor.pdb" />
+    <Content Include="License-LGPL.txt" />
     <Content Include="Ext\DotSpatial.Plugins.About.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
