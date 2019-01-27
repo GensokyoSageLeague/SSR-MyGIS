@@ -33,11 +33,12 @@ namespace MyGIS.Desktop {
 			Logger.log("Started at " + DateTime.Now.ToString() + " on " + AppInfo.Name + " " + AppInfo.Version + " " + AppInfo.VersionState);
 			Logger.log("===============Logger Start===============");
 
-			map1.GeoMouseMove += map1_GeoMouseMove;
+			// Uses StatusBarImprovement instead
+			//map1.GeoMouseMove += map1_GeoMouseMove;
 			map1.MouseWheel += new MouseEventHandler(map1_MouseWheel);
 
 			map1.FunctionMode = FunctionMode.Pan;
-			statusBar1.Width = this.Width - statusBar2.Width - 100;
+			statusBar1.Width = 300;
 		}
 
 		private void aboutToolStripMenuItem_Click(object sender, EventArgs e) {
@@ -208,7 +209,7 @@ namespace MyGIS.Desktop {
 		}
 
 		private void FormMain_ResizeEnd(object sender, EventArgs e) {
-			statusBar1.Width = this.Width - statusBar2.Width - 100;
+			//statusBar1.Width = this.Width - statusBar2.Width - 100;
 		}
 
 		private void lineToolStripMenuItem_Click(object sender, EventArgs e) {

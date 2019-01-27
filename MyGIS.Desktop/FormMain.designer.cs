@@ -568,14 +568,15 @@
 			// 
 			// statusBar1
 			// 
-			resources.ApplyResources(this.statusBar1, "statusBar1");
 			this.statusBar1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
 			this.statusBar1.Name = "statusBar1";
+			resources.ApplyResources(this.statusBar1, "statusBar1");
 			// 
 			// statusBar2
 			// 
 			this.statusBar2.Name = "statusBar2";
 			resources.ApplyResources(this.statusBar2, "statusBar2");
+			this.statusBar2.Spring = true;
 			// 
 			// FormMain
 			// 

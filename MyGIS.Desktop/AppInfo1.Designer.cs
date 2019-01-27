@@ -61,6 +61,16 @@ namespace MyGIS.Desktop {
         }
         
         /// <summary>
+        ///   查找类似于 (图标) 的 System.Drawing.Icon 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Icon Icon {
+            get {
+                object obj = ResourceManager.GetObject("Icon", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 MyGIS Desktop 的本地化字符串。
         /// </summary>
         internal static string Name {
@@ -70,7 +80,7 @@ namespace MyGIS.Desktop {
         }
         
         /// <summary>
-        ///   查找类似 0.1.190123 的本地化字符串。
+        ///   查找类似 0.2.190127 的本地化字符串。
         /// </summary>
         internal static string Version {
             get {

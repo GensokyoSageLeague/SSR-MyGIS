@@ -1,2 +1,4 @@
-# SimpleShapeRecognition
-没啥好看的。。。
+# MyGis.Desktop
+MyGIS Desktop
+
+Currently in Alpha Development

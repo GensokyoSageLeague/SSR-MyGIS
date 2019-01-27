@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("MyGIS Desktop")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Team Wuyanzu")]
+[assembly: AssemblyCompany("Team Wuyanzu, School of Geography, Nanjing Normal University")]
 [assembly: AssemblyProduct("MyGIS Desktop")]
 [assembly: AssemblyCopyright("Copyright © Team Wuyanzu, All Rights Reserved")]
 [assembly: AssemblyTrademark("")]
