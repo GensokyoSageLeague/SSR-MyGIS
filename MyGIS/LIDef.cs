@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace MyGIS {
 	public enum ShapeType {
+		NonShape = 0,
 		Line = 1,
 		Ellipse = 2,
 		Crescent = 3
@@ -40,6 +41,6 @@ namespace MyGIS {
 		}
 
 		public T shape { get; set; }
-		public ShapeType shapeType;
+		public ShapeType shapeType { get; }
 	}
 }

@@ -22,7 +22,7 @@ namespace MyGIS {
 			InitializeComponent();
 
 			Shell = this;
-			//appManager1.LoadExtensions();
+			appManager1.LoadExtensions();
 
 			Configurations.formMain = this;
 			Configurations.formLogger = new FormLogger();

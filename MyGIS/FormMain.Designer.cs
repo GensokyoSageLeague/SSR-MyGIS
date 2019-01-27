@@ -25,7 +25,7 @@
 		private void InitializeComponent() {
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
 			this.toolStripContainer = new System.Windows.Forms.ToolStripContainer();
-			this.splitContainer = new System.Windows.Forms.SplitContainer();
+			this.spatialDockManager1 = new DotSpatial.Controls.SpatialDockManager();
 			this.legend1 = new DotSpatial.Controls.Legend();
 			this.map1 = new DotSpatial.Controls.Map();
 			this.menuStrip = new System.Windows.Forms.MenuStrip();
@@ -83,19 +83,21 @@
 			this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
 			this.toolStripButton9 = new System.Windows.Forms.ToolStripButton();
 			this.appManager1 = new DotSpatial.Controls.AppManager();
+			this.spatialHeaderControl1 = new DotSpatial.Controls.SpatialHeaderControl();
 			this.spatialStatusStrip = new DotSpatial.Controls.SpatialStatusStrip();
 			this.statusBar1 = new System.Windows.Forms.ToolStripStatusLabel();
 			this.statusBar2 = new System.Windows.Forms.ToolStripStatusLabel();
 			this.toolStripContainer.ContentPanel.SuspendLayout();
 			this.toolStripContainer.TopToolStripPanel.SuspendLayout();
 			this.toolStripContainer.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
-			this.splitContainer.Panel1.SuspendLayout();
-			this.splitContainer.Panel2.SuspendLayout();
-			this.splitContainer.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.spatialDockManager1)).BeginInit();
+			this.spatialDockManager1.Panel1.SuspendLayout();
+			this.spatialDockManager1.Panel2.SuspendLayout();
+			this.spatialDockManager1.SuspendLayout();
 			this.menuStrip.SuspendLayout();
 			this.toolStrip1.SuspendLayout();
 			this.toolStrip2.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.spatialHeaderControl1)).BeginInit();
 			this.spatialStatusStrip.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -105,33 +107,33 @@
 			// toolStripContainer.ContentPanel
 			// 
 			resources.ApplyResources(this.toolStripContainer.ContentPanel, "toolStripContainer.ContentPanel");
-			this.toolStripContainer.ContentPanel.Controls.Add(this.splitContainer);
+			this.toolStripContainer.ContentPanel.Controls.Add(this.spatialDockManager1);
 			resources.ApplyResources(this.toolStripContainer, "toolStripContainer");
 			this.toolStripContainer.Name = "toolStripContainer";
 			// 
 			// toolStripContainer.TopToolStripPanel
 			// 
 			this.toolStripContainer.TopToolStripPanel.Controls.Add(this.menuStrip);
-			this.toolStripContainer.TopToolStripPanel.Controls.Add(this.toolStrip1);
-			this.toolStripContainer.TopToolStripPanel.Controls.Add(this.toolStrip2);
 			// 
-			// splitContainer
+			// spatialDockManager1
 			// 
-			resources.ApplyResources(this.splitContainer, "splitContainer");
-			this.splitContainer.Name = "splitContainer";
+			resources.ApplyResources(this.spatialDockManager1, "spatialDockManager1");
+			this.spatialDockManager1.Name = "spatialDockManager1";
 			// 
-			// splitContainer.Panel1
+			// spatialDockManager1.Panel1
 			// 
-			this.splitContainer.Panel1.Controls.Add(this.legend1);
+			this.spatialDockManager1.Panel1.Controls.Add(this.legend1);
 			// 
-			// splitContainer.Panel2
+			// spatialDockManager1.Panel2
 			// 
-			this.splitContainer.Panel2.Controls.Add(this.map1);
+			this.spatialDockManager1.Panel2.Controls.Add(this.map1);
+			this.spatialDockManager1.TabControl1 = null;
+			this.spatialDockManager1.TabControl2 = null;
 			// 
 			// legend1
 			// 
 			this.legend1.BackColor = System.Drawing.Color.White;
-			this.legend1.ControlRectangle = new System.Drawing.Rectangle(0, 0, 200, 393);
+			this.legend1.ControlRectangle = new System.Drawing.Rectangle(0, 0, 200, 390);
 			resources.ApplyResources(this.legend1, "legend1");
 			this.legend1.DocumentRectangle = new System.Drawing.Rectangle(0, 0, 187, 428);
 			this.legend1.HorizontalScrollEnabled = true;
@@ -540,12 +542,18 @@
 			// appManager1
 			// 
 			this.appManager1.Directories = ((System.Collections.Generic.List<string>)(resources.GetObject("appManager1.Directories")));
-			this.appManager1.DockManager = null;
-			this.appManager1.HeaderControl = null;
+			this.appManager1.DockManager = this.spatialDockManager1;
+			this.appManager1.HeaderControl = this.spatialHeaderControl1;
 			this.appManager1.Legend = this.legend1;
 			this.appManager1.Map = this.map1;
 			this.appManager1.ProgressHandler = this.spatialStatusStrip;
 			this.appManager1.ShowExtensionsDialogMode = DotSpatial.Controls.ShowExtensionsDialogMode.Default;
+			// 
+			// spatialHeaderControl1
+			// 
+			this.spatialHeaderControl1.ApplicationManager = this.appManager1;
+			this.spatialHeaderControl1.MenuStrip = this.menuStrip;
+			this.spatialHeaderControl1.ToolbarsContainer = this.toolStripContainer.TopToolStripPanel;
 			// 
 			// spatialStatusStrip
 			// 
@@ -584,16 +592,17 @@
 			this.toolStripContainer.TopToolStripPanel.PerformLayout();
 			this.toolStripContainer.ResumeLayout(false);
 			this.toolStripContainer.PerformLayout();
-			this.splitContainer.Panel1.ResumeLayout(false);
-			this.splitContainer.Panel2.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)(this.splitContainer)).EndInit();
-			this.splitContainer.ResumeLayout(false);
+			this.spatialDockManager1.Panel1.ResumeLayout(false);
+			this.spatialDockManager1.Panel2.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.spatialDockManager1)).EndInit();
+			this.spatialDockManager1.ResumeLayout(false);
 			this.menuStrip.ResumeLayout(false);
 			this.menuStrip.PerformLayout();
 			this.toolStrip1.ResumeLayout(false);
 			this.toolStrip1.PerformLayout();
 			this.toolStrip2.ResumeLayout(false);
 			this.toolStrip2.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.spatialHeaderControl1)).EndInit();
 			this.spatialStatusStrip.ResumeLayout(false);
 			this.spatialStatusStrip.PerformLayout();
 			this.ResumeLayout(false);
@@ -618,7 +627,6 @@
 		private System.Windows.Forms.ToolStripMenuItem gridToolStripMenuItem;
 		private System.Windows.Forms.ToolStripButton toolStripButton1;
 		private System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem;
-		private System.Windows.Forms.SplitContainer splitContainer;
 		private DotSpatial.Controls.Map map1;
 		private System.Windows.Forms.ToolStripMenuItem debugToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem dotSpatialTestToolStripMenuItem;
@@ -665,6 +673,8 @@
 		private DotSpatial.Controls.SpatialStatusStrip spatialStatusStrip;
 		private System.Windows.Forms.ToolStripStatusLabel statusBar1;
 		private System.Windows.Forms.ToolStripStatusLabel statusBar2;
+		private DotSpatial.Controls.SpatialDockManager spatialDockManager1;
+		private DotSpatial.Controls.SpatialHeaderControl spatialHeaderControl1;
 	}
 }
 
