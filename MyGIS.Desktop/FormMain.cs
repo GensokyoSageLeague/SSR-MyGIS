@@ -34,6 +34,24 @@ namespace MyGIS.Desktop {
 			map1.FunctionMode = FunctionMode.Pan;
 		}
 
+		private void MenuRemover(MenuStrip menuStrip, string itemName, string parentName) {
+			try {
+				foreach (var menuItem in menuStrip.Items) {
+					if (menuItem is ToolStripDropDownButton &&
+						(parentName == ((ToolStripDropDownButton)menuItem).Text)) {
+						foreach (var item in ((ToolStripDropDownButton)menuItem).DropDownItems) {
+							if (item is ToolStripMenuItem &&
+								(itemName == ((ToolStripMenuItem)item).Text)) {
+								((ToolStripDropDownButton)menuItem).DropDownItems.Remove((ToolStripMenuItem)item);
+								break;
+							}
+						}
+					}
+				}
+			}
+			catch (InvalidCastException) { }
+		}
+
 		private void aboutToolStripMenuItem_Click(object sender, EventArgs e) {
 			Logger.log(Configurations.appName + " " + Configurations.appVersion + "\r\n\r\n" +
 				"Proudly Made by\r\n\t10170320 李云烽\r\n\t10170325 李健纯\r\n\t10170347 姜子威\r\n\t10170348 姚迪昭" + "\r\n\r\n" +
@@ -112,9 +130,38 @@ namespace MyGIS.Desktop {
 			mapRenderingToolStripMenuItem.Checked = !mapRenderingToolStripMenuItem.Checked;
 		}
 
+		private void layersToolStripMenuItem_Click(object sender, EventArgs e) {
+			spatialDockManager1.Panel1Collapsed = !spatialDockManager1.Panel1Collapsed;
+			layersToolStripMenuItem.Checked = !layersToolStripMenuItem.Checked;
+		}
+
+		private void toolsToolStripMenuItem_Click(object sender, EventArgs e) {
+			spatialDockManager2.Panel2Collapsed = !spatialDockManager2.Panel2Collapsed;
+			toolsToolStripMenuItem.Checked = !toolsToolStripMenuItem.Checked;
+		}
+
+		private void toolBarToolStripMenuItem_Click(object sender, EventArgs e) {
+			spatialStatusStrip.Visible = !spatialStatusStrip.Visible;
+			toolBarToolStripMenuItem.Checked = !toolBarToolStripMenuItem.Checked;
+		}
+
 		private void FormMain_Load(object sender, EventArgs e) {
 			Configurations.formLogger.Visible = false;
 			Configurations.formSplashWrapper.Deactivate();
+			MenuRemover(menuStrip, "Options", "File");
+		}
+
+		private void basicOperationsToolStripMenuItem_Click(object sender, EventArgs e) {
+			foreach (TabPage tabpage in tabControl1.TabPages) {
+				if (tabpage.Text == "Tools") {
+					tabControl1.SelectedTab = tabpage;
+					break;
+				}
+			}
+		}
+
+		private void selectNoneToolStripMenuItem_Click(object sender, EventArgs e) {
+			map1.ClearSelection();
 		}
 
 		private void progressBar_Paint(object sender, PaintEventArgs e) {
@@ -167,6 +214,5 @@ namespace MyGIS.Desktop {
 			string s = string.Format("{0}  {1}  {2} ", asmdis.Description, asmcpr.Copyright, asmcpn.Company);
 			MessageBox.Show(s);
 		}
-		// --------------MAP Ctr End----------------
 	}
 }

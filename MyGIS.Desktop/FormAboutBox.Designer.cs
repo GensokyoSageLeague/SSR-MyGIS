@@ -27,6 +27,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAboutBox));
 			this.DetailsButton = new System.Windows.Forms.Button();
 			this.ImagePictureBox = new System.Windows.Forms.PictureBox();
 			this.AppDateLabel = new System.Windows.Forms.Label();
@@ -186,8 +187,7 @@
 			this.MoreRichTextBox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
 			this.MoreRichTextBox.Size = new System.Drawing.Size(505, 131);
 			this.MoreRichTextBox.TabIndex = 26;
-			this.MoreRichTextBox.Text = "%product% is %copyright%.\n\nAuthors:\n\t10170320 李云烽\n\t10170325 李健纯\n\t10170347 姜子威\n\t10" +
-    "170348 姚迪昭";
+			this.MoreRichTextBox.Text = resources.GetString("MoreRichTextBox.Text");
 			this.MoreRichTextBox.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.MoreRichTextBox_LinkClicked);
 			// 
 			// TabPanelDetails
@@ -368,7 +368,7 @@
 			this.MinimizeBox = false;
 			this.Name = "FormAboutBox";
 			this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "About %product%";
 			this.Load += new System.EventHandler(this.AboutBox_Load);
 			this.Paint += new System.Windows.Forms.PaintEventHandler(this.AboutBox_Paint);

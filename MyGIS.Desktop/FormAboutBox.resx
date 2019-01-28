@@ -117,4 +117,20 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="MoreRichTextBox.Text" xml:space="preserve">
+    <value>%product% is %copyright%.
+
+Authors (Ordered by Student Number):
+	┌──────┬────┐
+	│  10170320 │ 李云烽 │
+	├──────┼────┤
+	│  10170325 │ 李健纯 │
+	├──────┼────┤
+	│  10170347 │ 姜子威 │
+	├──────┼────┤
+	│  10170348 │ 姚迪昭 │
+	└──────┴────┘
+
+</value>
+  </data>
 </root>

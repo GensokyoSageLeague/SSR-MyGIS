@@ -26,7 +26,10 @@
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
 			this.toolStripContainer = new System.Windows.Forms.ToolStripContainer();
 			this.spatialDockManager1 = new DotSpatial.Controls.SpatialDockManager();
+			this.legend1 = new DotSpatial.Controls.Legend();
+			this.spatialDockManager2 = new DotSpatial.Controls.SpatialDockManager();
 			this.map1 = new DotSpatial.Controls.Map();
+			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.menuStrip = new System.Windows.Forms.MenuStrip();
 			this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -39,15 +42,14 @@
 			this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
 			this.propertiesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.selectAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.selectNoneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.reverseSelectionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
 			this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.layersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.mapRenderingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolBarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.layersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.mapRenderingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.procToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.basicOperationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.landformIdentificationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -74,9 +76,6 @@
 			this.statusBarBlocker1 = new System.Windows.Forms.ToolStripStatusLabel();
 			this.progressBar = new System.Windows.Forms.ToolStripProgressBar();
 			this.statusBarBlocker2 = new System.Windows.Forms.ToolStripStatusLabel();
-			this.tabPage1 = new System.Windows.Forms.TabPage();
-			this.legend1 = new DotSpatial.Controls.Legend();
-			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.toolStripContainer.ContentPanel.SuspendLayout();
 			this.toolStripContainer.TopToolStripPanel.SuspendLayout();
 			this.toolStripContainer.SuspendLayout();
@@ -84,11 +83,13 @@
 			this.spatialDockManager1.Panel1.SuspendLayout();
 			this.spatialDockManager1.Panel2.SuspendLayout();
 			this.spatialDockManager1.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.spatialDockManager2)).BeginInit();
+			this.spatialDockManager2.Panel1.SuspendLayout();
+			this.spatialDockManager2.Panel2.SuspendLayout();
+			this.spatialDockManager2.SuspendLayout();
 			this.menuStrip.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.spatialHeaderControl)).BeginInit();
 			this.spatialStatusStrip.SuspendLayout();
-			this.tabPage1.SuspendLayout();
-			this.tabControl1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// toolStripContainer
@@ -108,17 +109,50 @@
 			// spatialDockManager1
 			// 
 			resources.ApplyResources(this.spatialDockManager1, "spatialDockManager1");
+			this.spatialDockManager1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
 			this.spatialDockManager1.Name = "spatialDockManager1";
 			// 
 			// spatialDockManager1.Panel1
 			// 
-			this.spatialDockManager1.Panel1.Controls.Add(this.tabControl1);
+			this.spatialDockManager1.Panel1.Controls.Add(this.legend1);
 			// 
 			// spatialDockManager1.Panel2
 			// 
-			this.spatialDockManager1.Panel2.Controls.Add(this.map1);
-			this.spatialDockManager1.TabControl1 = this.tabControl1;
+			this.spatialDockManager1.Panel2.Controls.Add(this.spatialDockManager2);
+			this.spatialDockManager1.TabControl1 = null;
 			this.spatialDockManager1.TabControl2 = null;
+			// 
+			// legend1
+			// 
+			this.legend1.BackColor = System.Drawing.Color.White;
+			this.legend1.ControlRectangle = new System.Drawing.Rectangle(0, 0, 200, 395);
+			resources.ApplyResources(this.legend1, "legend1");
+			this.legend1.DocumentRectangle = new System.Drawing.Rectangle(0, 0, 187, 428);
+			this.legend1.HorizontalScrollEnabled = true;
+			this.legend1.Indentation = 30;
+			this.legend1.IsInitialized = false;
+			this.legend1.Name = "legend1";
+			this.legend1.ProgressHandler = null;
+			this.legend1.ResetOnResize = false;
+			this.legend1.SelectionFontColor = System.Drawing.Color.Black;
+			this.legend1.SelectionHighlight = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(238)))), ((int)(((byte)(252)))));
+			this.legend1.VerticalScrollEnabled = true;
+			// 
+			// spatialDockManager2
+			// 
+			resources.ApplyResources(this.spatialDockManager2, "spatialDockManager2");
+			this.spatialDockManager2.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
+			this.spatialDockManager2.Name = "spatialDockManager2";
+			// 
+			// spatialDockManager2.Panel1
+			// 
+			this.spatialDockManager2.Panel1.Controls.Add(this.map1);
+			// 
+			// spatialDockManager2.Panel2
+			// 
+			this.spatialDockManager2.Panel2.Controls.Add(this.tabControl1);
+			this.spatialDockManager2.TabControl1 = this.tabControl1;
+			this.spatialDockManager2.TabControl2 = this.tabControl1;
 			// 
 			// map1
 			// 
@@ -139,6 +173,12 @@
 			this.map1.RedrawLayersWhileResizing = false;
 			this.map1.SelectionEnabled = true;
 			this.map1.ZoomOutFartherThanMaxExtent = false;
+			// 
+			// tabControl1
+			// 
+			resources.ApplyResources(this.tabControl1, "tabControl1");
+			this.tabControl1.Name = "tabControl1";
+			this.tabControl1.SelectedIndex = 0;
 			// 
 			// menuStrip
 			// 
@@ -218,28 +258,17 @@
 			// editToolStripMenuItem
 			// 
 			this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.selectAllToolStripMenuItem,
             this.selectNoneToolStripMenuItem,
-            this.reverseSelectionToolStripMenuItem,
             this.toolStripSeparator2,
             this.optionsToolStripMenuItem});
 			this.editToolStripMenuItem.Name = "editToolStripMenuItem";
 			resources.ApplyResources(this.editToolStripMenuItem, "editToolStripMenuItem");
 			// 
-			// selectAllToolStripMenuItem
-			// 
-			this.selectAllToolStripMenuItem.Name = "selectAllToolStripMenuItem";
-			resources.ApplyResources(this.selectAllToolStripMenuItem, "selectAllToolStripMenuItem");
-			// 
 			// selectNoneToolStripMenuItem
 			// 
 			this.selectNoneToolStripMenuItem.Name = "selectNoneToolStripMenuItem";
 			resources.ApplyResources(this.selectNoneToolStripMenuItem, "selectNoneToolStripMenuItem");
-			// 
-			// reverseSelectionToolStripMenuItem
-			// 
-			this.reverseSelectionToolStripMenuItem.Name = "reverseSelectionToolStripMenuItem";
-			resources.ApplyResources(this.reverseSelectionToolStripMenuItem, "reverseSelectionToolStripMenuItem");
+			this.selectNoneToolStripMenuItem.Click += new System.EventHandler(this.selectNoneToolStripMenuItem_Click);
 			// 
 			// toolStripSeparator2
 			// 
@@ -255,11 +284,20 @@
 			// viewToolStripMenuItem
 			// 
 			this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolBarToolStripMenuItem,
             this.layersToolStripMenuItem,
-            this.mapRenderingToolStripMenuItem,
-            this.toolBarToolStripMenuItem});
+            this.toolsToolStripMenuItem,
+            this.mapRenderingToolStripMenuItem});
 			this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
 			resources.ApplyResources(this.viewToolStripMenuItem, "viewToolStripMenuItem");
+			// 
+			// toolBarToolStripMenuItem
+			// 
+			this.toolBarToolStripMenuItem.Checked = true;
+			this.toolBarToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+			this.toolBarToolStripMenuItem.Name = "toolBarToolStripMenuItem";
+			resources.ApplyResources(this.toolBarToolStripMenuItem, "toolBarToolStripMenuItem");
+			this.toolBarToolStripMenuItem.Click += new System.EventHandler(this.toolBarToolStripMenuItem_Click);
 			// 
 			// layersToolStripMenuItem
 			// 
@@ -267,6 +305,15 @@
 			this.layersToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.layersToolStripMenuItem.Name = "layersToolStripMenuItem";
 			resources.ApplyResources(this.layersToolStripMenuItem, "layersToolStripMenuItem");
+			this.layersToolStripMenuItem.Click += new System.EventHandler(this.layersToolStripMenuItem_Click);
+			// 
+			// toolsToolStripMenuItem
+			// 
+			this.toolsToolStripMenuItem.Checked = true;
+			this.toolsToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+			this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
+			resources.ApplyResources(this.toolsToolStripMenuItem, "toolsToolStripMenuItem");
+			this.toolsToolStripMenuItem.Click += new System.EventHandler(this.toolsToolStripMenuItem_Click);
 			// 
 			// mapRenderingToolStripMenuItem
 			// 
@@ -275,13 +322,6 @@
 			this.mapRenderingToolStripMenuItem.Name = "mapRenderingToolStripMenuItem";
 			resources.ApplyResources(this.mapRenderingToolStripMenuItem, "mapRenderingToolStripMenuItem");
 			this.mapRenderingToolStripMenuItem.Click += new System.EventHandler(this.mapRenderingToolStripMenuItem_Click);
-			// 
-			// toolBarToolStripMenuItem
-			// 
-			this.toolBarToolStripMenuItem.Checked = true;
-			this.toolBarToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-			this.toolBarToolStripMenuItem.Name = "toolBarToolStripMenuItem";
-			resources.ApplyResources(this.toolBarToolStripMenuItem, "toolBarToolStripMenuItem");
 			// 
 			// procToolStripMenuItem
 			// 
@@ -295,6 +335,7 @@
 			// 
 			this.basicOperationsToolStripMenuItem.Name = "basicOperationsToolStripMenuItem";
 			resources.ApplyResources(this.basicOperationsToolStripMenuItem, "basicOperationsToolStripMenuItem");
+			this.basicOperationsToolStripMenuItem.Click += new System.EventHandler(this.basicOperationsToolStripMenuItem_Click);
 			// 
 			// landformIdentificationToolStripMenuItem
 			// 
@@ -407,7 +448,7 @@
 			// appManager
 			// 
 			this.appManager.Directories = ((System.Collections.Generic.List<string>)(resources.GetObject("appManager.Directories")));
-			this.appManager.DockManager = this.spatialDockManager1;
+			this.appManager.DockManager = this.spatialDockManager2;
 			this.appManager.HeaderControl = this.spatialHeaderControl;
 			this.appManager.Legend = this.legend1;
 			this.appManager.Map = this.map1;
@@ -457,36 +498,6 @@
 			resources.ApplyResources(this.statusBarBlocker2, "statusBarBlocker2");
 			this.statusBarBlocker2.Spring = true;
 			// 
-			// tabPage1
-			// 
-			this.tabPage1.Controls.Add(this.legend1);
-			resources.ApplyResources(this.tabPage1, "tabPage1");
-			this.tabPage1.Name = "tabPage1";
-			this.tabPage1.UseVisualStyleBackColor = true;
-			// 
-			// legend1
-			// 
-			this.legend1.BackColor = System.Drawing.Color.White;
-			this.legend1.ControlRectangle = new System.Drawing.Rectangle(0, 0, 186, 355);
-			resources.ApplyResources(this.legend1, "legend1");
-			this.legend1.DocumentRectangle = new System.Drawing.Rectangle(0, 0, 187, 428);
-			this.legend1.HorizontalScrollEnabled = true;
-			this.legend1.Indentation = 30;
-			this.legend1.IsInitialized = false;
-			this.legend1.Name = "legend1";
-			this.legend1.ProgressHandler = null;
-			this.legend1.ResetOnResize = false;
-			this.legend1.SelectionFontColor = System.Drawing.Color.Black;
-			this.legend1.SelectionHighlight = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(238)))), ((int)(((byte)(252)))));
-			this.legend1.VerticalScrollEnabled = true;
-			// 
-			// tabControl1
-			// 
-			this.tabControl1.Controls.Add(this.tabPage1);
-			resources.ApplyResources(this.tabControl1, "tabControl1");
-			this.tabControl1.Name = "tabControl1";
-			this.tabControl1.SelectedIndex = 0;
-			// 
 			// FormMain
 			// 
 			resources.ApplyResources(this, "$this");
@@ -506,13 +517,15 @@
 			this.spatialDockManager1.Panel2.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.spatialDockManager1)).EndInit();
 			this.spatialDockManager1.ResumeLayout(false);
+			this.spatialDockManager2.Panel1.ResumeLayout(false);
+			this.spatialDockManager2.Panel2.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.spatialDockManager2)).EndInit();
+			this.spatialDockManager2.ResumeLayout(false);
 			this.menuStrip.ResumeLayout(false);
 			this.menuStrip.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.spatialHeaderControl)).EndInit();
 			this.spatialStatusStrip.ResumeLayout(false);
 			this.spatialStatusStrip.PerformLayout();
-			this.tabPage1.ResumeLayout(false);
-			this.tabControl1.ResumeLayout(false);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -532,7 +545,6 @@
 		private System.Windows.Forms.ToolStripMenuItem shapefileToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem gridToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem;
-		private DotSpatial.Controls.Map map1;
 		private System.Windows.Forms.ToolStripMenuItem debugToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem dotSpatialTestToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem sSRTestToolStripMenuItem;
@@ -542,9 +554,7 @@
 		private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem saveAsToolStripMenuItem;
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
-		private System.Windows.Forms.ToolStripMenuItem selectAllToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem selectNoneToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem reverseSelectionToolStripMenuItem;
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
 		private System.Windows.Forms.ToolStripMenuItem basicOperationsToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem landformIdentificationToolStripMenuItem;
@@ -570,9 +580,11 @@
 		private System.Windows.Forms.ToolStripProgressBar progressBar;
 		private System.Windows.Forms.ToolStripStatusLabel statusBarBlocker1;
 		private System.Windows.Forms.ToolStripMenuItem assemblyToolStripMenuItem;
-		private System.Windows.Forms.TabControl tabControl1;
-		private System.Windows.Forms.TabPage tabPage1;
 		private DotSpatial.Controls.Legend legend1;
+		private DotSpatial.Controls.SpatialDockManager spatialDockManager2;
+		private System.Windows.Forms.TabControl tabControl1;
+		private System.Windows.Forms.ToolStripMenuItem toolsToolStripMenuItem;
+		internal DotSpatial.Controls.Map map1;
 	}
 }
 
