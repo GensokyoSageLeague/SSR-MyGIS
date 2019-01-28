@@ -113,7 +113,7 @@
 			this.AppCopyrightLabel.Name = "AppCopyrightLabel";
 			this.AppCopyrightLabel.Size = new System.Drawing.Size(507, 18);
 			this.AppCopyrightLabel.TabIndex = 21;
-			this.AppCopyrightLabel.Text = "Copyright ?%year%, %company%";
+			this.AppCopyrightLabel.Text = "Copyright ©%year%, %company%";
 			// 
 			// AppVersionLabel
 			// 

@@ -16,6 +16,8 @@ namespace MyGIS.Desktop {
 
 			Configurations.formLogger = new FormLogger();
 			Configurations.formLogger.Show();
+			Configurations.formSplashWrapper = new Plugins.SplashScreen.SplashMain();
+			Configurations.formSplashWrapper.Activate();
 			Logger.log("Started at " + DateTime.Now.ToString() + " on " + Configurations.appName + " " + Configurations.appVersion);
 			Logger.log("Press Esc to hide.");
 			Logger.log("===============Logger Start===============");

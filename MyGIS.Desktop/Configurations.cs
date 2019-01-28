@@ -14,6 +14,7 @@ namespace MyGIS.Desktop {
 		// Global Variables
 		public static FormMain formMain { get; set; }
 		public static FormLogger formLogger { get; set; }
+		public static Plugins.SplashScreen.SplashMain formSplashWrapper { get; set; }
 
 		// AppInfo
 		public static string appName = ((AssemblyTitleAttribute)Attribute.GetCustomAttribute(Assembly.GetExecutingAssembly(), typeof(AssemblyTitleAttribute))).Title;

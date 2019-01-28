@@ -36,7 +36,7 @@ namespace MyGIS.Desktop {
 
 	public static class Logger {
 		public static void log(string s) {
-			if (Configurations.formLogger != null) {
+			if (Configurations.formLogger != null && !Configurations.formLogger.IsDisposed) {
 				Configurations.formLogger.log(s);
 			}
 		}

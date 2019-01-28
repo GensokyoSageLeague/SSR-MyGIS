@@ -114,6 +114,7 @@ namespace MyGIS.Desktop {
 
 		private void FormMain_Load(object sender, EventArgs e) {
 			Configurations.formLogger.Visible = false;
+			Configurations.formSplashWrapper.Deactivate();
 		}
 
 		private void progressBar_Paint(object sender, PaintEventArgs e) {
