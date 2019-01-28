@@ -303,6 +303,237 @@
   <data name="menuStrip.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>None</value>
   </data>
+  <data name="openToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 26</value>
+  </data>
+  <data name="openToolStripMenuItem.Text" xml:space="preserve">
+    <value>Open</value>
+  </data>
+  <data name="saveToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 26</value>
+  </data>
+  <data name="saveToolStripMenuItem.Text" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="saveAsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 26</value>
+  </data>
+  <data name="saveAsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Save As</value>
+  </data>
+  <data name="toolStripSeparator3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>157, 6</value>
+  </data>
+  <data name="shapefileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>151, 26</value>
+  </data>
+  <data name="shapefileToolStripMenuItem.Text" xml:space="preserve">
+    <value>Shapefile</value>
+  </data>
+  <data name="gridToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>151, 26</value>
+  </data>
+  <data name="gridToolStripMenuItem.Text" xml:space="preserve">
+    <value>Grid</value>
+  </data>
+  <data name="openShapefileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 26</value>
+  </data>
+  <data name="openShapefileToolStripMenuItem.Text" xml:space="preserve">
+    <value>Import</value>
+  </data>
+  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>157, 6</value>
+  </data>
+  <data name="propertiesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 26</value>
+  </data>
+  <data name="propertiesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Properties</value>
+  </data>
+  <data name="exitToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 26</value>
+  </data>
+  <data name="fileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>46, 27</value>
+  </data>
+  <data name="fileToolStripMenuItem.Text" xml:space="preserve">
+    <value>File</value>
+  </data>
+  <data name="fileToolStripMenuItem.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="selectAllToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>214, 26</value>
+  </data>
+  <data name="selectAllToolStripMenuItem.Text" xml:space="preserve">
+    <value>Select All</value>
+  </data>
+  <data name="selectNoneToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>214, 26</value>
+  </data>
+  <data name="selectNoneToolStripMenuItem.Text" xml:space="preserve">
+    <value>Select None</value>
+  </data>
+  <data name="reverseSelectionToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>214, 26</value>
+  </data>
+  <data name="reverseSelectionToolStripMenuItem.Text" xml:space="preserve">
+    <value>Reverse Selection</value>
+  </data>
+  <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>211, 6</value>
+  </data>
+  <data name="optionsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>214, 26</value>
+  </data>
+  <data name="optionsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Customization</value>
+  </data>
+  <data name="editToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>49, 27</value>
+  </data>
+  <data name="editToolStripMenuItem.Text" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="layersToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>197, 26</value>
+  </data>
+  <data name="layersToolStripMenuItem.Text" xml:space="preserve">
+    <value>Layers</value>
+  </data>
+  <data name="mapRenderingToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>197, 26</value>
+  </data>
+  <data name="mapRenderingToolStripMenuItem.Text" xml:space="preserve">
+    <value>Map Rendering</value>
+  </data>
+  <data name="toolBarToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>197, 26</value>
+  </data>
+  <data name="toolBarToolStripMenuItem.Text" xml:space="preserve">
+    <value>Tool Bar</value>
+  </data>
+  <data name="viewToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 27</value>
+  </data>
+  <data name="viewToolStripMenuItem.Text" xml:space="preserve">
+    <value>View</value>
+  </data>
+  <data name="basicOperationsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>254, 26</value>
+  </data>
+  <data name="basicOperationsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Basic Operations</value>
+  </data>
+  <data name="lineToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>148, 26</value>
+  </data>
+  <data name="lineToolStripMenuItem.Text" xml:space="preserve">
+    <value>Line</value>
+  </data>
+  <data name="circleToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>148, 26</value>
+  </data>
+  <data name="circleToolStripMenuItem.Text" xml:space="preserve">
+    <value>Circle</value>
+  </data>
+  <data name="crescentToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>148, 26</value>
+  </data>
+  <data name="crescentToolStripMenuItem.Text" xml:space="preserve">
+    <value>Crescent</value>
+  </data>
+  <data name="landformIdentificationToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>254, 26</value>
+  </data>
+  <data name="landformIdentificationToolStripMenuItem.Text" xml:space="preserve">
+    <value>Landform Identification</value>
+  </data>
+  <data name="procToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 27</value>
+  </data>
+  <data name="procToolStripMenuItem.Text" xml:space="preserve">
+    <value>Processing</value>
+  </data>
+  <data name="helpToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>221, 26</value>
+  </data>
+  <data name="helpToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Offline Help</value>
+  </data>
+  <data name="onlineHelpToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>221, 26</value>
+  </data>
+  <data name="onlineHelpToolStripMenuItem.Text" xml:space="preserve">
+    <value>Online Help</value>
+  </data>
+  <data name="toolStripSeparator4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>218, 6</value>
+  </data>
+  <data name="aboutToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>221, 26</value>
+  </data>
+  <data name="aboutToolStripMenuItem.Text" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="toolStripSeparator5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>218, 6</value>
+  </data>
+  <data name="debuggingToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="debuggingToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>221, 26</value>
+  </data>
+  <data name="debuggingToolStripMenuItem.Text" xml:space="preserve">
+    <value>---Debugging---</value>
+  </data>
+  <data name="toggleDebugLogToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>221, 26</value>
+  </data>
+  <data name="toggleDebugLogToolStripMenuItem.Text" xml:space="preserve">
+    <value>Toggle Debug Log</value>
+  </data>
+  <data name="kHeaderHelpItemKey.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 27</value>
+  </data>
+  <data name="kHeaderHelpItemKey.Text" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  <data name="dotSpatialTestToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="dotSpatialTestToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>195, 26</value>
+  </data>
+  <data name="dotSpatialTestToolStripMenuItem.Text" xml:space="preserve">
+    <value>DotSpatial Test</value>
+  </data>
+  <data name="sSRTestToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>195, 26</value>
+  </data>
+  <data name="sSRTestToolStripMenuItem.Text" xml:space="preserve">
+    <value>SSR Test Init</value>
+  </data>
+  <data name="sSREnumToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>195, 26</value>
+  </data>
+  <data name="sSREnumToolStripMenuItem.Text" xml:space="preserve">
+    <value>SSR Enum</value>
+  </data>
+  <data name="assemblyToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>195, 26</value>
+  </data>
+  <data name="assemblyToolStripMenuItem.Text" xml:space="preserve">
+    <value>Assembly</value>
+  </data>
+  <data name="debugToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>66, 27</value>
+  </data>
+  <data name="debugToolStripMenuItem.Text" xml:space="preserve">
+    <value>_Tests</value>
+  </data>
   <data name="menuStrip.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
@@ -351,231 +582,6 @@
   <data name="&gt;&gt;toolStripContainer.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="fileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>46, 27</value>
-  </data>
-  <data name="fileToolStripMenuItem.Text" xml:space="preserve">
-    <value>File</value>
-  </data>
-  <data name="fileToolStripMenuItem.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="openToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 26</value>
-  </data>
-  <data name="openToolStripMenuItem.Text" xml:space="preserve">
-    <value>Open</value>
-  </data>
-  <data name="saveToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 26</value>
-  </data>
-  <data name="saveToolStripMenuItem.Text" xml:space="preserve">
-    <value>Save</value>
-  </data>
-  <data name="saveAsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 26</value>
-  </data>
-  <data name="saveAsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Save As</value>
-  </data>
-  <data name="toolStripSeparator3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>157, 6</value>
-  </data>
-  <data name="openShapefileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 26</value>
-  </data>
-  <data name="openShapefileToolStripMenuItem.Text" xml:space="preserve">
-    <value>Import</value>
-  </data>
-  <data name="shapefileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>151, 26</value>
-  </data>
-  <data name="shapefileToolStripMenuItem.Text" xml:space="preserve">
-    <value>Shapefile</value>
-  </data>
-  <data name="gridToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>151, 26</value>
-  </data>
-  <data name="gridToolStripMenuItem.Text" xml:space="preserve">
-    <value>Grid</value>
-  </data>
-  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>157, 6</value>
-  </data>
-  <data name="propertiesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 26</value>
-  </data>
-  <data name="propertiesToolStripMenuItem.Text" xml:space="preserve">
-    <value>Properties</value>
-  </data>
-  <data name="exitToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 26</value>
-  </data>
-  <data name="editToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>49, 27</value>
-  </data>
-  <data name="editToolStripMenuItem.Text" xml:space="preserve">
-    <value>Edit</value>
-  </data>
-  <data name="selectAllToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>214, 26</value>
-  </data>
-  <data name="selectAllToolStripMenuItem.Text" xml:space="preserve">
-    <value>Select All</value>
-  </data>
-  <data name="selectNoneToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>214, 26</value>
-  </data>
-  <data name="selectNoneToolStripMenuItem.Text" xml:space="preserve">
-    <value>Select None</value>
-  </data>
-  <data name="reverseSelectionToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>214, 26</value>
-  </data>
-  <data name="reverseSelectionToolStripMenuItem.Text" xml:space="preserve">
-    <value>Reverse Selection</value>
-  </data>
-  <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>211, 6</value>
-  </data>
-  <data name="optionsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>214, 26</value>
-  </data>
-  <data name="optionsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Customization</value>
-  </data>
-  <data name="viewToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 27</value>
-  </data>
-  <data name="viewToolStripMenuItem.Text" xml:space="preserve">
-    <value>View</value>
-  </data>
-  <data name="layersToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>197, 26</value>
-  </data>
-  <data name="layersToolStripMenuItem.Text" xml:space="preserve">
-    <value>Layers</value>
-  </data>
-  <data name="mapRenderingToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>197, 26</value>
-  </data>
-  <data name="mapRenderingToolStripMenuItem.Text" xml:space="preserve">
-    <value>Map Rendering</value>
-  </data>
-  <data name="toolBarToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>197, 26</value>
-  </data>
-  <data name="toolBarToolStripMenuItem.Text" xml:space="preserve">
-    <value>Tool Bar</value>
-  </data>
-  <data name="procToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 27</value>
-  </data>
-  <data name="procToolStripMenuItem.Text" xml:space="preserve">
-    <value>Processing</value>
-  </data>
-  <data name="basicOperationsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>254, 26</value>
-  </data>
-  <data name="basicOperationsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Basic Operations</value>
-  </data>
-  <data name="landformIdentificationToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>254, 26</value>
-  </data>
-  <data name="landformIdentificationToolStripMenuItem.Text" xml:space="preserve">
-    <value>Landform Identification</value>
-  </data>
-  <data name="lineToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>181, 26</value>
-  </data>
-  <data name="lineToolStripMenuItem.Text" xml:space="preserve">
-    <value>Line</value>
-  </data>
-  <data name="circleToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>181, 26</value>
-  </data>
-  <data name="circleToolStripMenuItem.Text" xml:space="preserve">
-    <value>Circle</value>
-  </data>
-  <data name="crescentToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>181, 26</value>
-  </data>
-  <data name="crescentToolStripMenuItem.Text" xml:space="preserve">
-    <value>Crescent</value>
-  </data>
-  <data name="kHeaderHelpItemKey.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 27</value>
-  </data>
-  <data name="kHeaderHelpItemKey.Text" xml:space="preserve">
-    <value>Help</value>
-  </data>
-  <data name="helpToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>221, 26</value>
-  </data>
-  <data name="helpToolStripMenuItem1.Text" xml:space="preserve">
-    <value>Offline Help</value>
-  </data>
-  <data name="onlineHelpToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>221, 26</value>
-  </data>
-  <data name="onlineHelpToolStripMenuItem.Text" xml:space="preserve">
-    <value>Online Help</value>
-  </data>
-  <data name="toolStripSeparator4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>218, 6</value>
-  </data>
-  <data name="aboutToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>221, 26</value>
-  </data>
-  <data name="aboutToolStripMenuItem.Text" xml:space="preserve">
-    <value>About</value>
-  </data>
-  <data name="toolStripSeparator5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>218, 6</value>
-  </data>
-  <data name="debuggingToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="debuggingToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>221, 26</value>
-  </data>
-  <data name="debuggingToolStripMenuItem.Text" xml:space="preserve">
-    <value>---Debugging---</value>
-  </data>
-  <data name="toggleDebugLogToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>221, 26</value>
-  </data>
-  <data name="toggleDebugLogToolStripMenuItem.Text" xml:space="preserve">
-    <value>Toggle Debug Log</value>
-  </data>
-  <data name="debugToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>66, 27</value>
-  </data>
-  <data name="debugToolStripMenuItem.Text" xml:space="preserve">
-    <value>_Tests</value>
-  </data>
-  <data name="dotSpatialTestToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="dotSpatialTestToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>195, 26</value>
-  </data>
-  <data name="dotSpatialTestToolStripMenuItem.Text" xml:space="preserve">
-    <value>DotSpatial Test</value>
-  </data>
-  <data name="sSRTestToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>195, 26</value>
-  </data>
-  <data name="sSRTestToolStripMenuItem.Text" xml:space="preserve">
-    <value>SSR Test Init</value>
-  </data>
-  <data name="sSREnumToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>195, 26</value>
-  </data>
-  <data name="sSREnumToolStripMenuItem.Text" xml:space="preserve">
-    <value>SSR Enum</value>
-  </data>
   <metadata name="appManager.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>150, 17</value>
   </metadata>
@@ -614,7 +620,7 @@
     <value>100, 19</value>
   </data>
   <data name="statusBarBlocker2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>460, 20</value>
+    <value>507, 20</value>
   </data>
   <data name="spatialStatusStrip.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 423</value>
@@ -2886,6 +2892,12 @@
   <data name="&gt;&gt;sSREnumToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;assemblyToolStripMenuItem.Name" xml:space="preserve">
+    <value>assemblyToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;assemblyToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;appManager.Name" xml:space="preserve">
     <value>appManager</value>
   </data>
@@ -2904,10 +2916,10 @@
   <data name="&gt;&gt;statusBar1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;statusBarBlocker2.Name" xml:space="preserve">
-    <value>statusBarBlocker2</value>
+  <data name="&gt;&gt;statusBarBlocker1.Name" xml:space="preserve">
+    <value>statusBarBlocker1</value>
   </data>
-  <data name="&gt;&gt;statusBarBlocker2.Type" xml:space="preserve">
+  <data name="&gt;&gt;statusBarBlocker1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;progressBar.Name" xml:space="preserve">
@@ -2916,10 +2928,10 @@
   <data name="&gt;&gt;progressBar.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripProgressBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;statusBarBlocker1.Name" xml:space="preserve">
-    <value>statusBarBlocker1</value>
+  <data name="&gt;&gt;statusBarBlocker2.Name" xml:space="preserve">
+    <value>statusBarBlocker2</value>
   </data>
-  <data name="&gt;&gt;statusBarBlocker1.Type" xml:space="preserve">
+  <data name="&gt;&gt;statusBarBlocker2.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

@@ -68,13 +68,14 @@
 			this.dotSpatialTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.sSRTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.sSREnumToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.assemblyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.appManager = new DotSpatial.Controls.AppManager();
 			this.spatialHeaderControl = new DotSpatial.Controls.SpatialHeaderControl();
 			this.spatialStatusStrip = new DotSpatial.Controls.SpatialStatusStrip();
 			this.statusBar1 = new System.Windows.Forms.ToolStripStatusLabel();
-			this.statusBarBlocker2 = new System.Windows.Forms.ToolStripStatusLabel();
-			this.progressBar = new System.Windows.Forms.ToolStripProgressBar();
 			this.statusBarBlocker1 = new System.Windows.Forms.ToolStripStatusLabel();
+			this.progressBar = new System.Windows.Forms.ToolStripProgressBar();
+			this.statusBarBlocker2 = new System.Windows.Forms.ToolStripStatusLabel();
 			this.toolStripContainer.ContentPanel.SuspendLayout();
 			this.toolStripContainer.TopToolStripPanel.SuspendLayout();
 			this.toolStripContainer.SuspendLayout();
@@ -393,7 +394,8 @@
 			this.debugToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.dotSpatialTestToolStripMenuItem,
             this.sSRTestToolStripMenuItem,
-            this.sSREnumToolStripMenuItem});
+            this.sSREnumToolStripMenuItem,
+            this.assemblyToolStripMenuItem});
 			this.debugToolStripMenuItem.Name = "debugToolStripMenuItem";
 			resources.ApplyResources(this.debugToolStripMenuItem, "debugToolStripMenuItem");
 			// 
@@ -414,6 +416,12 @@
 			this.sSREnumToolStripMenuItem.Name = "sSREnumToolStripMenuItem";
 			resources.ApplyResources(this.sSREnumToolStripMenuItem, "sSREnumToolStripMenuItem");
 			this.sSREnumToolStripMenuItem.Click += new System.EventHandler(this.sSREnumToolStripMenuItem_Click);
+			// 
+			// assemblyToolStripMenuItem
+			// 
+			this.assemblyToolStripMenuItem.Name = "assemblyToolStripMenuItem";
+			resources.ApplyResources(this.assemblyToolStripMenuItem, "assemblyToolStripMenuItem");
+			this.assemblyToolStripMenuItem.Click += new System.EventHandler(this.assemblyToolStripMenuItem_Click);
 			// 
 			// appManager
 			// 
@@ -450,22 +458,23 @@
 			this.statusBar1.Name = "statusBar1";
 			resources.ApplyResources(this.statusBar1, "statusBar1");
 			// 
-			// statusBarBlocker2
-			// 
-			this.statusBarBlocker2.Name = "statusBarBlocker2";
-			resources.ApplyResources(this.statusBarBlocker2, "statusBarBlocker2");
-			this.statusBarBlocker2.Spring = true;
-			// 
-			// progressBar
-			// 
-			this.progressBar.Name = "progressBar";
-			resources.ApplyResources(this.progressBar, "progressBar");
-			// 
 			// statusBarBlocker1
 			// 
 			this.statusBarBlocker1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
 			this.statusBarBlocker1.Name = "statusBarBlocker1";
 			resources.ApplyResources(this.statusBarBlocker1, "statusBarBlocker1");
+			// 
+			// progressBar
+			// 
+			this.progressBar.Name = "progressBar";
+			resources.ApplyResources(this.progressBar, "progressBar");
+			this.progressBar.Paint += new System.Windows.Forms.PaintEventHandler(this.progressBar_Paint);
+			// 
+			// statusBarBlocker2
+			// 
+			this.statusBarBlocker2.Name = "statusBarBlocker2";
+			resources.ApplyResources(this.statusBarBlocker2, "statusBarBlocker2");
+			this.statusBarBlocker2.Spring = true;
 			// 
 			// FormMain
 			// 
@@ -549,6 +558,7 @@
 		private DotSpatial.Controls.SpatialHeaderControl spatialHeaderControl;
 		private System.Windows.Forms.ToolStripProgressBar progressBar;
 		private System.Windows.Forms.ToolStripStatusLabel statusBarBlocker1;
+		private System.Windows.Forms.ToolStripMenuItem assemblyToolStripMenuItem;
 	}
 }
 

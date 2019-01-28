@@ -146,11 +146,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AppInfo1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AppInfo.resx</DependentUpon>
-    </Compile>
     <Compile Include="Configurations.cs" />
     <Compile Include="FormLogger.cs">
       <SubType>Form</SubType>
@@ -180,10 +175,6 @@
     <Compile Include="LIDef.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="AppInfo.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>AppInfo1.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormLogger.resx">
       <DependentUpon>FormLogger.cs</DependentUpon>
     </EmbeddedResource>

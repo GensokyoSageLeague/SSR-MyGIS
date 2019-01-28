@@ -12,6 +12,7 @@ using DotSpatial.Data;
 using DotSpatial.Projections;
 using DotSpatial.Symbology;
 using DotSpatial.Topology;
+using System.Reflection;
 
 namespace MyGIS.Desktop {
 	public partial class FormMain : Form {
@@ -21,28 +22,25 @@ namespace MyGIS.Desktop {
 		public FormMain() {
 			InitializeComponent();
 
-			Shell = this;
 			Configurations.formMain = this;
-			this.Text = AppInfo.Name;
+			this.Text = Configurations.appNameProduct;
 			statusBar1.Text = "Idle";
-			//spatialHeaderControl.
+			//spatialHeaderControl.Add();
 
+			Shell = this;
 			appManager.LoadExtensions();
-			// Uses StatusBarImprovement instead
-			//map1.GeoMouseMove += map1_GeoMouseMove;
 			map1.MouseWheel += new MouseEventHandler(map1_MouseWheel);
 			map1.FunctionMode = FunctionMode.Pan;
-			statusBar1.Width = 300;
 		}
 
 		private void aboutToolStripMenuItem_Click(object sender, EventArgs e) {
-			Logger.log(AppInfo.Name + " " + AppInfo.Version + " " + AppInfo.VersionState + "\r\n\r\n" +
+			Logger.log(Configurations.appName + " " + Configurations.appVersion + "\r\n\r\n" +
 				"Proudly Made by\r\n\t10170320 李云烽\r\n\t10170325 李健纯\r\n\t10170347 姜子威\r\n\t10170348 姚迪昭" + "\r\n\r\n" +
 				"in Nanjing Normal University");
-			MessageBox.Show(AppInfo.Name + " " + AppInfo.Version +" "+ AppInfo.VersionState + "\r\n\r\n" +
+			MessageBox.Show(Configurations.appName + " " + Configurations.appVersion + "\r\n\r\n" +
 				"Proudly Made by\r\n\t10170320 李云烽\r\n\t10170325 李健纯\r\n\t10170347 姜子威\r\n\t10170348 姚迪昭" + "\r\n\r\n" +
 				"in Nanjing Normal University",
-				"About " + AppInfo.Name);
+				"About " + Configurations.appName);
 		}
 
 		private void optionsToolStripMenuItem_Click(object sender, EventArgs e) {
@@ -115,6 +113,10 @@ namespace MyGIS.Desktop {
 			Configurations.formLogger.Visible = false;
 		}
 
+		private void progressBar_Paint(object sender, PaintEventArgs e) {
+			//Logger.log("！！！");
+		}
+
 		// --------------MAP Ctr Start----------------
 		private void InitializeMapper() {
 			Logger.log("Shapefile.OpenFile(\"so/腾冲/腾冲_Casted1.shp\")");
@@ -150,6 +152,16 @@ namespace MyGIS.Desktop {
 				IEnvelope pEnvelope = null;
 				pLayer.Select(null, feature.Envelope, DotSpatial.Symbology.SelectionMode.Intersects, out pEnvelope);
 			}
+		}
+
+		private void assemblyToolStripMenuItem_Click(object sender, EventArgs e) {
+			Assembly asm = Assembly.GetExecutingAssembly();
+			AssemblyDescriptionAttribute asmdis = (AssemblyDescriptionAttribute)Attribute.GetCustomAttribute(asm, typeof(AssemblyDescriptionAttribute));
+			AssemblyCopyrightAttribute asmcpr = (AssemblyCopyrightAttribute)Attribute.GetCustomAttribute(asm, typeof(AssemblyCopyrightAttribute));
+			AssemblyCompanyAttribute asmcpn = (AssemblyCompanyAttribute)Attribute.GetCustomAttribute(asm, typeof(AssemblyCompanyAttribute));
+
+			string s = string.Format("{0}  {1}  {2} ", asmdis.Description, asmcpr.Copyright, asmcpn.Company);
+			MessageBox.Show(s);
 		}
 		// --------------MAP Ctr End----------------
 	}

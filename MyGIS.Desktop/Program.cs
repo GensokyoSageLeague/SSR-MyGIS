@@ -13,7 +13,17 @@ namespace MyGIS.Desktop {
 		static void Main() {
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
+
+			Configurations.formLogger = new FormLogger();
+			Configurations.formLogger.Show();
+			Logger.log("Started at " + DateTime.Now.ToString() + " on " + Configurations.appName + " " + Configurations.appVersion);
+			Logger.log("Press Esc to hide.");
+			Logger.log("===============Logger Start===============");
+
 			Application.Run(new FormMain());
+			Configurations.formLogger.Show();
+			Logger.log("===============Logger End=================");
+			Logger.doDelay(1);
 		}
 	}
 }

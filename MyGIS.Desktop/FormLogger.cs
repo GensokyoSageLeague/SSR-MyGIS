@@ -29,9 +29,8 @@ namespace MyGIS.Desktop {
 		}
 
 		private void FormLogger_FormClosing(object sender, FormClosingEventArgs e) {
-			Logger.log("===============Logger End=================");
-			Logger.doDelay(1);
-
+// 			Logger.log("===============Logger End=================");
+// 			System.Diagnostics.Debugger.Break();
 		}
 	}
 
