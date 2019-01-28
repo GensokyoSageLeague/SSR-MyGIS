@@ -39,7 +39,6 @@
 			this.gridToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
 			this.propertiesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.selectAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.selectNoneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -175,8 +174,7 @@
             this.toolStripSeparator3,
             this.openShapefileToolStripMenuItem,
             this.toolStripSeparator1,
-            this.propertiesToolStripMenuItem,
-            this.exitToolStripMenuItem});
+            this.propertiesToolStripMenuItem});
 			this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
 			resources.ApplyResources(this.fileToolStripMenuItem, "fileToolStripMenuItem");
 			// 
@@ -228,11 +226,6 @@
 			// 
 			this.propertiesToolStripMenuItem.Name = "propertiesToolStripMenuItem";
 			resources.ApplyResources(this.propertiesToolStripMenuItem, "propertiesToolStripMenuItem");
-			// 
-			// exitToolStripMenuItem
-			// 
-			this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-			resources.ApplyResources(this.exitToolStripMenuItem, "exitToolStripMenuItem");
 			// 
 			// editToolStripMenuItem
 			// 
@@ -369,8 +362,8 @@
 			// 
 			// aboutToolStripMenuItem
 			// 
-			this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
 			resources.ApplyResources(this.aboutToolStripMenuItem, "aboutToolStripMenuItem");
+			this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
 			this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
 			// 
 			// toolStripSeparator5
@@ -515,7 +508,6 @@
 		private System.Windows.Forms.ToolStripMenuItem kHeaderHelpItemKey;
 		private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-		private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem openShapefileToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem shapefileToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem gridToolStripMenuItem;
