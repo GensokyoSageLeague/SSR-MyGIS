@@ -26,7 +26,6 @@
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
 			this.toolStripContainer = new System.Windows.Forms.ToolStripContainer();
 			this.spatialDockManager1 = new DotSpatial.Controls.SpatialDockManager();
-			this.legend1 = new DotSpatial.Controls.Legend();
 			this.map1 = new DotSpatial.Controls.Map();
 			this.menuStrip = new System.Windows.Forms.MenuStrip();
 			this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -75,6 +74,9 @@
 			this.statusBarBlocker1 = new System.Windows.Forms.ToolStripStatusLabel();
 			this.progressBar = new System.Windows.Forms.ToolStripProgressBar();
 			this.statusBarBlocker2 = new System.Windows.Forms.ToolStripStatusLabel();
+			this.tabPage1 = new System.Windows.Forms.TabPage();
+			this.legend1 = new DotSpatial.Controls.Legend();
+			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.toolStripContainer.ContentPanel.SuspendLayout();
 			this.toolStripContainer.TopToolStripPanel.SuspendLayout();
 			this.toolStripContainer.SuspendLayout();
@@ -85,6 +87,8 @@
 			this.menuStrip.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.spatialHeaderControl)).BeginInit();
 			this.spatialStatusStrip.SuspendLayout();
+			this.tabPage1.SuspendLayout();
+			this.tabControl1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// toolStripContainer
@@ -108,29 +112,13 @@
 			// 
 			// spatialDockManager1.Panel1
 			// 
-			this.spatialDockManager1.Panel1.Controls.Add(this.legend1);
+			this.spatialDockManager1.Panel1.Controls.Add(this.tabControl1);
 			// 
 			// spatialDockManager1.Panel2
 			// 
 			this.spatialDockManager1.Panel2.Controls.Add(this.map1);
-			this.spatialDockManager1.TabControl1 = null;
+			this.spatialDockManager1.TabControl1 = this.tabControl1;
 			this.spatialDockManager1.TabControl2 = null;
-			// 
-			// legend1
-			// 
-			this.legend1.BackColor = System.Drawing.Color.White;
-			this.legend1.ControlRectangle = new System.Drawing.Rectangle(0, 0, 200, 390);
-			resources.ApplyResources(this.legend1, "legend1");
-			this.legend1.DocumentRectangle = new System.Drawing.Rectangle(0, 0, 187, 428);
-			this.legend1.HorizontalScrollEnabled = true;
-			this.legend1.Indentation = 30;
-			this.legend1.IsInitialized = false;
-			this.legend1.Name = "legend1";
-			this.legend1.ProgressHandler = null;
-			this.legend1.ResetOnResize = false;
-			this.legend1.SelectionFontColor = System.Drawing.Color.Black;
-			this.legend1.SelectionHighlight = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(238)))), ((int)(((byte)(252)))));
-			this.legend1.VerticalScrollEnabled = true;
 			// 
 			// map1
 			// 
@@ -469,6 +457,36 @@
 			resources.ApplyResources(this.statusBarBlocker2, "statusBarBlocker2");
 			this.statusBarBlocker2.Spring = true;
 			// 
+			// tabPage1
+			// 
+			this.tabPage1.Controls.Add(this.legend1);
+			resources.ApplyResources(this.tabPage1, "tabPage1");
+			this.tabPage1.Name = "tabPage1";
+			this.tabPage1.UseVisualStyleBackColor = true;
+			// 
+			// legend1
+			// 
+			this.legend1.BackColor = System.Drawing.Color.White;
+			this.legend1.ControlRectangle = new System.Drawing.Rectangle(0, 0, 186, 355);
+			resources.ApplyResources(this.legend1, "legend1");
+			this.legend1.DocumentRectangle = new System.Drawing.Rectangle(0, 0, 187, 428);
+			this.legend1.HorizontalScrollEnabled = true;
+			this.legend1.Indentation = 30;
+			this.legend1.IsInitialized = false;
+			this.legend1.Name = "legend1";
+			this.legend1.ProgressHandler = null;
+			this.legend1.ResetOnResize = false;
+			this.legend1.SelectionFontColor = System.Drawing.Color.Black;
+			this.legend1.SelectionHighlight = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(238)))), ((int)(((byte)(252)))));
+			this.legend1.VerticalScrollEnabled = true;
+			// 
+			// tabControl1
+			// 
+			this.tabControl1.Controls.Add(this.tabPage1);
+			resources.ApplyResources(this.tabControl1, "tabControl1");
+			this.tabControl1.Name = "tabControl1";
+			this.tabControl1.SelectedIndex = 0;
+			// 
 			// FormMain
 			// 
 			resources.ApplyResources(this, "$this");
@@ -493,6 +511,8 @@
 			((System.ComponentModel.ISupportInitialize)(this.spatialHeaderControl)).EndInit();
 			this.spatialStatusStrip.ResumeLayout(false);
 			this.spatialStatusStrip.PerformLayout();
+			this.tabPage1.ResumeLayout(false);
+			this.tabControl1.ResumeLayout(false);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -517,7 +537,6 @@
 		private System.Windows.Forms.ToolStripMenuItem dotSpatialTestToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem sSRTestToolStripMenuItem;
 		private System.Windows.Forms.ToolStripContainer toolStripContainer;
-		private DotSpatial.Controls.Legend legend1;
 		private System.Windows.Forms.ToolStripMenuItem sSREnumToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
@@ -551,6 +570,9 @@
 		private System.Windows.Forms.ToolStripProgressBar progressBar;
 		private System.Windows.Forms.ToolStripStatusLabel statusBarBlocker1;
 		private System.Windows.Forms.ToolStripMenuItem assemblyToolStripMenuItem;
+		private System.Windows.Forms.TabControl tabControl1;
+		private System.Windows.Forms.TabPage tabPage1;
+		private DotSpatial.Controls.Legend legend1;
 	}
 }
 

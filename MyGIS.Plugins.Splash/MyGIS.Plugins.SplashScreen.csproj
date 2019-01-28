@@ -41,6 +41,7 @@
   <ItemGroup>
     <Reference Include="DotSpatial.Extensions">
       <HintPath>..\packages\DotSpatial\DotSpatial.Extensions.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
