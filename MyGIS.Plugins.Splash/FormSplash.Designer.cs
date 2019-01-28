@@ -36,6 +36,7 @@
 			this.label.Size = new System.Drawing.Size(121, 31);
 			this.label.TabIndex = 0;
 			this.label.Text = "Loading...";
+			this.label.Visible = false;
 			// 
 			// FormSplash
 			// 

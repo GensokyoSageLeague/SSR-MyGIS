@@ -22,5 +22,8 @@ namespace MyGIS.Desktop {
 		public static string appNameProduct = Application.ProductName;
 		public static string appVersion = Assembly.GetExecutingAssembly().GetName().Version.ToString();
 		public static string appBuildTime = System.IO.File.GetLastWriteTime(Assembly.GetExecutingAssembly().Location).ToString();
+
+		// Constants
+		public const bool showLoggerInit = false;
 	}
 }

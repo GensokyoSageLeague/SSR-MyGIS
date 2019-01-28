@@ -15,7 +15,8 @@ namespace MyGIS.Desktop {
 			Application.SetCompatibleTextRenderingDefault(false);
 
 			Configurations.formLogger = new FormLogger();
-			Configurations.formLogger.Show();
+			if (Configurations.showLoggerInit)
+				Configurations.formLogger.Show();
 			Configurations.formSplashWrapper = new Plugins.SplashScreen.SplashMain();
 			Configurations.formSplashWrapper.Activate();
 			Logger.log("Started at " + DateTime.Now.ToString() + " on " + Configurations.appName + " " + Configurations.appVersion);
@@ -23,9 +24,11 @@ namespace MyGIS.Desktop {
 			Logger.log("===============Logger Start===============");
 
 			Application.Run(new FormMain());
-			Configurations.formLogger.Show();
+			if (Configurations.showLoggerInit)
+				Configurations.formLogger.Show();
 			Logger.log("===============Logger End=================");
-			Logger.doDelay(1);
+			if (Configurations.showLoggerInit)
+				Logger.doDelay(1);
 		}
 	}
 }
