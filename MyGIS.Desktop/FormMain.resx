@@ -598,6 +598,9 @@
   <data name="dotSpatialTestToolStripMenuItem.Text" xml:space="preserve">
     <value>DotSpatial Test</value>
   </data>
+  <data name="sSRTestToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="sSRTestToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>195, 26</value>
   </data>

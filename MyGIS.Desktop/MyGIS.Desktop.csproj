@@ -72,6 +72,9 @@
   <PropertyGroup>
     <ApplicationIcon>Resources\Icon.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="DotSpatial.Analysis">
       <HintPath>..\packages\DotSpatial\DotSpatial.Analysis.dll</HintPath>

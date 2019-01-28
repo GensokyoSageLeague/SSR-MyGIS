@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyGIS.Plugins.SplashScreen"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotSpatial.Plugins.ToolManager", "DotSpatial.Plugins.ToolManager\DotSpatial.Plugins.ToolManager.csproj", "{7888B17F-915E-4648-9C49-8B4B42808B7B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyGIS.Tools", "MyGIS.Tools\MyGIS.Tools.csproj", "{878A9C2C-21AC-4E63-9819-715B66B63CF5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -153,6 +155,18 @@ Global
 		{7888B17F-915E-4648-9C49-8B4B42808B7B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7888B17F-915E-4648-9C49-8B4B42808B7B}.Release|x64.ActiveCfg = Release|Any CPU
 		{7888B17F-915E-4648-9C49-8B4B42808B7B}.Release|x64.Build.0 = Release|Any CPU
+		{878A9C2C-21AC-4E63-9819-715B66B63CF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{878A9C2C-21AC-4E63-9819-715B66B63CF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{878A9C2C-21AC-4E63-9819-715B66B63CF5}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{878A9C2C-21AC-4E63-9819-715B66B63CF5}.Debug|x64.Build.0 = Debug|Any CPU
+		{878A9C2C-21AC-4E63-9819-715B66B63CF5}.None|Any CPU.ActiveCfg = Release|Any CPU
+		{878A9C2C-21AC-4E63-9819-715B66B63CF5}.None|Any CPU.Build.0 = Release|Any CPU
+		{878A9C2C-21AC-4E63-9819-715B66B63CF5}.None|x64.ActiveCfg = Release|Any CPU
+		{878A9C2C-21AC-4E63-9819-715B66B63CF5}.None|x64.Build.0 = Release|Any CPU
+		{878A9C2C-21AC-4E63-9819-715B66B63CF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{878A9C2C-21AC-4E63-9819-715B66B63CF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{878A9C2C-21AC-4E63-9819-715B66B63CF5}.Release|x64.ActiveCfg = Release|Any CPU
+		{878A9C2C-21AC-4E63-9819-715B66B63CF5}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

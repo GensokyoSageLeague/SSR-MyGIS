@@ -388,8 +388,8 @@
 			// 
 			// sSRTestToolStripMenuItem
 			// 
-			this.sSRTestToolStripMenuItem.Name = "sSRTestToolStripMenuItem";
 			resources.ApplyResources(this.sSRTestToolStripMenuItem, "sSRTestToolStripMenuItem");
+			this.sSRTestToolStripMenuItem.Name = "sSRTestToolStripMenuItem";
 			this.sSRTestToolStripMenuItem.Click += new System.EventHandler(this.sSRTestToolStripMenuItem_Click);
 			// 
 			// sSREnumToolStripMenuItem
