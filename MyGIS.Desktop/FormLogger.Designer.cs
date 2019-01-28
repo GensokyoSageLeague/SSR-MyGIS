@@ -52,7 +52,7 @@
 			this.ShowIcon = false;
 			this.ShowInTaskbar = false;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-			this.Text = "Debug Log [Esc To Hide]";
+			this.Text = "Debug Log";
 			this.TopMost = true;
 			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormLogger_FormClosing);
 			this.ResumeLayout(false);
