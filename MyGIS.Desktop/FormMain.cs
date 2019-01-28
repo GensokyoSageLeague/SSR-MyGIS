@@ -13,10 +13,11 @@ using DotSpatial.Projections;
 using DotSpatial.Symbology;
 using DotSpatial.Topology;
 using System.Reflection;
+using System.ComponentModel.Composition;
 
 namespace MyGIS.Desktop {
 	public partial class FormMain : Form {
-		[System.ComponentModel.Composition.Export("Shell", typeof(ContainerControl))]
+		[Export("Shell", typeof(ContainerControl))]
 		private static ContainerControl Shell;
 
 		public FormMain() {
@@ -37,10 +38,12 @@ namespace MyGIS.Desktop {
 			Logger.log(Configurations.appName + " " + Configurations.appVersion + "\r\n\r\n" +
 				"Proudly Made by\r\n\t10170320 李云烽\r\n\t10170325 李健纯\r\n\t10170347 姜子威\r\n\t10170348 姚迪昭" + "\r\n\r\n" +
 				"in Nanjing Normal University");
-			MessageBox.Show(Configurations.appName + " " + Configurations.appVersion + "\r\n\r\n" +
-				"Proudly Made by\r\n\t10170320 李云烽\r\n\t10170325 李健纯\r\n\t10170347 姜子威\r\n\t10170348 姚迪昭" + "\r\n\r\n" +
-				"in Nanjing Normal University",
-				"About " + Configurations.appName);
+
+			var form = new FormAboutBox();
+			Icon icon = Icon.ExtractAssociatedIcon(Assembly.GetExecutingAssembly().Location);
+			if (icon != null)
+				form.AppImage = icon;
+			form.Show();
 		}
 
 		private void optionsToolStripMenuItem_Click(object sender, EventArgs e) {

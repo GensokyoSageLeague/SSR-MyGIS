@@ -1,6 +1,5 @@
-﻿namespace DotSpatial.Plugins.About
-{
-	partial class AboutBox
+﻿namespace MyGIS.Desktop {
+	partial class FormAboutBox
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -187,7 +186,8 @@
 			this.MoreRichTextBox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
 			this.MoreRichTextBox.Size = new System.Drawing.Size(505, 131);
 			this.MoreRichTextBox.TabIndex = 26;
-			this.MoreRichTextBox.Text = "%product% is %copyright%, %trademark%";
+			this.MoreRichTextBox.Text = "%product% is %copyright%.\n\nAuthors:\n\t10170320 李云烽\n\t10170325 李健纯\n\t10170347 姜子威\n\t10" +
+    "170348 姚迪昭";
 			this.MoreRichTextBox.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.MoreRichTextBox_LinkClicked);
 			// 
 			// TabPanelDetails
@@ -344,7 +344,7 @@
 			this.AssemblyNamesComboBox.TabIndex = 18;
 			this.AssemblyNamesComboBox.SelectedIndexChanged += new System.EventHandler(this.AssemblyNamesComboBox_SelectedIndexChanged);
 			// 
-			// AboutBox
+			// FormAboutBox
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -366,10 +366,10 @@
 			this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
 			this.MaximizeBox = false;
 			this.MinimizeBox = false;
-			this.Name = "AboutBox";
+			this.Name = "FormAboutBox";
 			this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-			this.Text = "About %title%";
+			this.Text = "About %product%";
 			this.Load += new System.EventHandler(this.AboutBox_Load);
 			this.Paint += new System.Windows.Forms.PaintEventHandler(this.AboutBox_Paint);
 			((System.ComponentModel.ISupportInitialize)(this.ImagePictureBox)).EndInit();
