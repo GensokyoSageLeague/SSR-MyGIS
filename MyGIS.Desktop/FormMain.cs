@@ -22,42 +22,31 @@ namespace MyGIS.Desktop {
 			InitializeComponent();
 
 			Shell = this;
-			appManager1.LoadExtensions();
-
 			Configurations.formMain = this;
-			Configurations.formLogger = new FormLogger();
-			Configurations.formLogger.Show();
-
 			this.Text = AppInfo.Name;
 			statusBar1.Text = "Idle";
-			Logger.log("Started at " + DateTime.Now.ToString() + " on " + AppInfo.Name + " " + AppInfo.Version + " " + AppInfo.VersionState);
-			Logger.log("===============Logger Start===============");
+			//spatialHeaderControl.
 
+			appManager.LoadExtensions();
 			// Uses StatusBarImprovement instead
 			//map1.GeoMouseMove += map1_GeoMouseMove;
 			map1.MouseWheel += new MouseEventHandler(map1_MouseWheel);
-
 			map1.FunctionMode = FunctionMode.Pan;
 			statusBar1.Width = 300;
 		}
 
 		private void aboutToolStripMenuItem_Click(object sender, EventArgs e) {
+			Logger.log(AppInfo.Name + " " + AppInfo.Version + " " + AppInfo.VersionState + "\r\n\r\n" +
+				"Proudly Made by\r\n\t10170320 李云烽\r\n\t10170325 李健纯\r\n\t10170347 姜子威\r\n\t10170348 姚迪昭" + "\r\n\r\n" +
+				"in Nanjing Normal University");
 			MessageBox.Show(AppInfo.Name + " " + AppInfo.Version +" "+ AppInfo.VersionState + "\r\n\r\n" +
 				"Proudly Made by\r\n\t10170320 李云烽\r\n\t10170325 李健纯\r\n\t10170347 姜子威\r\n\t10170348 姚迪昭" + "\r\n\r\n" +
 				"in Nanjing Normal University",
 				"About " + AppInfo.Name);
 		}
 
-		private void exitToolStripMenuItem_Click(object sender, EventArgs e) {
-			Application.Exit();
-		}
-
 		private void optionsToolStripMenuItem_Click(object sender, EventArgs e) {
 			new FormOptions().ShowDialog(this);
-		}
-
-		private void toolStripButton1_Click(object sender, EventArgs e) {
-			Application.Exit();
 		}
 
 		private void toggleDebugLogToolStripMenuItem_Click(object sender, EventArgs e) {
@@ -67,11 +56,12 @@ namespace MyGIS.Desktop {
 		}
 
 		private void FormMain_FormClosing(object sender, FormClosingEventArgs e) {
-			Application.Exit();
+			Configurations.formLogger.Visible = false;
+			//Application.Exit();
 		}
 
 		private void dotSpatialTestToolStripMenuItem_Click(object sender, EventArgs e) {
-			Logger.log("new FormTestDotSpatial().ShowDialog()");
+			Logger.log("new FormTestDotSpatial().ShowDialog() is Disposed");
 			//new FormTestDotSpatial().ShowDialog();
 		}
 
@@ -82,8 +72,47 @@ namespace MyGIS.Desktop {
 		void map1_GeoMouseMove(object sender, GeoMouseArgs e) {
 			string locStr = "X:" + e.GeographicLocation.X.ToString("F2") +
 				", Y:" + e.GeographicLocation.Y.ToString("F2");
-			statusBar2.Text = locStr;
-			statusBar1.Width = this.Width - statusBar2.Width - 100;
+			statusBarBlocker2.Text = locStr;
+			statusBar1.Width = this.Width - statusBarBlocker2.Width - 100;
+		}
+
+		private void shapefileToolStripMenuItem_Click(object sender, EventArgs e) {
+			string fileName = "";
+			OpenFileDialog openFile = new OpenFileDialog();
+			openFile.Filter = "Shapefile|*.shp";
+			if (openFile.ShowDialog() == DialogResult.OK) {
+				fileName = openFile.FileName;
+				map1.AddLayer(fileName);
+			}
+		}
+
+		private void map1_MouseWheel(object sender, MouseEventArgs e) {
+			FunctionMode ori = map1.FunctionMode;
+			if (e.Delta > 0) {
+				map1.FunctionMode = FunctionMode.ZoomIn;
+			}
+			else {
+				map1.FunctionMode = FunctionMode.ZoomOut;
+			}
+			map1.FunctionMode = ori;
+		}
+
+		private void toolStripButton10_Click(object sender, EventArgs e) {
+			shapefileToolStripMenuItem_Click(sender, e);
+		}
+
+		private void mapRenderingToolStripMenuItem_Click(object sender, EventArgs e) {
+			if (map1.Enabled)
+				map1.SuspendLayout();
+			else
+				map1.ResumeLayout();
+			map1.Enabled = !map1.Enabled;
+			map1.Visible = !map1.Visible;
+			mapRenderingToolStripMenuItem.Checked = !mapRenderingToolStripMenuItem.Checked;
+		}
+
+		private void FormMain_Load(object sender, EventArgs e) {
+			Configurations.formLogger.Visible = false;
 		}
 
 		// --------------MAP Ctr Start----------------
@@ -94,8 +123,8 @@ namespace MyGIS.Desktop {
 
 			foreach (var item in shp.Features) {
 				LICore.LI_Line(item.ToShape().Vertices);
-// 				Logger.log("X:" + item.ToShape().Vertices[0].ToString() +
-// 					", Y:" + item.ToShape().Vertices[1].ToString());
+				// 				Logger.log("X:" + item.ToShape().Vertices[0].ToString() +
+				// 					", Y:" + item.ToShape().Vertices[1].ToString());
 			}
 
 			var layer = map1.Layers.Add(shp) as MapLineLayer;
@@ -123,102 +152,5 @@ namespace MyGIS.Desktop {
 			}
 		}
 		// --------------MAP Ctr End----------------
-
-		private void shapefileToolStripMenuItem_Click(object sender, EventArgs e) {
-			string fileName = "";
-			OpenFileDialog openFile = new OpenFileDialog();
-			openFile.Filter = "Shapefile|*.shp";
-			if (openFile.ShowDialog() == DialogResult.OK) {
-				fileName = openFile.FileName;
-				map1.AddLayer(fileName);
-			}
-		}
-
-		private void map1_MouseWheel(object sender, MouseEventArgs e) {
-			FunctionMode ori = map1.FunctionMode;
-			if (e.Delta > 0) {
-				map1.FunctionMode = FunctionMode.ZoomIn;
-			}
-			else {
-				map1.FunctionMode = FunctionMode.ZoomOut;
-			}
-			map1.FunctionMode = ori;
-		}
-
-		private void toolStripButton2_Click(object sender, EventArgs e) {
-			map1.FunctionMode = FunctionMode.Info;
-			clntoolStripButtonChecked();
-			toolStripButton2.Checked = true;
-		}
-
-		private void toolStripButton3_Click(object sender, EventArgs e) {
-			map1.FunctionMode = FunctionMode.ZoomIn;
-			clntoolStripButtonChecked();
-			toolStripButton3.Checked = true;
-		}
-
-		private void toolStripButton4_Click(object sender, EventArgs e) {
-			map1.FunctionMode = FunctionMode.ZoomOut;
-			clntoolStripButtonChecked();
-			toolStripButton4.Checked = true;
-		}
-
-		private void toolStripButton5_Click(object sender, EventArgs e) {
-			map1.FunctionMode = FunctionMode.ZoomPan;
-			clntoolStripButtonChecked();
-			toolStripButton5.Checked = true;
-		}
-
-		private void toolStripButton6_Click(object sender, EventArgs e) {
-			map1.FunctionMode = FunctionMode.Pan;
-			clntoolStripButtonChecked();
-			toolStripButton6.Checked = true;
-		}
-
-		private void toolStripButton7_Click(object sender, EventArgs e) {
-			map1.FunctionMode = FunctionMode.Select;
-			clntoolStripButtonChecked();
-			toolStripButton7.Checked = true;
-		}
-
-		private void toolStripButton8_Click(object sender, EventArgs e) {
-			map1.FunctionMode = FunctionMode.Label;
-			clntoolStripButtonChecked();
-			toolStripButton8.Checked = true;
-		}
-
-		private void toolStripButton9_Click(object sender, EventArgs e) {
-			map1.FunctionMode = FunctionMode.None;
-			clntoolStripButtonChecked();
-			toolStripButton9.Checked = true;
-		}
-
-		private void clntoolStripButtonChecked() {
-			toolStripButton2.Checked = false;
-			toolStripButton3.Checked = false;
-			toolStripButton4.Checked = false;
-			toolStripButton5.Checked = false;
-			toolStripButton6.Checked = false;
-			toolStripButton7.Checked = false;
-			toolStripButton8.Checked = false;
-			toolStripButton9.Checked = false;
-		}
-
-		private void toolStripButton10_Click(object sender, EventArgs e) {
-			shapefileToolStripMenuItem_Click(sender, e);
-		}
-
-		private void FormMain_ResizeEnd(object sender, EventArgs e) {
-			//statusBar1.Width = this.Width - statusBar2.Width - 100;
-		}
-
-		private void lineToolStripMenuItem_Click(object sender, EventArgs e) {
-			
-		}
-
-		private void mapRenderingToolStripMenuItem_Click(object sender, EventArgs e) {
-			map1.Enabled = !map1.Enabled;
-			mapRenderingToolStripMenuItem.Checked = !mapRenderingToolStripMenuItem.Checked;
-		}
 	}
 }
