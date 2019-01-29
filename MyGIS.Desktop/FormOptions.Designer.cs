@@ -59,6 +59,7 @@
 			this.Controls.Add(this.checkBox1);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
 			this.Name = "FormOptions";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
 			this.Text = "Options";
 			this.ResumeLayout(false);
 			this.PerformLayout();

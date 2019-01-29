@@ -47,7 +47,7 @@
 			this.ClientSize = new System.Drawing.Size(350, 250);
 			this.ControlBox = false;
 			this.Controls.Add(this.label);
-			this.Cursor = System.Windows.Forms.Cursors.WaitCursor;
+			this.Cursor = System.Windows.Forms.Cursors.Arrow;
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Name = "FormSplash";
 			this.ShowIcon = false;
