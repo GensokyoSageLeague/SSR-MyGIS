@@ -31,25 +31,18 @@
 			this.map1 = new DotSpatial.Controls.Map();
 			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.menuStrip = new System.Windows.Forms.MenuStrip();
-			this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-			this.openShapefileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.shapefileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.gridToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-			this.propertiesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.selectNoneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
 			this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.toolBarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.layersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolBarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
 			this.mapRenderingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
+			this.zoomToExtentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.procToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.basicOperationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.landformIdentificationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -64,11 +57,6 @@
 			this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
 			this.debuggingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.toggleDebugLogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.debugToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.dotSpatialTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.sSRTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.sSREnumToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.assemblyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.appManager = new DotSpatial.Controls.AppManager();
 			this.spatialHeaderControl = new DotSpatial.Controls.SpatialHeaderControl();
 			this.spatialStatusStrip = new DotSpatial.Controls.SpatialStatusStrip();
@@ -185,75 +173,11 @@
 			resources.ApplyResources(this.menuStrip, "menuStrip");
 			this.menuStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
 			this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem,
             this.editToolStripMenuItem,
             this.viewToolStripMenuItem,
             this.procToolStripMenuItem,
-            this.kHeaderHelpItemKey,
-            this.debugToolStripMenuItem});
+            this.kHeaderHelpItemKey});
 			this.menuStrip.Name = "menuStrip";
-			// 
-			// fileToolStripMenuItem
-			// 
-			this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.openToolStripMenuItem,
-            this.saveToolStripMenuItem,
-            this.saveAsToolStripMenuItem,
-            this.toolStripSeparator3,
-            this.openShapefileToolStripMenuItem,
-            this.toolStripSeparator1,
-            this.propertiesToolStripMenuItem});
-			this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-			resources.ApplyResources(this.fileToolStripMenuItem, "fileToolStripMenuItem");
-			// 
-			// openToolStripMenuItem
-			// 
-			this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-			resources.ApplyResources(this.openToolStripMenuItem, "openToolStripMenuItem");
-			// 
-			// saveToolStripMenuItem
-			// 
-			this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-			resources.ApplyResources(this.saveToolStripMenuItem, "saveToolStripMenuItem");
-			// 
-			// saveAsToolStripMenuItem
-			// 
-			this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-			resources.ApplyResources(this.saveAsToolStripMenuItem, "saveAsToolStripMenuItem");
-			// 
-			// toolStripSeparator3
-			// 
-			this.toolStripSeparator3.Name = "toolStripSeparator3";
-			resources.ApplyResources(this.toolStripSeparator3, "toolStripSeparator3");
-			// 
-			// openShapefileToolStripMenuItem
-			// 
-			this.openShapefileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.shapefileToolStripMenuItem,
-            this.gridToolStripMenuItem});
-			this.openShapefileToolStripMenuItem.Name = "openShapefileToolStripMenuItem";
-			resources.ApplyResources(this.openShapefileToolStripMenuItem, "openShapefileToolStripMenuItem");
-			// 
-			// shapefileToolStripMenuItem
-			// 
-			this.shapefileToolStripMenuItem.Name = "shapefileToolStripMenuItem";
-			resources.ApplyResources(this.shapefileToolStripMenuItem, "shapefileToolStripMenuItem");
-			this.shapefileToolStripMenuItem.Click += new System.EventHandler(this.shapefileToolStripMenuItem_Click);
-			// 
-			// gridToolStripMenuItem
-			// 
-			this.gridToolStripMenuItem.Name = "gridToolStripMenuItem";
-			resources.ApplyResources(this.gridToolStripMenuItem, "gridToolStripMenuItem");
-			// 
-			// toolStripSeparator1
-			// 
-			this.toolStripSeparator1.Name = "toolStripSeparator1";
-			resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
-			// 
-			// propertiesToolStripMenuItem
-			// 
-			this.propertiesToolStripMenuItem.Name = "propertiesToolStripMenuItem";
-			resources.ApplyResources(this.propertiesToolStripMenuItem, "propertiesToolStripMenuItem");
 			// 
 			// editToolStripMenuItem
 			// 
@@ -266,8 +190,8 @@
 			// 
 			// selectNoneToolStripMenuItem
 			// 
-			this.selectNoneToolStripMenuItem.Name = "selectNoneToolStripMenuItem";
 			resources.ApplyResources(this.selectNoneToolStripMenuItem, "selectNoneToolStripMenuItem");
+			this.selectNoneToolStripMenuItem.Name = "selectNoneToolStripMenuItem";
 			this.selectNoneToolStripMenuItem.Click += new System.EventHandler(this.selectNoneToolStripMenuItem_Click);
 			// 
 			// toolStripSeparator2
@@ -277,27 +201,22 @@
 			// 
 			// optionsToolStripMenuItem
 			// 
-			this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
 			resources.ApplyResources(this.optionsToolStripMenuItem, "optionsToolStripMenuItem");
+			this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
 			this.optionsToolStripMenuItem.Click += new System.EventHandler(this.optionsToolStripMenuItem_Click);
 			// 
 			// viewToolStripMenuItem
 			// 
 			this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolBarToolStripMenuItem,
             this.layersToolStripMenuItem,
             this.toolsToolStripMenuItem,
-            this.mapRenderingToolStripMenuItem});
+            this.toolBarToolStripMenuItem,
+            this.toolStripSeparator6,
+            this.mapRenderingToolStripMenuItem,
+            this.toolStripSeparator7,
+            this.zoomToExtentToolStripMenuItem});
 			this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
 			resources.ApplyResources(this.viewToolStripMenuItem, "viewToolStripMenuItem");
-			// 
-			// toolBarToolStripMenuItem
-			// 
-			this.toolBarToolStripMenuItem.Checked = true;
-			this.toolBarToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-			this.toolBarToolStripMenuItem.Name = "toolBarToolStripMenuItem";
-			resources.ApplyResources(this.toolBarToolStripMenuItem, "toolBarToolStripMenuItem");
-			this.toolBarToolStripMenuItem.Click += new System.EventHandler(this.toolBarToolStripMenuItem_Click);
 			// 
 			// layersToolStripMenuItem
 			// 
@@ -315,6 +234,19 @@
 			resources.ApplyResources(this.toolsToolStripMenuItem, "toolsToolStripMenuItem");
 			this.toolsToolStripMenuItem.Click += new System.EventHandler(this.toolsToolStripMenuItem_Click);
 			// 
+			// toolBarToolStripMenuItem
+			// 
+			this.toolBarToolStripMenuItem.Checked = true;
+			this.toolBarToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+			this.toolBarToolStripMenuItem.Name = "toolBarToolStripMenuItem";
+			resources.ApplyResources(this.toolBarToolStripMenuItem, "toolBarToolStripMenuItem");
+			this.toolBarToolStripMenuItem.Click += new System.EventHandler(this.toolBarToolStripMenuItem_Click);
+			// 
+			// toolStripSeparator6
+			// 
+			this.toolStripSeparator6.Name = "toolStripSeparator6";
+			resources.ApplyResources(this.toolStripSeparator6, "toolStripSeparator6");
+			// 
 			// mapRenderingToolStripMenuItem
 			// 
 			this.mapRenderingToolStripMenuItem.Checked = true;
@@ -322,6 +254,17 @@
 			this.mapRenderingToolStripMenuItem.Name = "mapRenderingToolStripMenuItem";
 			resources.ApplyResources(this.mapRenderingToolStripMenuItem, "mapRenderingToolStripMenuItem");
 			this.mapRenderingToolStripMenuItem.Click += new System.EventHandler(this.mapRenderingToolStripMenuItem_Click);
+			// 
+			// toolStripSeparator7
+			// 
+			this.toolStripSeparator7.Name = "toolStripSeparator7";
+			resources.ApplyResources(this.toolStripSeparator7, "toolStripSeparator7");
+			// 
+			// zoomToExtentToolStripMenuItem
+			// 
+			resources.ApplyResources(this.zoomToExtentToolStripMenuItem, "zoomToExtentToolStripMenuItem");
+			this.zoomToExtentToolStripMenuItem.Name = "zoomToExtentToolStripMenuItem";
+			this.zoomToExtentToolStripMenuItem.Click += new System.EventHandler(this.zoomToExtentToolStripMenuItem_Click);
 			// 
 			// procToolStripMenuItem
 			// 
@@ -333,6 +276,8 @@
 			// 
 			// basicOperationsToolStripMenuItem
 			// 
+			this.basicOperationsToolStripMenuItem.Checked = true;
+			this.basicOperationsToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.basicOperationsToolStripMenuItem.Name = "basicOperationsToolStripMenuItem";
 			resources.ApplyResources(this.basicOperationsToolStripMenuItem, "basicOperationsToolStripMenuItem");
 			this.basicOperationsToolStripMenuItem.Click += new System.EventHandler(this.basicOperationsToolStripMenuItem_Click);
@@ -376,13 +321,14 @@
 			// 
 			// helpToolStripMenuItem1
 			// 
-			this.helpToolStripMenuItem1.Name = "helpToolStripMenuItem1";
 			resources.ApplyResources(this.helpToolStripMenuItem1, "helpToolStripMenuItem1");
+			this.helpToolStripMenuItem1.Name = "helpToolStripMenuItem1";
 			// 
 			// onlineHelpToolStripMenuItem
 			// 
-			this.onlineHelpToolStripMenuItem.Name = "onlineHelpToolStripMenuItem";
 			resources.ApplyResources(this.onlineHelpToolStripMenuItem, "onlineHelpToolStripMenuItem");
+			this.onlineHelpToolStripMenuItem.Name = "onlineHelpToolStripMenuItem";
+			this.onlineHelpToolStripMenuItem.Click += new System.EventHandler(this.onlineHelpToolStripMenuItem_Click);
 			// 
 			// toolStripSeparator4
 			// 
@@ -407,43 +353,9 @@
 			// 
 			// toggleDebugLogToolStripMenuItem
 			// 
-			this.toggleDebugLogToolStripMenuItem.Name = "toggleDebugLogToolStripMenuItem";
 			resources.ApplyResources(this.toggleDebugLogToolStripMenuItem, "toggleDebugLogToolStripMenuItem");
+			this.toggleDebugLogToolStripMenuItem.Name = "toggleDebugLogToolStripMenuItem";
 			this.toggleDebugLogToolStripMenuItem.Click += new System.EventHandler(this.toggleDebugLogToolStripMenuItem_Click);
-			// 
-			// debugToolStripMenuItem
-			// 
-			this.debugToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.dotSpatialTestToolStripMenuItem,
-            this.sSRTestToolStripMenuItem,
-            this.sSREnumToolStripMenuItem,
-            this.assemblyToolStripMenuItem});
-			this.debugToolStripMenuItem.Name = "debugToolStripMenuItem";
-			resources.ApplyResources(this.debugToolStripMenuItem, "debugToolStripMenuItem");
-			// 
-			// dotSpatialTestToolStripMenuItem
-			// 
-			resources.ApplyResources(this.dotSpatialTestToolStripMenuItem, "dotSpatialTestToolStripMenuItem");
-			this.dotSpatialTestToolStripMenuItem.Name = "dotSpatialTestToolStripMenuItem";
-			this.dotSpatialTestToolStripMenuItem.Click += new System.EventHandler(this.dotSpatialTestToolStripMenuItem_Click);
-			// 
-			// sSRTestToolStripMenuItem
-			// 
-			resources.ApplyResources(this.sSRTestToolStripMenuItem, "sSRTestToolStripMenuItem");
-			this.sSRTestToolStripMenuItem.Name = "sSRTestToolStripMenuItem";
-			this.sSRTestToolStripMenuItem.Click += new System.EventHandler(this.sSRTestToolStripMenuItem_Click);
-			// 
-			// sSREnumToolStripMenuItem
-			// 
-			this.sSREnumToolStripMenuItem.Name = "sSREnumToolStripMenuItem";
-			resources.ApplyResources(this.sSREnumToolStripMenuItem, "sSREnumToolStripMenuItem");
-			this.sSREnumToolStripMenuItem.Click += new System.EventHandler(this.sSREnumToolStripMenuItem_Click);
-			// 
-			// assemblyToolStripMenuItem
-			// 
-			this.assemblyToolStripMenuItem.Name = "assemblyToolStripMenuItem";
-			resources.ApplyResources(this.assemblyToolStripMenuItem, "assemblyToolStripMenuItem");
-			this.assemblyToolStripMenuItem.Click += new System.EventHandler(this.assemblyToolStripMenuItem_Click);
 			// 
 			// appManager
 			// 
@@ -534,34 +446,19 @@
 		#endregion
 
 		private System.Windows.Forms.MenuStrip menuStrip;
-		private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem procToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem kHeaderHelpItemKey;
 		private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
-		private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-		private System.Windows.Forms.ToolStripMenuItem openShapefileToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem shapefileToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem gridToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem debugToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem dotSpatialTestToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem sSRTestToolStripMenuItem;
 		private System.Windows.Forms.ToolStripContainer toolStripContainer;
-		private System.Windows.Forms.ToolStripMenuItem sSREnumToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem saveAsToolStripMenuItem;
-		private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
 		private System.Windows.Forms.ToolStripMenuItem selectNoneToolStripMenuItem;
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-		private System.Windows.Forms.ToolStripMenuItem basicOperationsToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem landformIdentificationToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem lineToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem circleToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem crescentToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem propertiesToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem layersToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem mapRenderingToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem toolBarToolStripMenuItem;
@@ -579,12 +476,15 @@
 		private DotSpatial.Controls.SpatialHeaderControl spatialHeaderControl;
 		private System.Windows.Forms.ToolStripProgressBar progressBar;
 		private System.Windows.Forms.ToolStripStatusLabel statusBarBlocker1;
-		private System.Windows.Forms.ToolStripMenuItem assemblyToolStripMenuItem;
 		private DotSpatial.Controls.Legend legend1;
-		private DotSpatial.Controls.SpatialDockManager spatialDockManager2;
 		private System.Windows.Forms.TabControl tabControl1;
-		private System.Windows.Forms.ToolStripMenuItem toolsToolStripMenuItem;
 		internal DotSpatial.Controls.Map map1;
+		private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
+		private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
+		private System.Windows.Forms.ToolStripMenuItem zoomToExtentToolStripMenuItem;
+		internal System.Windows.Forms.ToolStripMenuItem basicOperationsToolStripMenuItem;
+		internal DotSpatial.Controls.SpatialDockManager spatialDockManager2;
+		internal System.Windows.Forms.ToolStripMenuItem toolsToolStripMenuItem;
 	}
 }
 

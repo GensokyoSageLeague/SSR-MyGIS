@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -117,22 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="MoreRichTextBox.Text" xml:space="preserve">
-    <value>%product% is %copyright%.
-
-Authors:
-	┌──────┬────┐
-	│  No.  ↑  │  Name  │
-	├──────┼────┤
-	│  10170320 │ 李云烽 │
-	├──────┼────┤
-	│  10170325 │ 李健纯 │
-	├──────┼────┤
-	│  10170347 │ 姜子威 │
-	├──────┼────┤
-	│  10170348 │ 姚迪昭 │
-	└──────┴────┘
-
-</value>
+  <data name="Category" xml:space="preserve">
+    <value>Landform Identification</value>
+  </data>
+  <data name="InputFeatureSet" xml:space="preserve">
+    <value>Input Feature Set</value>
+  </data>
+  <data name="LILine" xml:space="preserve">
+    <value>Line</value>
+  </data>
+  <data name="LILineDescription" xml:space="preserve">
+    <value>Identify line(s)</value>
+  </data>
+  <data name="LILinePara" xml:space="preserve">
+    <value>Parameter</value>
+  </data>
+  <data name="LILineTip" xml:space="preserve">
+    <value>~~</value>
+  </data>
+  <data name="OutputFeatureSet" xml:space="preserve">
+    <value>Output Feature Set</value>
   </data>
 </root>

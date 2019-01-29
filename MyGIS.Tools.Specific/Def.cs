@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MyGIS.Desktop {
+namespace MyGIS.Tools.Specific {
 	public enum ShapeType {
 		NonShape = 0,
 		Line = 1,

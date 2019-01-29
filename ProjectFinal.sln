@@ -19,11 +19,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotSpatial.Plugins.StatusBa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotSpatial.Plugins.TableEditor", "DotSpatial.Plugins.TableEditor\DotSpatial.Plugins.TableEditor.csproj", "{30B6615B-0275-494E-8686-2C72CD99DAB3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyGIS.Plugins.SplashScreen", "MyGIS.Plugins.Splash\MyGIS.Plugins.SplashScreen.csproj", "{55A8461C-3E64-414E-9863-DDD5C876A060}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyGIS.Plugins.SplashScreen", "MyGIS.Plugins.SplashScreen\MyGIS.Plugins.SplashScreen.csproj", "{55A8461C-3E64-414E-9863-DDD5C876A060}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotSpatial.Plugins.ToolManager", "DotSpatial.Plugins.ToolManager\DotSpatial.Plugins.ToolManager.csproj", "{7888B17F-915E-4648-9C49-8B4B42808B7B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyGIS.Tools", "MyGIS.Tools\MyGIS.Tools.csproj", "{878A9C2C-21AC-4E63-9819-715B66B63CF5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyGIS.Tools.Specific", "MyGIS.Tools.Specific\MyGIS.Tools.Specific.csproj", "{34DF957C-8D98-4BF7-BBAC-C504359EF0A6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -167,6 +169,18 @@ Global
 		{878A9C2C-21AC-4E63-9819-715B66B63CF5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{878A9C2C-21AC-4E63-9819-715B66B63CF5}.Release|x64.ActiveCfg = Release|Any CPU
 		{878A9C2C-21AC-4E63-9819-715B66B63CF5}.Release|x64.Build.0 = Release|Any CPU
+		{34DF957C-8D98-4BF7-BBAC-C504359EF0A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34DF957C-8D98-4BF7-BBAC-C504359EF0A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34DF957C-8D98-4BF7-BBAC-C504359EF0A6}.Debug|x64.ActiveCfg = Debug|x64
+		{34DF957C-8D98-4BF7-BBAC-C504359EF0A6}.Debug|x64.Build.0 = Debug|x64
+		{34DF957C-8D98-4BF7-BBAC-C504359EF0A6}.None|Any CPU.ActiveCfg = Release|Any CPU
+		{34DF957C-8D98-4BF7-BBAC-C504359EF0A6}.None|Any CPU.Build.0 = Release|Any CPU
+		{34DF957C-8D98-4BF7-BBAC-C504359EF0A6}.None|x64.ActiveCfg = Release|Any CPU
+		{34DF957C-8D98-4BF7-BBAC-C504359EF0A6}.None|x64.Build.0 = Release|Any CPU
+		{34DF957C-8D98-4BF7-BBAC-C504359EF0A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34DF957C-8D98-4BF7-BBAC-C504359EF0A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34DF957C-8D98-4BF7-BBAC-C504359EF0A6}.Release|x64.ActiveCfg = Release|Any CPU
+		{34DF957C-8D98-4BF7-BBAC-C504359EF0A6}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

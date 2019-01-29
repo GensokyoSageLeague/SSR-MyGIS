@@ -57,6 +57,10 @@ namespace MyGIS.Desktop {
 				"Proudly Made by\r\n\t10170320 李云烽\r\n\t10170325 李健纯\r\n\t10170347 姜子威\r\n\t10170348 姚迪昭" + "\r\n\r\n" +
 				"in Nanjing Normal University");
 
+			Configurations.formSplashWrapper.Activate();
+			Logger.doDelay(1);
+			Configurations.formSplashWrapper.Deactivate();
+
 			var form = new FormAboutBox();
 			Icon icon = Icon.ExtractAssociatedIcon(Assembly.GetExecutingAssembly().Location);
 			if (icon != null)
@@ -79,15 +83,6 @@ namespace MyGIS.Desktop {
 			//Application.Exit();
 		}
 
-		private void dotSpatialTestToolStripMenuItem_Click(object sender, EventArgs e) {
-			Logger.log("new FormTestDotSpatial().ShowDialog() is Disposed");
-			//new FormTestDotSpatial().ShowDialog();
-		}
-
-		private void sSRTestToolStripMenuItem_Click(object sender, EventArgs e) {
-			InitializeMapper();
-		}
-
 		void map1_GeoMouseMove(object sender, GeoMouseArgs e) {
 			string locStr = "X:" + e.GeographicLocation.X.ToString("F2") +
 				", Y:" + e.GeographicLocation.Y.ToString("F2");
@@ -95,29 +90,11 @@ namespace MyGIS.Desktop {
 			statusBar1.Width = this.Width - statusBarBlocker2.Width - 100;
 		}
 
-		private void shapefileToolStripMenuItem_Click(object sender, EventArgs e) {
-			string fileName = "";
-			OpenFileDialog openFile = new OpenFileDialog();
-			openFile.Filter = "Shapefile|*.shp";
-			if (openFile.ShowDialog() == DialogResult.OK) {
-				fileName = openFile.FileName;
-				map1.AddLayer(fileName);
-			}
-		}
-
 		private void map1_MouseWheel(object sender, MouseEventArgs e) {
-			FunctionMode ori = map1.FunctionMode;
-			if (e.Delta > 0) {
-				map1.FunctionMode = FunctionMode.ZoomIn;
-			}
-			else {
-				map1.FunctionMode = FunctionMode.ZoomOut;
-			}
-			map1.FunctionMode = ori;
-		}
-
-		private void toolStripButton10_Click(object sender, EventArgs e) {
-			shapefileToolStripMenuItem_Click(sender, e);
+			if (e.Delta > 0)
+				map1.ZoomIn();
+			else
+				map1.ZoomOut();
 		}
 
 		private void mapRenderingToolStripMenuItem_Click(object sender, EventArgs e) {
@@ -136,8 +113,7 @@ namespace MyGIS.Desktop {
 		}
 
 		private void toolsToolStripMenuItem_Click(object sender, EventArgs e) {
-			spatialDockManager2.Panel2Collapsed = !spatialDockManager2.Panel2Collapsed;
-			toolsToolStripMenuItem.Checked = !toolsToolStripMenuItem.Checked;
+			Configurations.showTool = !Configurations.showTool;
 		}
 
 		private void toolBarToolStripMenuItem_Click(object sender, EventArgs e) {
@@ -152,67 +128,29 @@ namespace MyGIS.Desktop {
 		}
 
 		private void basicOperationsToolStripMenuItem_Click(object sender, EventArgs e) {
-			foreach (TabPage tabpage in tabControl1.TabPages) {
-				if (tabpage.Text == "Tools") {
-					tabControl1.SelectedTab = tabpage;
-					break;
-				}
-			}
+			Configurations.showTool = !Configurations.showTool;
+			if (Configurations.showTool)
+				foreach (TabPage tabpage in tabControl1.TabPages)
+					if (tabpage.Text == "Tools") {
+						tabControl1.SelectedTab = tabpage;
+						break;
+					}
 		}
 
 		private void selectNoneToolStripMenuItem_Click(object sender, EventArgs e) {
 			map1.ClearSelection();
 		}
 
+		private void zoomToExtentToolStripMenuItem_Click(object sender, EventArgs e) {
+			map1.ZoomToMaxExtent();
+		}
+
 		private void progressBar_Paint(object sender, PaintEventArgs e) {
-			//Logger.log("！！！");
+			//Logger.log("progressBar.Paint");
 		}
 
-		// --------------MAP Ctr Start----------------
-		private void InitializeMapper() {
-			Logger.log("Shapefile.OpenFile(\"so/腾冲/腾冲_Casted1.shp\")");
-			Shapefile shp = Shapefile.OpenFile("so/腾冲/腾冲_Casted1.shp");
-			shp.Projection = KnownCoordinateSystems.Geographic.World.WGS1984;
-
-			foreach (var item in shp.Features) {
-				LICore.LI_Line(item.ToShape().Vertices);
-				// 				Logger.log("X:" + item.ToShape().Vertices[0].ToString() +
-				// 					", Y:" + item.ToShape().Vertices[1].ToString());
-			}
-
-			var layer = map1.Layers.Add(shp) as MapLineLayer;
-			layer.Symbolizer = new LineSymbolizer(Color.FromArgb(0x33, 0x33, 0x33), 1);
-		}
-
-		private void sSREnumToolStripMenuItem_Click(object sender, EventArgs e) {
-			//查看与选中要素重叠的要素
-			if (map1.Layers.Count == 0) {
-				return;
-			}
-			//重叠分析
-			//遍历要素，显示面积
-			PolygonLayer pLayer = map1.Layers[0] as PolygonLayer;
-			FeatureSet fs = null;
-			fs = (FeatureSet)map1.Layers[0].DataSet;
-			if (pLayer.Selection.Count == 0) {
-				MessageBox.Show("无选中记录", "系统提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
-				return;
-			}
-			foreach (Feature feature in pLayer.Selection.ToFeatureList()) {
-				////实现方式1==================
-				IEnvelope pEnvelope = null;
-				pLayer.Select(null, feature.Envelope, DotSpatial.Symbology.SelectionMode.Intersects, out pEnvelope);
-			}
-		}
-
-		private void assemblyToolStripMenuItem_Click(object sender, EventArgs e) {
-			Assembly asm = Assembly.GetExecutingAssembly();
-			AssemblyDescriptionAttribute asmdis = (AssemblyDescriptionAttribute)Attribute.GetCustomAttribute(asm, typeof(AssemblyDescriptionAttribute));
-			AssemblyCopyrightAttribute asmcpr = (AssemblyCopyrightAttribute)Attribute.GetCustomAttribute(asm, typeof(AssemblyCopyrightAttribute));
-			AssemblyCompanyAttribute asmcpn = (AssemblyCompanyAttribute)Attribute.GetCustomAttribute(asm, typeof(AssemblyCompanyAttribute));
-
-			string s = string.Format("{0}  {1}  {2} ", asmdis.Description, asmcpr.Copyright, asmcpn.Company);
-			MessageBox.Show(s);
+		private void onlineHelpToolStripMenuItem_Click(object sender, EventArgs e) {
+			System.Diagnostics.Process.Start("https://github.com/GensokyoSageLeague/SSR-MyGIS/wiki");
 		}
 	}
 }

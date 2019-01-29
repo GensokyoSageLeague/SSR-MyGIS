@@ -8,7 +8,7 @@ namespace DotSpatial.Plugins.Help
 {
     public class HelpPlugin : Extension
     {
-        private const string Url = "http://dotspatial.codeplex.com/documentation";
+        private const string Url = "https://github.com/GensokyoSageLeague/SSR-MyGIS/wiki";
         private const string HelpMenu = HeaderControl.HeaderHelpItemKey;
 
         public override void Activate()

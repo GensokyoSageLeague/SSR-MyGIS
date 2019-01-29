@@ -20,6 +20,18 @@ namespace MyGIS.Desktop {
 				formMain.map1.ZoomOutFartherThanMaxExtent = value;
 			}
 		}
+		private static bool _showTool = true;
+		public static bool showTool {
+			get {
+				return _showTool;
+			}
+			set {
+				formMain.spatialDockManager2.Panel2Collapsed = !value;
+				formMain.toolsToolStripMenuItem.Checked = value;
+				formMain.basicOperationsToolStripMenuItem.Checked = value;
+				_showTool = value;
+			}
+		}
 
 		// Global Variables
 		public static FormMain formMain { get; set; }

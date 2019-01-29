@@ -175,8 +175,6 @@
     <None Include="FormTestDotSpatial.Designer.cs">
       <DependentUpon>FormTestDotSpatial.cs</DependentUpon>
     </None>
-    <Compile Include="LICore.cs" />
-    <Compile Include="LIDef.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormAboutBox.resx">
@@ -235,10 +233,19 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MyGIS.Plugins.Splash\MyGIS.Plugins.SplashScreen.csproj">
+    <ProjectReference Include="..\MyGIS.Plugins.SplashScreen\MyGIS.Plugins.SplashScreen.csproj">
       <Project>{55a8461c-3e64-414e-9863-ddd5c876a060}</Project>
       <Name>MyGIS.Plugins.SplashScreen</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\layer_remove_32x32.png" />
+    <Content Include="Resources\Options.png" />
+    <Content Include="Resources\Web.png" />
+    <Content Include="Resources\zoom_extend_32x32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
