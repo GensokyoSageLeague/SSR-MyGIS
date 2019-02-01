@@ -242,7 +242,7 @@
     <None Include="Resources\Help.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\layer_remove_32x32.png" />
+    <Content Include="Resources\mnuLayerClear.png" />
     <Content Include="Resources\Options.png" />
     <Content Include="Resources\Web.png" />
     <Content Include="Resources\zoom_extend_32x32.png" />

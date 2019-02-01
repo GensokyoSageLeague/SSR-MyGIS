@@ -13,13 +13,6 @@ namespace MyGIS.Tools.Specific {
 		private Parameter[] _inputParam;
 		private Parameter[] _outputParam;
 
-		public LILine () {
-			this.Name = TextStrings.LILine;
-			this.Category = TextStrings.Category;
-			this.Description = TextStrings.LILineDescription;
-			this.ToolTip = TextStrings.LILineTip;
-		}
-
 		public override Parameter[] InputParameters {
 			get {
 				return _inputParam;
@@ -32,6 +25,21 @@ namespace MyGIS.Tools.Specific {
 			}
 		}
 
+		public LILine () {
+			this.Name = TextStrings.LILine;
+			this.Category = TextStrings.Category;
+			this.Description = TextStrings.LILineDescription;
+			this.ToolTip = TextStrings.LILineTip;
+		}
+
+		public override void Initialize() {
+			_inputParam = new Parameter[2];
+			_inputParam[0] = new LineFeatureSetParam(TextStrings.InputFeatureSet);
+			_inputParam[1] = new DoubleParam(TextStrings.LILinePara, 10.0);
+			_outputParam = new Parameter[1];
+			_outputParam[0] = new LineFeatureSetParam(TextStrings.OutputFeatureSet);
+		}
+
 		public override bool Execute(ICancelProgressHandler cancelProgressHandler) {
 			IFeatureSet inputFeatures = _inputParam[0].Value as IFeatureSet;
 			DoubleParam dp = _inputParam[1] as DoubleParam;
@@ -42,7 +50,7 @@ namespace MyGIS.Tools.Specific {
 			IFeatureSet outputFeatures = _outputParam[0].Value as IFeatureSet;
 
 			Desktop.Logger.log("hhh");
-			//outputFeatures.CopyFeatures(inputFeatures, false);
+			outputFeatures.CopyFeatures(inputFeatures, false);
 
 			if (true) {
 				outputFeatures.Save();
@@ -52,14 +60,6 @@ namespace MyGIS.Tools.Specific {
 				_outputParam = null;
 				return false;
 			}
-		}
-
-		public override void Initialize() {
-			_inputParam = new Parameter[2];
-			_inputParam[0] = new LineFeatureSetParam(TextStrings.InputFeatureSet);
-			_inputParam[1] = new DoubleParam(TextStrings.LILinePara, 10.0);
-			_outputParam = new Parameter[1];
-			_outputParam[0] = new LineFeatureSetParam(TextStrings.OutputFeatureSet);
 		}
 	}
 }
