@@ -26,10 +26,10 @@ namespace MyGIS.Desktop {
 				return _showTool;
 			}
 			set {
+				_showTool = value;
 				formMain.spatialDockManager2.Panel2Collapsed = !value;
 				formMain.toolsToolStripMenuItem.Checked = value;
 				formMain.basicOperationsToolStripMenuItem.Checked = value;
-				_showTool = value;
 			}
 		}
 
