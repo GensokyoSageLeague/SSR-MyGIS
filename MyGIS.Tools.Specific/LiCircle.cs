@@ -9,7 +9,7 @@ using DotSpatial.Topology;
 using DotSpatial.Topology.Algorithm;
 
 namespace MyGIS.Tools.Specific {
-	public class LiLine : Tool {
+	public class LiCircle : Tool {
 		private Parameter[] _inputParam;
 		private Parameter[] _outputParam;
 
@@ -25,11 +25,11 @@ namespace MyGIS.Tools.Specific {
 			}
 		}
 
-		public LiLine () {
-			this.Name = TextStrings.LiLine;
+		public LiCircle() {
+			this.Name = TextStrings.LiCircle;
 			this.Category = TextStrings.Category;
-			this.Description = TextStrings.LiLineDescription;
-			this.ToolTip = TextStrings.LiLineTip;
+			this.Description = TextStrings.LiCircleDescription;
+			this.ToolTip = TextStrings.LICircleTip;
 		}
 
 		public override void Initialize() {

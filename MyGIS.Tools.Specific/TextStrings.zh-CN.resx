@@ -123,16 +123,25 @@
   <data name="InputFeatureSet" xml:space="preserve">
     <value>输入要素集</value>
   </data>
-  <data name="LILine" xml:space="preserve">
-    <value>线段（?）</value>
+  <data name="LiCircle" xml:space="preserve">
+    <value>火山（圆）</value>
   </data>
-  <data name="LILineDescription" xml:space="preserve">
+  <data name="LiCircleDescription" xml:space="preserve">
+    <value>识别火山口</value>
+  </data>
+  <data name="LiCircleTip" xml:space="preserve">
+    <value>地貌识别</value>
+  </data>
+  <data name="LiLine" xml:space="preserve">
+    <value>（线段）</value>
+  </data>
+  <data name="LiLineDescription" xml:space="preserve">
     <value>识别线段</value>
   </data>
-  <data name="LILinePara" xml:space="preserve">
-    <value>参数</value>
+  <data name="LiLinePara" xml:space="preserve">
+    <value>容差</value>
   </data>
-  <data name="LILineTip" xml:space="preserve">
+  <data name="LiLineTip" xml:space="preserve">
     <value>地貌识别</value>
   </data>
   <data name="OutputFeatureSet" xml:space="preserve">

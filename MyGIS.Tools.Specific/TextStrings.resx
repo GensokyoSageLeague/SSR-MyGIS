@@ -123,17 +123,26 @@
   <data name="InputFeatureSet" xml:space="preserve">
     <value>Input Feature Set</value>
   </data>
-  <data name="LILine" xml:space="preserve">
+  <data name="LiCircle" xml:space="preserve">
+    <value>Circle</value>
+  </data>
+  <data name="LiCircleDescription" xml:space="preserve">
+    <value>Identify circle(s)</value>
+  </data>
+  <data name="LICircleTip" xml:space="preserve">
+    <value>Landform Identification</value>
+  </data>
+  <data name="LiLine" xml:space="preserve">
     <value>Line</value>
   </data>
-  <data name="LILineDescription" xml:space="preserve">
+  <data name="LiLineDescription" xml:space="preserve">
     <value>Identify line(s)</value>
   </data>
-  <data name="LILinePara" xml:space="preserve">
+  <data name="LiLinePara" xml:space="preserve">
     <value>Parameter</value>
   </data>
-  <data name="LILineTip" xml:space="preserve">
-    <value>~~</value>
+  <data name="LiLineTip" xml:space="preserve">
+    <value>Landform Identification</value>
   </data>
   <data name="OutputFeatureSet" xml:space="preserve">
     <value>Output Feature Set</value>

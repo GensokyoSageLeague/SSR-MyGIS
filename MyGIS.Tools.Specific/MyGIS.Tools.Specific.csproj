@@ -79,7 +79,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LILine.cs" />
+    <Compile Include="LiCircle.cs" />
+    <Compile Include="LiLine.cs" />
     <Compile Include="Core.cs" />
     <Compile Include="Def.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

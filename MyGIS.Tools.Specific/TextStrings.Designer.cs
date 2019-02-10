@@ -79,38 +79,65 @@ namespace MyGIS.Tools.Specific {
         }
         
         /// <summary>
+        ///   查找类似 Circle 的本地化字符串。
+        /// </summary>
+        internal static string LiCircle {
+            get {
+                return ResourceManager.GetString("LiCircle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Identify circle(s) 的本地化字符串。
+        /// </summary>
+        internal static string LiCircleDescription {
+            get {
+                return ResourceManager.GetString("LiCircleDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Landform Identification 的本地化字符串。
+        /// </summary>
+        internal static string LICircleTip {
+            get {
+                return ResourceManager.GetString("LICircleTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Line 的本地化字符串。
         /// </summary>
-        internal static string LILine {
+        internal static string LiLine {
             get {
-                return ResourceManager.GetString("LILine", resourceCulture);
+                return ResourceManager.GetString("LiLine", resourceCulture);
             }
         }
         
         /// <summary>
         ///   查找类似 Identify line(s) 的本地化字符串。
         /// </summary>
-        internal static string LILineDescription {
+        internal static string LiLineDescription {
             get {
-                return ResourceManager.GetString("LILineDescription", resourceCulture);
+                return ResourceManager.GetString("LiLineDescription", resourceCulture);
             }
         }
         
         /// <summary>
         ///   查找类似 Parameter 的本地化字符串。
         /// </summary>
-        internal static string LILinePara {
+        internal static string LiLinePara {
             get {
-                return ResourceManager.GetString("LILinePara", resourceCulture);
+                return ResourceManager.GetString("LiLinePara", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 ~~ 的本地化字符串。
+        ///   查找类似 Landform Identification 的本地化字符串。
         /// </summary>
-        internal static string LILineTip {
+        internal static string LiLineTip {
             get {
-                return ResourceManager.GetString("LILineTip", resourceCulture);
+                return ResourceManager.GetString("LiLineTip", resourceCulture);
             }
         }
         
