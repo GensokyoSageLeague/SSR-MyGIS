@@ -115,7 +115,7 @@ namespace MyGIS.Tools.Specific {
         }
         
         /// <summary>
-        ///   查找类似 Identify line(s) 的本地化字符串。
+        ///   查找类似 Simply line(s) 的本地化字符串。
         /// </summary>
         internal static string LiLineDescription {
             get {

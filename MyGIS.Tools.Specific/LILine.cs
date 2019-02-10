@@ -7,6 +7,8 @@ using DotSpatial.Data;
 using DotSpatial.Modeling.Forms;
 using DotSpatial.Topology;
 using DotSpatial.Topology.Algorithm;
+using DotSpatial.Topology.Simplify;
+using System.Data;
 
 namespace MyGIS.Tools.Specific {
 	public class LiLine : Tool {
@@ -25,7 +27,7 @@ namespace MyGIS.Tools.Specific {
 			}
 		}
 
-		public LiLine () {
+		public LiLine() {
 			this.Name = TextStrings.LiLine;
 			this.Category = TextStrings.Category;
 			this.Description = TextStrings.LiLineDescription;
@@ -40,7 +42,7 @@ namespace MyGIS.Tools.Specific {
 			_outputParam[0] = new LineFeatureSetParam(TextStrings.OutputFeatureSet);
 		}
 
-		public override bool Execute(ICancelProgressHandler cancelProgressHandler) {
+		public bool ExecuteTestings(ICancelProgressHandler cancelProgressHandler) {
 			IFeatureSet inputFeatures = _inputParam[0].Value as IFeatureSet;
 			DoubleParam dp = _inputParam[1] as DoubleParam;
 			double bufferDistance = 1;
@@ -60,6 +62,85 @@ namespace MyGIS.Tools.Specific {
 				_outputParam = null;
 				return false;
 			}
+		}
+
+		public override bool Execute(ICancelProgressHandler cancelProgressHandler) {
+			IFeatureSet input = _inputParam[0].Value as IFeatureSet;
+			if (input != null) {
+				input.FillAttributes();
+			}
+
+			double tolerance = (double)_inputParam[1].Value;
+			IFeatureSet output = _outputParam[0].Value as IFeatureSet;
+
+			return Execute(input, tolerance, output, cancelProgressHandler);
+		}
+
+		public bool Execute(
+			IFeatureSet input, double tolerance, IFeatureSet output,
+			ICancelProgressHandler cancelProgressHandler) {
+
+			// Validates the input and output data
+			if (input == null || output == null) {
+				return false;
+			}
+
+			// We copy all the fields
+			foreach (DataColumn inputColumn in input.DataTable.Columns) {
+				output.DataTable.Columns.Add(new DataColumn(inputColumn.ColumnName, inputColumn.DataType));
+			}
+
+			int numTotalOldPoints = 0;
+			int numTotalNewPoints = 0;
+
+			for (int j = 0; j < input.Features.Count; j++) {
+				int numOldPoints = 0;
+				int numNewPoints = 0;
+
+				Geometry geom = input.Features[j].BasicGeometry as Geometry;
+				if (geom != null) {
+					numOldPoints = geom.NumPoints;
+				}
+
+				numTotalOldPoints += numOldPoints;
+				if (geom != null) {
+					for (int part = 0; part < geom.NumGeometries; part++) {
+						Geometry geomPart = (Geometry)geom.GetGeometryN(part);
+
+						// do the simplification
+						IList<Coordinate> oldCoords = geomPart.Coordinates;
+						IList<Coordinate> newCoords = DouglasPeuckerLineSimplifier.Simplify(
+							oldCoords, tolerance);
+
+						// convert the coordinates back to a geometry
+						Geometry newGeom = new LineString(newCoords);
+						numNewPoints += newGeom.NumPoints;
+						numTotalNewPoints += numNewPoints;
+						Feature newFeature = new Feature(newGeom, output);
+						foreach (DataColumn colSource in input.DataTable.Columns) {
+							newFeature.DataRow[colSource.ColumnName] = input.Features[j].DataRow[colSource.ColumnName];
+						}
+					}
+				}
+
+				// Status updates is done here, shows number of old / new points
+				cancelProgressHandler.Progress(
+					string.Empty,
+					Convert.ToInt32((Convert.ToDouble(j) / Convert.ToDouble(input.Features.Count)) * 100),
+					numOldPoints + "-->" + numNewPoints);
+				if (cancelProgressHandler.Cancel) {
+					return false;
+				}
+			}
+
+			cancelProgressHandler.Progress(
+				string.Empty,
+				100,
+				"Original number of points:" + numTotalOldPoints + " " + "New number of points:"
+				+ numTotalNewPoints);
+
+			output.Save();
+			return true;
 		}
 	}
 }

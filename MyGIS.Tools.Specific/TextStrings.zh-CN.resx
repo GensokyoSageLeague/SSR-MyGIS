@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Category" xml:space="preserve">
-    <value>地貌识别</value>
+    <value>地貌识别与综合</value>
   </data>
   <data name="InputFeatureSet" xml:space="preserve">
     <value>输入要素集</value>
@@ -133,10 +133,10 @@
     <value>地貌识别</value>
   </data>
   <data name="LiLine" xml:space="preserve">
-    <value>（线段）</value>
+    <value>简化线（线段）</value>
   </data>
   <data name="LiLineDescription" xml:space="preserve">
-    <value>识别线段</value>
+    <value>简化线</value>
   </data>
   <data name="LiLinePara" xml:space="preserve">
     <value>容差</value>
