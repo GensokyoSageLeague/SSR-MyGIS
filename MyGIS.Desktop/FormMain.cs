@@ -93,10 +93,12 @@ namespace MyGIS.Desktop {
 		}
 
 		private void map1_MouseWheel(object sender, MouseEventArgs e) {
-			if (e.Delta > 0)
-				map1.ZoomIn();
-			else
-				map1.ZoomOut();
+			if (map1.FunctionMode != FunctionMode.Pan) {
+				if (e.Delta > 0)
+					map1.ZoomIn();
+				else
+					map1.ZoomOut();
+			}
 		}
 
 		private void mapRenderingToolStripMenuItem_Click(object sender, EventArgs e) {

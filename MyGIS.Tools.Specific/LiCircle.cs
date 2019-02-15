@@ -53,7 +53,17 @@ namespace MyGIS.Tools.Specific {
 				var c1 = envelop.TopLeft();
 				var c2 = envelop.BottomRight();
 
-				//feature.
+				output.Features.Add(
+					new Polygon(
+						new Coordinate[] {
+							new Coordinate(c1.X, c1.Y),
+							new Coordinate(c1.X, c2.Y),
+							new Coordinate(c2.X, c2.Y),
+							new Coordinate(c2.X, c1.Y),
+							new Coordinate(c1.X, c1.Y)
+						}
+					)
+				);
 
 				cancelProgressHandler.Progress(
 					string.Empty,
@@ -72,6 +82,6 @@ namespace MyGIS.Tools.Specific {
 			}
 		}
 
-		private bool CheckContain
+		//private bool CheckContain
 	}
 }
