@@ -37,23 +37,33 @@ namespace MyGIS.Tools.Specific {
 			_inputParam[0] = new LineFeatureSetParam(TextStrings.InputFeatureSet);
 			_inputParam[1] = new DoubleParam(TextStrings.LiLinePara, 10.0);
 			_outputParam = new Parameter[1];
-			_outputParam[0] = new LineFeatureSetParam(TextStrings.OutputFeatureSet);
+			_outputParam[0] = new PolygonFeatureSetParam(TextStrings.OutputFeatureSet);
 		}
 
 		public override bool Execute(ICancelProgressHandler cancelProgressHandler) {
-			IFeatureSet inputFeatures = _inputParam[0].Value as IFeatureSet;
+			IFeatureSet input = _inputParam[0].Value as IFeatureSet;
+			IFeatureSet output = _outputParam[0].Value as IFeatureSet;
 			DoubleParam dp = _inputParam[1] as DoubleParam;
-			double bufferDistance = 1;
-			if (dp != null) {
-				bufferDistance = dp.Value;
-			}
-			IFeatureSet outputFeatures = _outputParam[0].Value as IFeatureSet;
+			double para = dp != null ? dp.Value : 1;
 
-			Desktop.Logger.log("hhh");
-			outputFeatures.CopyFeatures(inputFeatures, false);
+			for (int i = 0; i < input.Features.Count; i++) {
+				IFeature  feature = input.Features[i];
+				IEnvelope envelop = input.Features[i].Envelope;
+
+				var c1 = envelop.TopLeft();
+				var c2 = envelop.BottomRight();
+
+				//feature.
+
+				cancelProgressHandler.Progress(
+					string.Empty,
+					Convert.ToInt32((Convert.ToDouble(i) / Convert.ToDouble(input.Features.Count)) * 100),
+					c1.ToString() + " " + c2.ToString()
+				);
+			}
 
 			if (true) {
-				outputFeatures.Save();
+				output.Save();
 				return true;
 			}
 			else {
@@ -61,5 +71,7 @@ namespace MyGIS.Tools.Specific {
 				return false;
 			}
 		}
+
+		private bool CheckContain
 	}
 }

@@ -60,13 +60,14 @@ namespace MyGIS.Desktop {
 
 			Configurations.formSplashWrapper.Activate();
 			Logger.doDelay(1);
-			Configurations.formSplashWrapper.Deactivate();
 
 			var form = new FormAboutBox();
 			Icon icon = Icon.ExtractAssociatedIcon(Assembly.GetExecutingAssembly().Location);
 			if (icon != null)
 				form.AppImage = icon;
 			form.Show();
+
+			Configurations.formSplashWrapper.Deactivate();
 		}
 
 		private void optionsToolStripMenuItem_Click(object sender, EventArgs e) {
