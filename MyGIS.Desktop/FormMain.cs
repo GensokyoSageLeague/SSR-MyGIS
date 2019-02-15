@@ -29,6 +29,7 @@ namespace MyGIS.Desktop {
 			//spatialHeaderControl.Add();
 
 			Shell = this;
+			appManager.NakidosFix();
 			appManager.LoadExtensions();
 			map1.MouseWheel += new MouseEventHandler(map1_MouseWheel);
 			map1.FunctionMode = FunctionMode.Pan;
