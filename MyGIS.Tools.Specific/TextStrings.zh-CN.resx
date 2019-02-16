@@ -141,6 +141,9 @@
   <data name="LiLinePara" xml:space="preserve">
     <value>容差</value>
   </data>
+  <data name="LiLinePara1" xml:space="preserve">
+    <value>参数</value>
+  </data>
   <data name="LiLineTip" xml:space="preserve">
     <value>地貌识别</value>
   </data>

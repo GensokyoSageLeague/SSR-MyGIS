@@ -42,27 +42,27 @@ namespace MyGIS.Tools.Specific {
 			_outputParam[0] = new LineFeatureSetParam(TextStrings.OutputFeatureSet);
 		}
 
-		public bool ExecuteTestings(ICancelProgressHandler cancelProgressHandler) {
-			IFeatureSet inputFeatures = _inputParam[0].Value as IFeatureSet;
-			DoubleParam dp = _inputParam[1] as DoubleParam;
-			double bufferDistance = 1;
-			if (dp != null) {
-				bufferDistance = dp.Value;
-			}
-			IFeatureSet outputFeatures = _outputParam[0].Value as IFeatureSet;
-
-			Desktop.Logger.log("hhh");
-			outputFeatures.CopyFeatures(inputFeatures, false);
-
-			if (true) {
-				outputFeatures.Save();
-				return true;
-			}
-			else {
-				_outputParam = null;
-				return false;
-			}
-		}
+// 		public bool ExecuteTestings(ICancelProgressHandler cancelProgressHandler) {
+// 			IFeatureSet inputFeatures = _inputParam[0].Value as IFeatureSet;
+// 			DoubleParam dp = _inputParam[1] as DoubleParam;
+// 			double bufferDistance = 1;
+// 			if (dp != null) {
+// 				bufferDistance = dp.Value;
+// 			}
+// 			IFeatureSet outputFeatures = _outputParam[0].Value as IFeatureSet;
+// 
+// 			//Desktop.Logger.log("hhh");
+// 			outputFeatures.CopyFeatures(inputFeatures, false);
+// 
+// 			if (true) {
+// 				outputFeatures.Save();
+// 				return true;
+// 			}
+// 			else {
+// 				_outputParam = null;
+// 				return false;
+// 			}
+// 		}
 
 		public override bool Execute(ICancelProgressHandler cancelProgressHandler) {
 			IFeatureSet input = _inputParam[0].Value as IFeatureSet;

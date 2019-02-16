@@ -156,5 +156,17 @@ namespace MyGIS.Desktop {
 		private void onlineHelpToolStripMenuItem_Click(object sender, EventArgs e) {
 			System.Diagnostics.Process.Start("https://github.com/GensokyoSageLeague/SSR-MyGIS/wiki");
 		}
+
+		private void lineToolStripMenuItem_Click(object sender, EventArgs e) {
+			MessageBox.Show("Moved to Toolbox.", "Warn", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+		}
+
+		private void circleToolStripMenuItem_Click(object sender, EventArgs e) {
+			MessageBox.Show("Moved to Toolbox.", "Warn", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+		}
+
+		private void crescentToolStripMenuItem_Click(object sender, EventArgs e) {
+			MessageBox.Show("Moved to Toolbox.", "Warn", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+		}
 	}
 }

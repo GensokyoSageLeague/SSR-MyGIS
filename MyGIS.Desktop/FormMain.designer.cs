@@ -295,16 +295,19 @@
 			// 
 			this.lineToolStripMenuItem.Name = "lineToolStripMenuItem";
 			resources.ApplyResources(this.lineToolStripMenuItem, "lineToolStripMenuItem");
+			this.lineToolStripMenuItem.Click += new System.EventHandler(this.lineToolStripMenuItem_Click);
 			// 
 			// circleToolStripMenuItem
 			// 
 			this.circleToolStripMenuItem.Name = "circleToolStripMenuItem";
 			resources.ApplyResources(this.circleToolStripMenuItem, "circleToolStripMenuItem");
+			this.circleToolStripMenuItem.Click += new System.EventHandler(this.circleToolStripMenuItem_Click);
 			// 
 			// crescentToolStripMenuItem
 			// 
 			this.crescentToolStripMenuItem.Name = "crescentToolStripMenuItem";
 			resources.ApplyResources(this.crescentToolStripMenuItem, "crescentToolStripMenuItem");
+			this.crescentToolStripMenuItem.Click += new System.EventHandler(this.crescentToolStripMenuItem_Click);
 			// 
 			// kHeaderHelpItemKey
 			// 

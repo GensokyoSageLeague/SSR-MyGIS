@@ -91,13 +91,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MyGIS.Desktop\MyGIS.Desktop.csproj">
-      <Project>{d253f9cb-8e36-4a50-9a44-15ea598feabc}</Project>
-      <Name>MyGIS.Desktop</Name>
-      <Private>False</Private>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="TextStrings.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>TextStrings.Designer.cs</LastGenOutput>

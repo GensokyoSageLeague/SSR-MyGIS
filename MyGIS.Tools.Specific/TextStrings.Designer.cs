@@ -133,6 +133,15 @@ namespace MyGIS.Tools.Specific {
         }
         
         /// <summary>
+        ///   查找类似 Parameter1 的本地化字符串。
+        /// </summary>
+        internal static string LiLinePara1 {
+            get {
+                return ResourceManager.GetString("LiLinePara1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Landform Identification 的本地化字符串。
         /// </summary>
         internal static string LiLineTip {
