@@ -34,10 +34,11 @@ namespace MyGIS.Tools.Specific {
 		}
 
 		public override void Initialize() {
-			_inputParam = new Parameter[3];
+			_inputParam = new Parameter[4];
 			_inputParam[0] = new LineFeatureSetParam(TextStrings.InputFeatureSet);
 			_inputParam[1] = new DoubleParam(TextStrings.LiLinePara, 60.0);
 			_inputParam[2] = new DoubleParam(TextStrings.LiLinePara1, 2.0);
+			_inputParam[3] = new DoubleParam(TextStrings.LiLinePara2, 100.0);
 			_outputParam = new Parameter[1];
 			_outputParam[0] = new PolygonFeatureSetParam(TextStrings.OutputFeatureSet);
 		}
@@ -53,9 +54,11 @@ namespace MyGIS.Tools.Specific {
 			IFeatureSet input = _inputParam[0].Value as IFeatureSet;
 			IFeatureSet output = _outputParam[0].Value as IFeatureSet;
 			DoubleParam para = _inputParam[1] as DoubleParam;
-			double tolerance = para != null ? para.Value : 60;
+			double tolerance1 = para != null ? para.Value : 60;
 			para = _inputParam[2] as DoubleParam;
-			double parameter = para != null ? para.Value : 2;
+			double tolerance2 = para != null ? para.Value : 2;
+			para = _inputParam[3] as DoubleParam;
+			double parameter = para != null ? para.Value : 100;
 
 			List<FeatureUnion> myunion = new List<FeatureUnion>();
 
@@ -65,7 +68,8 @@ namespace MyGIS.Tools.Specific {
 
 				if (feature.BasicGeometry.Coordinates[feature.BasicGeometry.Coordinates.Count - 1]
 					!=
-					feature.BasicGeometry.Coordinates[0]) {
+					feature.BasicGeometry.Coordinates[0])
+				{
 					continue;
 				}
 
@@ -84,12 +88,24 @@ namespace MyGIS.Tools.Specific {
 				var erf = new Feature(er);
 				var cop = lpf.Centroid();
 
+				if (double.IsNaN(cop.Coordinates[0].X) ||
+					double.IsNaN(cop.Coordinates[0].Y)) 
+				{
+					continue;
+				}
+
+				if (Math.Abs(lpf.ConvexHull().Area() - lpf.Area()) > parameter) {
+					continue;
+				}
+
 				myunion.Add(new FeatureUnion {
 					originalLine = input.Features[i],
 					linkedPolygon = lpf,
 					envelopedRect = erf,
 					centroidOfPolygon = cop
 				});
+
+				output.Features.Add(myunion[myunion.Count - 1].centroidOfPolygon.Buffer(tolerance1));
 
 				cancelProgressHandler.Progress(
 					string.Empty,
@@ -104,17 +120,17 @@ namespace MyGIS.Tools.Specific {
 					Coordinate c = myunion[i].centroidOfPolygon.BasicGeometry.Coordinates[0];
 					int covers = 0;
 					for (int j = 0; j < i; j++) {
-						if (myunion[i].centroidOfPolygon.Buffer(tolerance).Covers(myunion[j].centroidOfPolygon)) {
+						if (myunion[i].centroidOfPolygon.Buffer(tolerance1).Covers(myunion[j].centroidOfPolygon)) {
 							covers++;
 						}
 					}
 					for (int j = i + 1; j < myunion.Count; j++) {
-						if (myunion[i].centroidOfPolygon.Buffer(tolerance).Covers(myunion[j].centroidOfPolygon)) {
+						if (myunion[i].centroidOfPolygon.Buffer(tolerance1).Covers(myunion[j].centroidOfPolygon)) {
 							covers++;
 						}
 					}
-					if (covers >= parameter) {
-						output.Features.Add(myunion[i].centroidOfPolygon.Buffer(tolerance));
+					if (covers >= tolerance2) {
+						//output.Features.Add(myunion[i].centroidOfPolygon.Buffer(tolerance));
 					}
 
 					cancelProgressHandler.Progress(

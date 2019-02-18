@@ -139,10 +139,13 @@
     <value>简化线</value>
   </data>
   <data name="LiLinePara" xml:space="preserve">
-    <value>容差</value>
+    <value>容差1</value>
   </data>
   <data name="LiLinePara1" xml:space="preserve">
-    <value>参数</value>
+    <value>容差2</value>
+  </data>
+  <data name="LiLinePara2" xml:space="preserve">
+    <value>ConvexHull容差</value>
   </data>
   <data name="LiLineTip" xml:space="preserve">
     <value>地貌识别</value>
