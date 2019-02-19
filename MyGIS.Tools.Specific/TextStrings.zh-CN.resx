@@ -127,13 +127,13 @@
     <value>火山（圆）</value>
   </data>
   <data name="LiCircleDescription" xml:space="preserve">
-    <value>识别火山口</value>
+    <value>识别火山口等环状等高线</value>
   </data>
   <data name="LiCircleTip" xml:space="preserve">
     <value>地貌识别</value>
   </data>
   <data name="LiLine" xml:space="preserve">
-    <value>简化线（线段）</value>
+    <value>简化线（直线）</value>
   </data>
   <data name="LiLineDescription" xml:space="preserve">
     <value>简化线</value>
@@ -142,10 +142,13 @@
     <value>质心偏移（米）</value>
   </data>
   <data name="LiLinePara2" xml:space="preserve">
-    <value>识别阈值（个）</value>
+    <value>重叠阈值（个）</value>
   </data>
   <data name="LiLinePara3" xml:space="preserve">
-    <value>ConvexHull容差（%）</value>
+    <value>凸包容差（%）</value>
+  </data>
+  <data name="LiLinePara4" xml:space="preserve">
+    <value>高程字段</value>
   </data>
   <data name="LiLineTip" xml:space="preserve">
     <value>地貌识别</value>

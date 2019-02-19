@@ -153,4 +153,7 @@
   <data name="LiLinePara3" xml:space="preserve">
     <value>Parameter3</value>
   </data>
+  <data name="LiLinePara4" xml:space="preserve">
+    <value>Parameter4</value>
+  </data>
 </root>

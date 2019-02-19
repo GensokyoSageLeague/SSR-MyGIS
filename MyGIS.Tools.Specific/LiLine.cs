@@ -80,12 +80,11 @@ namespace MyGIS.Tools.Specific {
 			IFeatureSet input, double tolerance, IFeatureSet output,
 			ICancelProgressHandler cancelProgressHandler) {
 
-			// Validates the input and output data
 			if (input == null || output == null) {
 				return false;
 			}
 
-			// We copy all the fields
+			// 复制表
 			foreach (DataColumn inputColumn in input.DataTable.Columns) {
 				output.DataTable.Columns.Add(new DataColumn(inputColumn.ColumnName, inputColumn.DataType));
 			}
@@ -107,12 +106,12 @@ namespace MyGIS.Tools.Specific {
 					for (int part = 0; part < geom.NumGeometries; part++) {
 						Geometry geomPart = (Geometry)geom.GetGeometryN(part);
 
-						// do the simplification
+						// 简化
 						IList<Coordinate> oldCoords = geomPart.Coordinates;
 						IList<Coordinate> newCoords = DouglasPeuckerLineSimplifier.Simplify(
 							oldCoords, tolerance);
 
-						// convert the coordinates back to a geometry
+						// coordinates -> geometry
 						Geometry newGeom = new LineString(newCoords);
 						numNewPoints += newGeom.NumPoints;
 						numTotalNewPoints += numNewPoints;
@@ -123,7 +122,6 @@ namespace MyGIS.Tools.Specific {
 					}
 				}
 
-				// Status updates is done here, shows number of old / new points
 				cancelProgressHandler.Progress(
 					string.Empty,
 					Convert.ToInt32((Convert.ToDouble(j) / Convert.ToDouble(input.Features.Count)) * 100),
@@ -136,7 +134,7 @@ namespace MyGIS.Tools.Specific {
 			cancelProgressHandler.Progress(
 				string.Empty,
 				100,
-				"Original number of points:" + numTotalOldPoints + " " + "New number of points:"
+				"Old / Processed number of points:" + numTotalOldPoints + "/"
 				+ numTotalNewPoints);
 
 			output.Save();

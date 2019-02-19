@@ -34,16 +34,23 @@ namespace MyGIS.Tools.Specific {
 		}
 
 		public override void Initialize() {
-			_inputParam = new Parameter[4];
+			_inputParam = new Parameter[5];
 			_inputParam[0] = new LineFeatureSetParam(TextStrings.InputFeatureSet);
 			_inputParam[1] = new DoubleParam(TextStrings.LiLinePara1, 60.0);
 			_inputParam[2] = new DoubleParam(TextStrings.LiLinePara2, 3.0);
 			_inputParam[3] = new DoubleParam(TextStrings.LiLinePara3, 5.0);
+			_inputParam[4] = new StringParam(TextStrings.LiLinePara4, string.Empty);
+#if DEBUG
+			_outputParam = new Parameter[2];
+			_outputParam[0] = new PointFeatureSetParam(TextStrings.OutputFeatureSet);
+			_outputParam[1] = new PolygonFeatureSetParam("DEBUG MODE OUTPUT");
+#else
 			_outputParam = new Parameter[1];
-			_outputParam[0] = new PolygonFeatureSetParam(TextStrings.OutputFeatureSet);
+			_outputParam[0] = new PointFeatureSetParam(TextStrings.OutputFeatureSet);
+#endif
 		}
 
-		struct FeatureUnion {
+		class FeatureUnion {
 			internal IFeature OriginalLine;
 			internal IFeature LinkedPolygon;
 			internal IFeature EnvelopedRect;
@@ -54,6 +61,9 @@ namespace MyGIS.Tools.Specific {
 		public override bool Execute(ICancelProgressHandler cancelProgressHandler) {
 			IFeatureSet input = _inputParam[0].Value as IFeatureSet;
 			IFeatureSet output = _outputParam[0].Value as IFeatureSet;
+#if DEBUG
+			IFeatureSet output1 = _outputParam[1].Value as IFeatureSet;
+#endif
 			DoubleParam para;
 			para = _inputParam[1] as DoubleParam;
 			double paraSearchRadius = para != null ? para.Value : 60;
@@ -61,17 +71,20 @@ namespace MyGIS.Tools.Specific {
 			double paraSearchCount = para != null ? para.Value : 3;
 			para = _inputParam[3] as DoubleParam;
 			double paraToleranceOfConvexHull = para != null ? para.Value : 5;
+			string column = ((StringParam)_inputParam[4]).Value;
 
 			List<FeatureUnion> myunion = new List<FeatureUnion>();
 
+			cancelProgressHandler.Progress(string.Empty, 0, "Stage 1/2.");
+
 			for (int i = 0; i < input.Features.Count; i++) {
-				IFeature  feature = input.Features[i];
+				IFeature feature = input.Features[i];
 				IEnvelope envelop = input.Features[i].Envelope;
 
+				// 不闭合
 				if (feature.BasicGeometry.Coordinates[feature.BasicGeometry.Coordinates.Count - 1]
 					!=
-					feature.BasicGeometry.Coordinates[0])
-				{
+					feature.BasicGeometry.Coordinates[0]) {
 					continue;
 				}
 
@@ -90,12 +103,13 @@ namespace MyGIS.Tools.Specific {
 				var erf = new Feature(er);
 				var cop = lpf.Centroid();
 
+				// 无面积
 				if (double.IsNaN(cop.Coordinates[0].X) ||
-					double.IsNaN(cop.Coordinates[0].Y)) 
-				{
+					double.IsNaN(cop.Coordinates[0].Y)) {
 					continue;
 				}
 
+				// paraToleranceOfConvexHull
 				if (Math.Abs(lpf.ConvexHull().Area() - lpf.Area()) / lpf.Area() > paraToleranceOfConvexHull / 100) {
 					continue;
 				}
@@ -108,56 +122,57 @@ namespace MyGIS.Tools.Specific {
 					Visited = false
 				});
 
-				output.Features.Add(myunion[myunion.Count - 1].CentroidOfPolygon.Buffer(paraSearchRadius));
+#if DEBUG
+				output1.Features.Add(myunion[myunion.Count - 1].CentroidOfPolygon.Buffer(paraSearchRadius));
+				//output1.Features.Add(myunion[myunion.Count - 1].EnvelopedRect);
+#endif
 
 				cancelProgressHandler.Progress(
 					string.Empty,
 					Convert.ToInt32((Convert.ToDouble(i) / Convert.ToDouble(input.Features.Count)) * 100),
 					string.Empty
-					//(myunion[i].LinkedPolygon.Area() / myunion[i].EnvelopedRect.Area()).ToString()
+				//(myunion[i].LinkedPolygon.Area() / myunion[i].EnvelopedRect.Area()).ToString()
 				);
 			}
 
-			try {
-				for (int i = 0; i < myunion.Count; i++) {
-					Coordinate c = myunion[i].CentroidOfPolygon.BasicGeometry.Coordinates[0];
-					int covers = 0;
-					for (int j = 0; j < i; j++) {
-						if (myunion[i].CentroidOfPolygon.Buffer(paraSearchRadius).Covers(myunion[j].CentroidOfPolygon)) {
-							covers++;
-						}
-					}
-					for (int j = i + 1; j < myunion.Count; j++) {
-						if (myunion[i].CentroidOfPolygon.Buffer(paraSearchRadius).Covers(myunion[j].CentroidOfPolygon)) {
-							covers++;
-						}
-					}
-					if (covers >= paraSearchCount) {
-						//output.Features.Add(myunion[i].CentroidOfPolygon.Buffer(tolerance));
-					}
+			cancelProgressHandler.Progress(string.Empty, 0, "Stage 2/2.");
 
-					cancelProgressHandler.Progress(
-						string.Empty,
-						Convert.ToInt32((Convert.ToDouble(i) / Convert.ToDouble(input.Features.Count)) * 100),
-						string.Empty
-);
+			for (int i = 0; i < myunion.Count; i++) {
+				Coordinate c = myunion[i].CentroidOfPolygon.BasicGeometry.Coordinates[0];
+				int covers = 0;
+				for (int j = 0; j < i; j++) {
+					if (myunion[i].CentroidOfPolygon.Buffer(paraSearchRadius).Intersects(myunion[j].CentroidOfPolygon.Buffer(paraSearchRadius)) &&
+						!myunion[i].Visited)
+					{
+						covers++;
+						myunion[j].Visited = true;
+					}
 				}
-			}
-			catch (Exception) {
-			}
+				for (int j = i + 1; j < myunion.Count; j++) {
+					if (myunion[i].CentroidOfPolygon.Buffer(paraSearchRadius).Intersects(myunion[j].CentroidOfPolygon.Buffer(paraSearchRadius)) &&
+						!myunion[i].Visited)
+					{
+						covers++;
+						myunion[j].Visited = true;
+					}
+				}
+				myunion[i].Visited = true;
+				if (covers >= paraSearchCount - 1) { // 自己也算一个
+					//output1.Features.Add(myunion[i].CentroidOfPolygon.Buffer(paraSearchRadius));
+					output.Features.Add(myunion[i].CentroidOfPolygon);
+				}
 
-			// 测试
-// 			for (int i = 0; i < myunion.Count; i++) {
-// 				output.Features.Add(myunion[i].CentroidOfPolygon.Buffer(tolerance));
-// 				output.Features.Add(myunion[i].EnvelopedRect);
-// 				cancelProgressHandler.Progress(
-// 					string.Empty,
-// 					Convert.ToInt32((Convert.ToDouble(i) / Convert.ToDouble(input.Features.Count)) * 100),
-// 					string.Empty
-// 				);
-// 			}
+				cancelProgressHandler.Progress(
+					string.Empty,
+					Convert.ToInt32((Convert.ToDouble(i) / Convert.ToDouble(myunion.Count)) * 100),
+					string.Empty
+				);
+			}
 
 			output.Save();
+#if DEBUG
+			output1.Save();
+#endif
 			return true;
 		}
 	}

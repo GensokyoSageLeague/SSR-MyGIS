@@ -151,6 +151,15 @@ namespace MyGIS.Tools.Specific {
         }
         
         /// <summary>
+        ///   查找类似 Parameter4 的本地化字符串。
+        /// </summary>
+        internal static string LiLinePara4 {
+            get {
+                return ResourceManager.GetString("LiLinePara4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Landform Identification 的本地化字符串。
         /// </summary>
         internal static string LiLineTip {
