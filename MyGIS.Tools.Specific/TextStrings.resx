@@ -138,8 +138,8 @@
   <data name="LiLineDescription" xml:space="preserve">
     <value>Simply line(s)</value>
   </data>
-  <data name="LiLinePara" xml:space="preserve">
-    <value>Parameter</value>
+  <data name="LiLinePara1" xml:space="preserve">
+    <value>Parameter1</value>
   </data>
   <data name="LiLineTip" xml:space="preserve">
     <value>Landform Identification</value>
@@ -147,10 +147,10 @@
   <data name="OutputFeatureSet" xml:space="preserve">
     <value>Output Feature Set</value>
   </data>
-  <data name="LiLinePara1" xml:space="preserve">
-    <value>Parameter1</value>
-  </data>
   <data name="LiLinePara2" xml:space="preserve">
     <value>Parameter2</value>
+  </data>
+  <data name="LiLinePara3" xml:space="preserve">
+    <value>Parameter3</value>
   </data>
 </root>

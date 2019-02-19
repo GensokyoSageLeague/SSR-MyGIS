@@ -124,15 +124,6 @@ namespace MyGIS.Tools.Specific {
         }
         
         /// <summary>
-        ///   查找类似 Parameter 的本地化字符串。
-        /// </summary>
-        internal static string LiLinePara {
-            get {
-                return ResourceManager.GetString("LiLinePara", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   查找类似 Parameter1 的本地化字符串。
         /// </summary>
         internal static string LiLinePara1 {
@@ -147,6 +138,15 @@ namespace MyGIS.Tools.Specific {
         internal static string LiLinePara2 {
             get {
                 return ResourceManager.GetString("LiLinePara2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Parameter3 的本地化字符串。
+        /// </summary>
+        internal static string LiLinePara3 {
+            get {
+                return ResourceManager.GetString("LiLinePara3", resourceCulture);
             }
         }
         
