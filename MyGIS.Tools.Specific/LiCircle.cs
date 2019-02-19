@@ -72,10 +72,19 @@ namespace MyGIS.Tools.Specific {
 			para = _inputParam[3] as DoubleParam;
 			double paraToleranceOfConvexHull = para != null ? para.Value : 5;
 			string column = ((StringParam)_inputParam[4]).Value;
+			int columnIndex;
 
 			List<FeatureUnion> myunion = new List<FeatureUnion>();
 
-			cancelProgressHandler.Progress(string.Empty, 0, "Stage 1/2.");
+			if (column != string.Empty) {
+				columnIndex = input.DataTable.Columns.IndexOf(column);
+				if (columnIndex == -1) {
+					cancelProgressHandler.Progress(string.Empty, 100, "[Error] Column Not Found.");
+					return false;
+				}
+			}
+
+			cancelProgressHandler.Progress(string.Empty, 0, "[Info] Stage 1/2: Cancellable.");
 
 			for (int i = 0; i < input.Features.Count; i++) {
 				IFeature feature = input.Features[i];
@@ -133,9 +142,13 @@ namespace MyGIS.Tools.Specific {
 					string.Empty
 				//(myunion[i].LinkedPolygon.Area() / myunion[i].EnvelopedRect.Area()).ToString()
 				);
+				if (cancelProgressHandler.Cancel) {
+					cancelProgressHandler.Progress(string.Empty, 100, "[Error] Cancelled.");
+					return false;
+				}
 			}
 
-			cancelProgressHandler.Progress(string.Empty, 0, "Stage 2/2.");
+			cancelProgressHandler.Progress(string.Empty, 0, "[Info] Stage 2/2: Cancellable.");
 
 			for (int i = 0; i < myunion.Count; i++) {
 				Coordinate c = myunion[i].CentroidOfPolygon.BasicGeometry.Coordinates[0];
@@ -167,6 +180,10 @@ namespace MyGIS.Tools.Specific {
 					Convert.ToInt32((Convert.ToDouble(i) / Convert.ToDouble(myunion.Count)) * 100),
 					string.Empty
 				);
+				if (cancelProgressHandler.Cancel) {
+					cancelProgressHandler.Progress(string.Empty, 100, "[Error] Cancelled.");
+					return false;
+				}
 			}
 
 			output.Save();

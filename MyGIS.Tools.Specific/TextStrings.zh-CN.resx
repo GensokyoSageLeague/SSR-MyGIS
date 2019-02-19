@@ -148,7 +148,7 @@
     <value>凸包容差（%）</value>
   </data>
   <data name="LiLinePara4" xml:space="preserve">
-    <value>高程字段</value>
+    <value>高程字段（可空）</value>
   </data>
   <data name="LiLineTip" xml:space="preserve">
     <value>地貌识别</value>
