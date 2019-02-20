@@ -72,7 +72,7 @@ namespace MyGIS.Tools.Specific {
 			para = _inputParam[3] as DoubleParam;
 			double paraToleranceOfConvexHull = para != null ? para.Value : 5;
 			string column = ((StringParam)_inputParam[4]).Value;
-			int columnIndex;
+			int columnIndex = -1;
 
 			List<FeatureUnion> myunion = new List<FeatureUnion>();
 
@@ -93,7 +93,8 @@ namespace MyGIS.Tools.Specific {
 				// 不闭合
 				if (feature.BasicGeometry.Coordinates[feature.BasicGeometry.Coordinates.Count - 1]
 					!=
-					feature.BasicGeometry.Coordinates[0]) {
+					feature.BasicGeometry.Coordinates[0]
+				) {
 					continue;
 				}
 
@@ -114,7 +115,8 @@ namespace MyGIS.Tools.Specific {
 
 				// 无面积
 				if (double.IsNaN(cop.Coordinates[0].X) ||
-					double.IsNaN(cop.Coordinates[0].Y)) {
+					double.IsNaN(cop.Coordinates[0].Y)
+				) {
 					continue;
 				}
 
@@ -151,28 +153,62 @@ namespace MyGIS.Tools.Specific {
 			cancelProgressHandler.Progress(string.Empty, 0, "[Info] Stage 2/2: Cancellable.");
 
 			for (int i = 0; i < myunion.Count; i++) {
-				Coordinate c = myunion[i].CentroidOfPolygon.BasicGeometry.Coordinates[0];
-				int covers = 0;
+				List<int> coversList = new List<int>();
+
 				for (int j = 0; j < i; j++) {
 					if (myunion[i].CentroidOfPolygon.Buffer(paraSearchRadius).Intersects(myunion[j].CentroidOfPolygon.Buffer(paraSearchRadius)) &&
-						!myunion[i].Visited)
-					{
-						covers++;
+						!myunion[i].Visited
+					) {
+						coversList.Add(j);
 						myunion[j].Visited = true;
 					}
 				}
 				for (int j = i + 1; j < myunion.Count; j++) {
 					if (myunion[i].CentroidOfPolygon.Buffer(paraSearchRadius).Intersects(myunion[j].CentroidOfPolygon.Buffer(paraSearchRadius)) &&
-						!myunion[i].Visited)
-					{
-						covers++;
+						!myunion[i].Visited
+					) {
+						coversList.Add(j);
 						myunion[j].Visited = true;
 					}
 				}
+				coversList.Add(i); // 自己也算一个
 				myunion[i].Visited = true;
-				if (covers >= paraSearchCount - 1) { // 自己也算一个
-					//output1.Features.Add(myunion[i].CentroidOfPolygon.Buffer(paraSearchRadius));
-					output.Features.Add(myunion[i].CentroidOfPolygon);
+
+				// 排序使coversList存储的Index与面积正相关
+				coversList.Sort(
+					(a, b) =>
+					myunion[a].LinkedPolygon.Area().CompareTo(
+						myunion[b].LinkedPolygon.Area()
+					)
+				);
+
+				if (coversList.Count >= paraSearchCount) {
+					//output.Features.Add(myunion[i].CentroidOfPolygon);
+					bool flag = true;
+					double max = 0;
+
+					// columnIndex of Height
+					if (column != string.Empty
+						&&
+						myunion[coversList[0]].OriginalLine.DataRow[columnIndex] is double
+					) {
+						for (int j = 1; j < coversList.Count; j++) {
+							double current = (double)(myunion[coversList[j]].OriginalLine.DataRow[columnIndex]);
+							if (max < current)
+								max = current;
+						}
+						if (
+							(double)(myunion[coversList[0]].OriginalLine.DataRow[columnIndex])
+							>=
+							max
+						) {
+							flag = false;
+						}
+					}
+
+					if (flag) {
+						output.Features.Add(myunion[coversList[0]].CentroidOfPolygon);
+					}
 				}
 
 				cancelProgressHandler.Progress(
