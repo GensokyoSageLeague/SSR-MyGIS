@@ -37,7 +37,7 @@ namespace MyGIS.Tools.Specific {
 		public override void Initialize() {
 			_inputParam = new Parameter[2];
 			_inputParam[0] = new LineFeatureSetParam(TextStrings.InputFeatureSet);
-			_inputParam[1] = new DoubleParam(TextStrings.LiLinePara1, 10.0);
+			_inputParam[1] = new DoubleParam(TextStrings.LiLinePara, 10.0);
 			_outputParam = new Parameter[1];
 			_outputParam[0] = new LineFeatureSetParam(TextStrings.OutputFeatureSet);
 		}

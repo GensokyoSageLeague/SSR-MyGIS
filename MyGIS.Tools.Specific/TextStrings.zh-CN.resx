@@ -124,10 +124,22 @@
     <value>输入要素集</value>
   </data>
   <data name="LiCircle" xml:space="preserve">
-    <value>火山（圆）</value>
+    <value>火山口（圆）</value>
   </data>
   <data name="LiCircleDescription" xml:space="preserve">
-    <value>识别火山口等环状等高线</value>
+    <value>识别火山口。如果高程字段为空，则识别火山口、山顶、山谷等环状等高线。</value>
+  </data>
+  <data name="LiCirclePara1" xml:space="preserve">
+    <value>最大质心偏移（米）</value>
+  </data>
+  <data name="LiCirclePara2" xml:space="preserve">
+    <value>最小叠置数</value>
+  </data>
+  <data name="LiCirclePara3" xml:space="preserve">
+    <value>凸包容差（%）</value>
+  </data>
+  <data name="LiCirclePara4" xml:space="preserve">
+    <value>高程字段</value>
   </data>
   <data name="LiCircleTip" xml:space="preserve">
     <value>地貌识别</value>
@@ -136,19 +148,10 @@
     <value>简化线（直线）</value>
   </data>
   <data name="LiLineDescription" xml:space="preserve">
-    <value>简化线</value>
+    <value>使用道格拉斯·普克算法简化线要素</value>
   </data>
-  <data name="LiLinePara1" xml:space="preserve">
-    <value>质心偏移（米）</value>
-  </data>
-  <data name="LiLinePara2" xml:space="preserve">
-    <value>重叠阈值（个）</value>
-  </data>
-  <data name="LiLinePara3" xml:space="preserve">
-    <value>凸包容差（%）</value>
-  </data>
-  <data name="LiLinePara4" xml:space="preserve">
-    <value>高程字段（可空）</value>
+  <data name="LiLinePara" xml:space="preserve">
+    <value>容差</value>
   </data>
   <data name="LiLineTip" xml:space="preserve">
     <value>地貌识别</value>

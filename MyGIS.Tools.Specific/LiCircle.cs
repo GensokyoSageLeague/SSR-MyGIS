@@ -36,10 +36,10 @@ namespace MyGIS.Tools.Specific {
 		public override void Initialize() {
 			_inputParam = new Parameter[5];
 			_inputParam[0] = new LineFeatureSetParam(TextStrings.InputFeatureSet);
-			_inputParam[1] = new DoubleParam(TextStrings.LiLinePara1, 60.0);
-			_inputParam[2] = new DoubleParam(TextStrings.LiLinePara2, 3.0);
-			_inputParam[3] = new DoubleParam(TextStrings.LiLinePara3, 5.0);
-			_inputParam[4] = new StringParam(TextStrings.LiLinePara4, string.Empty);
+			_inputParam[1] = new DoubleParam(TextStrings.LiCirclePara1, 60.0);
+			_inputParam[2] = new DoubleParam(TextStrings.LiCirclePara2, 3.0);
+			_inputParam[3] = new DoubleParam(TextStrings.LiCirclePara3, 5.0);
+			_inputParam[4] = new StringParam(TextStrings.LiCirclePara4, string.Empty);
 #if DEBUG
 			_outputParam = new Parameter[2];
 			_outputParam[0] = new PointFeatureSetParam(TextStrings.OutputFeatureSet);

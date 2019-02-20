@@ -46,6 +46,10 @@ namespace MyGIS.Desktop {
 		public static string appBuildTime = System.IO.File.GetLastWriteTime(Assembly.GetExecutingAssembly().Location).ToString();
 
 		// Constants
+#if DEBUG
+		public const bool showLoggerInit = true;
+#else
 		public const bool showLoggerInit = false;
+#endif
 	}
 }

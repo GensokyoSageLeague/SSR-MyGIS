@@ -26,7 +26,6 @@ namespace MyGIS.Desktop {
 			Configurations.formMain = this;
 			this.Text = Configurations.appNameProduct;
 			statusBar1.Text = "Idle";
-			//spatialHeaderControl.Add();
 
 			Shell = this;
 			appManager.NakidosFix();
@@ -82,7 +81,6 @@ namespace MyGIS.Desktop {
 
 		private void FormMain_FormClosing(object sender, FormClosingEventArgs e) {
 			Configurations.formLogger.Visible = false;
-			//Application.Exit();
 		}
 
 		void map1_GeoMouseMove(object sender, GeoMouseArgs e) {
@@ -126,7 +124,6 @@ namespace MyGIS.Desktop {
 		}
 
 		private void FormMain_Load(object sender, EventArgs e) {
-			Configurations.formLogger.Visible = false;
 			Configurations.formSplashWrapper.Deactivate();
 			MenuRemover(menuStrip, "Options", "File");
 		}

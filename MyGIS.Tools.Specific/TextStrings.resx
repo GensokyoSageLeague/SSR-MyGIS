@@ -138,8 +138,8 @@
   <data name="LiLineDescription" xml:space="preserve">
     <value>Simply line(s)</value>
   </data>
-  <data name="LiLinePara1" xml:space="preserve">
-    <value>Parameter1</value>
+  <data name="LiCirclePara1" xml:space="preserve">
+    <value>Max Centroid Offset (Meter)</value>
   </data>
   <data name="LiLineTip" xml:space="preserve">
     <value>Landform Identification</value>
@@ -147,13 +147,16 @@
   <data name="OutputFeatureSet" xml:space="preserve">
     <value>Output Feature Set</value>
   </data>
-  <data name="LiLinePara2" xml:space="preserve">
-    <value>Parameter2</value>
+  <data name="LiCirclePara2" xml:space="preserve">
+    <value>Minimum Overlap Count</value>
   </data>
-  <data name="LiLinePara3" xml:space="preserve">
-    <value>Parameter3</value>
+  <data name="LiCirclePara3" xml:space="preserve">
+    <value>Convex Hull Tolerance (%)</value>
   </data>
-  <data name="LiLinePara4" xml:space="preserve">
-    <value>Parameter4</value>
+  <data name="LiCirclePara4" xml:space="preserve">
+    <value>Column Name of Height</value>
+  </data>
+  <data name="LiLinePara" xml:space="preserve">
+    <value>Tolerance</value>
   </data>
 </root>

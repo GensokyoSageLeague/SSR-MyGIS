@@ -97,6 +97,42 @@ namespace MyGIS.Tools.Specific {
         }
         
         /// <summary>
+        ///   查找类似 Max Centroid Offset (Meter) 的本地化字符串。
+        /// </summary>
+        internal static string LiCirclePara1 {
+            get {
+                return ResourceManager.GetString("LiCirclePara1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Minimum Overlap Count 的本地化字符串。
+        /// </summary>
+        internal static string LiCirclePara2 {
+            get {
+                return ResourceManager.GetString("LiCirclePara2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Convex Hull Tolerance (%) 的本地化字符串。
+        /// </summary>
+        internal static string LiCirclePara3 {
+            get {
+                return ResourceManager.GetString("LiCirclePara3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Column Name of Height 的本地化字符串。
+        /// </summary>
+        internal static string LiCirclePara4 {
+            get {
+                return ResourceManager.GetString("LiCirclePara4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Landform Identification 的本地化字符串。
         /// </summary>
         internal static string LICircleTip {
@@ -124,38 +160,11 @@ namespace MyGIS.Tools.Specific {
         }
         
         /// <summary>
-        ///   查找类似 Parameter1 的本地化字符串。
+        ///   查找类似 Tolerance 的本地化字符串。
         /// </summary>
-        internal static string LiLinePara1 {
+        internal static string LiLinePara {
             get {
-                return ResourceManager.GetString("LiLinePara1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 Parameter2 的本地化字符串。
-        /// </summary>
-        internal static string LiLinePara2 {
-            get {
-                return ResourceManager.GetString("LiLinePara2", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 Parameter3 的本地化字符串。
-        /// </summary>
-        internal static string LiLinePara3 {
-            get {
-                return ResourceManager.GetString("LiLinePara3", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 Parameter4 的本地化字符串。
-        /// </summary>
-        internal static string LiLinePara4 {
-            get {
-                return ResourceManager.GetString("LiLinePara4", resourceCulture);
+                return ResourceManager.GetString("LiLinePara", resourceCulture);
             }
         }
         
