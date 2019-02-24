@@ -7,11 +7,11 @@ Fin.
 
 # LICENSE
 
-MyGIS.* is licensed under
+MyGIS.* is licensed under the
 [GNU General Public License v3.0](LICENSE "LICENSE")
 .
 
-DotSpatial.* is licensed under MIT License.
+DotSpatial.* is licensed under the MIT License.
 
 ```
 The MIT License (MIT)
@@ -37,3 +37,9 @@ CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
 TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 ```
+
+# Build
+
+Use "Release, Any CPU", then build the solution.
+
+VS with .NET Framework 4.5.2 SDK is required.
